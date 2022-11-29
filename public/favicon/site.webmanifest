@@ -1,0 +1,19 @@
+{
+  "name": "Liberaawards.com",
+  "short_name": "liberaawards.com",
+  "icons": [
+    {
+      "src": "/favicons/dancing-lady-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/dancing-lady-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#fffbeb",
+  "display": "standalone"
+}
