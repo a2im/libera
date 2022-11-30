@@ -7,7 +7,7 @@ import { LiberaButtonInternal } from "./button"
 export function Intro() {
   return (
     <>
-  <div className="max-w-4xl grid grid-cols-4 md:pt-10 justify-center gap-0 md:mx-auto relative">
+  <div className="max-w-4xl pt-20 grid grid-cols-4 justify-center gap-0 md:mx-auto relative">
         <div className="col-span-1"></div>
         <motion.div 
           initial= {{
@@ -22,7 +22,7 @@ export function Intro() {
               repeat: Infinity,
               repeatType: "reverse", 
             }}}
-          className="col-span-2 mt-4 z-10">
+          className="col-span-2 mt-5 z-3">
           <Image height={926} width={814} priority={true} 
             src="/images/dancing-lady.png" alt="Libera Awards Dancing Lady"/>
         </motion.div>
@@ -35,17 +35,17 @@ export function Intro() {
           animate={{
             x: 0,
             y: 0,
-            scale: ["0%", "90%", "100%"],
+            scale: "100%",
             transition:{ 
-              ease: "anticipate", 
-              duration: 1.8, 
+              type: 'tween', 
+              duration: .4, 
             }}}
           className="w-32 col-span-1">
           <Image height={50} width={50} priority={true}
             src="/images/sparkles-2.png" alt="Libera sparkles"/>
         </motion.div>
             </div>
-            <div className="-mt-12 md:-mt-20 max-w-4xl grid grid-cols-4 justify-center pb-8 gap-0 md:mx-auto">
+            <div className=" max-w-4xl grid grid-cols-4 justify-center pb-8 gap-0 md:mx-auto">
         <motion.div
         initial= {{
             x: 100,
@@ -55,11 +55,10 @@ export function Intro() {
           animate={{
             x: -10,
             y: 0,
-            scale: ["0%", "90%", "100%"],
+            scale: "100%",
             transition:{ 
-              type: 'spring',
-              stiffness: 300,
-              delay: 1,
+              type: 'tween',
+              delay: .3,
               duration: .4,
             }}}
           className="w-32 col-span-1">
@@ -80,12 +79,12 @@ export function Intro() {
             repeatType: "reverse", 
           }}}
           className="col-span-2">
-        <Image className="" height={100} width={100} priority={true} 
+        <Image className="" height={225} width={500} priority={true} 
             src="/logos/black-logos/libera-title-logo.png" alt="Libera Awards Logo"/>
         </motion.div>
         <div className="col-span-1"></div>
   </div>
-  <div className="justify-center md:-mt-32 mx-auto">
+  <div className="justify-center  mx-auto">
         <LiberaButtonInternal href="/submissions" variant="Borderswap3">SUBMIT NOW</LiberaButtonInternal>
         </div>
         </>

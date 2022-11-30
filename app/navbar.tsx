@@ -11,9 +11,9 @@ export default function MyNavbar() {
   useOnClickOutside(ref, () => setNavbar(false));
   return (
       <nav className="liberanav w-full fixed z-50 shadow">
-        <div className="justify-between mx-auto py-2 md:py-0 lg:max-w-7xl items-center md:flex md:px-4">
+        <div className="justify-between mx-auto lg:max-w-7xl items-center md:flex md:px-4">
           <div>
-            <div className="flex items-center justify-between md:py-5 md:block">
+            <div className="flex items-center justify-between md:block">
             <Link href={"/"} legacyBehavior>
                 <a>
               <div className="flex justify-center gap-10 grid-cols-2">
@@ -21,7 +21,7 @@ export default function MyNavbar() {
                 <Image src="/logos/A2IM-button-white-sm.png" alt="a2im logo button" height={50} width={50} />
                 </div>
                 <div className="mt-1">
-                <h2 className="text-2xl hover:text-libera-pink text-white font-bold text-center align-middle -ml-5 tracking-wider">LIBERA AWARDS</h2>
+                <h2 className="text-2xl hover:text-libera-pink text-white font-bold mt-1 text-center align-middle -ml-5 tracking-wider">LIBERA AWARDS</h2>
                 </div>
               </div>
               </a>
@@ -66,7 +66,7 @@ export default function MyNavbar() {
           </div>
           <div>
             <div
-              className={`flex-1 justify-self-center mb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+              className={`flex-1 justify-self-center md:block ${
                 navbar ? 'block' : 'hidden'
               }`}
             >
