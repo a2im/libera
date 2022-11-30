@@ -1,9 +1,9 @@
 'use client';
 
 import React from "react"
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 
 export default function MyModal (){
@@ -11,16 +11,16 @@ export default function MyModal (){
     const [isModalOpen, setModalOpen] = useState(false)
     const close = () => setModalOpen(false);
     const open = () => setModalOpen(true);
-    
+    useOnClickOutside(componentRef, () => setModalOpen(false));
     const dropIn = {
         hidden: {
-            x: "-30vw",
-            y: "100vh",
+            x: -320,
+            y: 100,
             opacity: 0,
         },
         visible: {
-            x: "-30vw",
-            y: "-70vh",
+            x: -360,
+            y: -410,
             opacity: 1,
             transition: {
                 duration: 0.1,
@@ -39,6 +39,7 @@ export default function MyModal (){
         <>
             <div className="flex fixed ladymodalbg bottom-5 right-5">
             {isModalOpen ? (
+                <AnimatePresence>
                 <motion.div
                 ref={componentRef}
                 onClick={(e) => e.stopPropagation()}
@@ -71,7 +72,8 @@ export default function MyModal (){
                             </motion.button>
                         </Link> 
                     </div>
-                </motion.div> ) : (
+                </motion.div>
+                </AnimatePresence> ) : (
                 
                 <motion.button 
                 whileTap={{scale: 0.95}}
@@ -85,7 +87,32 @@ export default function MyModal (){
     );
     }
 
-
+    function useOnClickOutside(ref, handler) {
+        useEffect(
+          () => {
+            const listener = (event) => {
+              // Do nothing if clicking ref's element or descendent elements
+              if (!ref.current || ref.current.contains(event.target)) {
+                return;
+              }
+              handler(event);
+            };
+            document.addEventListener("mousedown", listener);
+            document.addEventListener("touchstart", listener);
+            return () => {
+              document.removeEventListener("mousedown", listener);
+              document.removeEventListener("touchstart", listener);
+            };
+          },
+          // Add ref and handler to effect dependencies
+          // It's worth noting that because passed in handler is a new ...
+          // ... function on every render that will cause this effect ...
+          // ... callback/cleanup to run every render. It's not a big deal ...
+          // ... but to optimize you can wrap handler in useCallback before ...
+          // ... passing it into this hook.
+          [ref, handler]
+        );
+      }
       
 
 

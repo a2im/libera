@@ -1,38 +1,60 @@
-/** @type {import('next').NextConfig} */
-
-const securityHeaders = [
-  {
-    key: 'Strict-Transport-Security',
-    value: 'max-age=63072000; includeSubDomains; preload'
-  },
-  {
-    key: 'Referrer-Policy',
-    value: 'strict-origin-when-cross-origin'
-  },
-  {
-    key: 'X-DNS-Prefetch-Control',
-    value: 'on'
-  }
-]
-const nextConfig = {
-  async headers() {
-    return [
-      {
-        // Apply these headers to all routes in your application.
-        source: '/:path*',
-        headers: securityHeaders,
-      },
-    ]
-  },
+module.exports = {
+  output: 'standalone',
   env: {
     NEXT_PUBLIC_GOOGLE_ANALYTICS: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
     SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
     WORDPRESS_API_URL: process.env.WORDPRESS_API_URL,
     A2IMCMS_API_URL: process.env.A2IMCMS_API_URL,
   },
-  experimental: {
-    appDir: true,
-  },
-}
+  images: {
+    domains: [
+      process.env.WORDPRESS_API_URL.match(/(?!(w+)\.)\w*(?:\w+\.)+\w+/)[0], // Valid WP Image domain.
+      '0.gravatar.com',
+      '1.gravatar.com',
+      '2.gravatar.com',
+      'secure.gravatar.com',
+      'images.liberaawards.com',
+      'liberaawards.com',
+      'liberaawards.a2im.xyz',
+      'a2im-strapi-cms-images.s3.amazonaws.com',
+    ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'liberaawards.com',
+        port: '80',
+        pathname: '/wp-content/uploads/***',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.liberaawards.com',
+        port: '80',
+        pathname: '/wp-content/uploads/***',
+      },
+      {
+        protocol: 'https',
+        hostname: 'liberaawards.com',
+        port: '80',
+        pathname: '/wp-content/uploads/***',
+      },
+      {
+        protocol: 'https',
+        hostname: 'liberaawards.a2im.xyz',
+        port: '80',
+        pathname: '/wp-content/uploads/***',
+      },
+      {
+        protocol: 'https',
+        hostname: 'a2im-strapi-cms-images.s3.amazonaws.com',
+        port: '80',
+        pathname: '/***',
+      }
 
-module.exports = nextConfig
+    ],
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; sandbox;",
+},
+experimental: {
+  appDir: true,
+},
+}

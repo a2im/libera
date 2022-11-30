@@ -2,7 +2,7 @@ import Footer from './footer'
 import './globals.css'
 import MyNavbar from './navbar'
 import MyModal from "./modal"
-import { Providers } from './providers';
+
 
 export default function RootLayout({
   children,
@@ -16,13 +16,11 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
-        <Providers>
+      <body className="min-h-screen z-0">
       <MyNavbar />
       {children}
       <Footer />
       <MyModal />
-      </Providers>
       </body>
     </html>
   )

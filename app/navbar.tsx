@@ -8,7 +8,7 @@ import Image from "next/legacy/image";
 export default function MyNavbar() {
   const ref = useRef();
   const [navbar, setNavbar] = useState(false);
-  
+  useOnClickOutside(ref, () => setNavbar(false));
   return (
       <nav className="liberanav w-full fixed z-50 shadow">
         <div className="justify-between mx-auto py-2 md:py-0 lg:max-w-7xl items-center md:flex md:px-4">
@@ -18,7 +18,7 @@ export default function MyNavbar() {
                 <a>
               <div className="flex justify-center gap-10 grid-cols-2">
                 <div className="mygrow a2imbuttonbox ml-2 w-10">
-                <Image src="/logos/A2IM-button-white.png" alt="a2im logo button" height={100} width={100} layout="responsive" />
+                <Image src="/logos/A2IM-button-white-sm.png" alt="a2im logo button" height={50} width={50} />
                 </div>
                 <div className="mt-1">
                 <h2 className="text-2xl hover:text-libera-pink text-white font-bold text-center align-middle -ml-5 tracking-wider">LIBERA AWARDS</h2>
@@ -70,7 +70,7 @@ export default function MyNavbar() {
                 navbar ? 'block' : 'hidden'
               }`}
             >
-              <ul className="items-center justify-center space-x-6 space-y-0 md:flex">
+              <ul ref={ref} className="items-center justify-center space-x-6 space-y-0 md:flex">
                 <li 
                   className="ml-6 p-1 text-center text-2xl text-white Borderswap2nav">
                   <Link href="/about" onClick={() => setNavbar(false)} >
@@ -118,5 +118,31 @@ export default function MyNavbar() {
           </div>
         </div>
       </nav>
+  );
+}
+function useOnClickOutside(ref, handler) {
+  useEffect(
+    () => {
+      const listener = (event) => {
+        // Do nothing if clicking ref's element or descendent elements
+        if (!ref.current || ref.current.contains(event.target)) {
+          return;
+        }
+        handler(event);
+      };
+      document.addEventListener("mousedown", listener);
+      document.addEventListener("touchstart", listener);
+      return () => {
+        document.removeEventListener("mousedown", listener);
+        document.removeEventListener("touchstart", listener);
+      };
+    },
+    // Add ref and handler to effect dependencies
+    // It's worth noting that because passed in handler is a new ...
+    // ... function on every render that will cause this effect ...
+    // ... callback/cleanup to run every render. It's not a big deal ...
+    // ... but to optimize you can wrap handler in useCallback before ...
+    // ... passing it into this hook.
+    [ref, handler]
   );
 }

@@ -34,7 +34,7 @@ export default function Archive21({  }) {
           <motion.section exit={{ opacity: 0 }}>
       <div className="max-w-6xl mx-auto">
         <div className='Youtubebox'>
-        <YouTube videoId="jKq4vdWwPeE" className="video-responsive" opts={opts} onReady={onPlayerReady} />
+        <YouTube videoId="7weehasRE48" className="video-responsive" opts={opts} onReady={onPlayerReady} />
         </div>
         <div className='mt-10 flex flex-wrap flex-row gap-5 p-8 justify-center mb-20'>
         {Awards2021.map(Awards2021 => (
