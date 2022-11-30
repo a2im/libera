@@ -3,14 +3,7 @@
 import Image from "next/legacy/image";
 import Link from 'next/link'
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faYoutube,
-    faFacebook,
-    faTwitter,
-    faInstagram,
-    faLinkedin
-  } from "@fortawesome/free-brands-svg-icons";
+import { SocialFollowWhite } from "./SocialFollow";
 import { motion } from "framer-motion";
 
 
@@ -34,68 +27,7 @@ export default function Footer() {
             <Link href="https://liberaawards.com" legacyBehavior>
               <Image src="/logos/A2IM-logo-white.png" alt='a2im logo' height={100} width={100} layout={'responsive'} objectFit={'contain'} priority={true}/>
             </Link>
-            <div className="social-container items-center content-center grid grid-cols-5 p-8 gap-8 text-white">
-            <Link
-              href="https://youtu.be/mV5DSttNOPE"
-              className="youtube social"
-              target="_blank"
-              rel="noopener noreferrer"
-              legacyBehavior>
-              <motion.button 
-                whileHover={{scale: 1.04}}
-                whileTap={{scale: 0.95}}>
-                <FontAwesomeIcon icon={faYoutube} size="2x" />
-              </motion.button>
-            </Link>
-      <motion.button 
-      whileHover={{scale: 1.04}}
-      whileTap={{scale: 0.95}}>
-        <Link
-          href="https://www.facebook.com/independentlabels/"
-          className="facebook social"
-          target="_blank"
-          rel="noopener noreferrer"
-          legacyBehavior>
-          <FontAwesomeIcon icon={faFacebook} size="2x" />
-        </Link>
-      </motion.button>
-      <motion.button 
-      whileHover={{scale: 1.04}}
-      whileTap={{scale: 0.95}}>
-        <Link
-          href="https://twitter.com/LiberaAwards"
-          className="twitter social"
-          target="_blank"
-          rel="noopener noreferrer"
-          legacyBehavior>
-          <FontAwesomeIcon icon={faTwitter} size="2x" />
-        </Link>
-      </motion.button>
-      <motion.button 
-      whileHover={{scale: 1.04}}
-      whileTap={{scale: 0.95}}>
-        <Link
-          href="https://www.instagram.com/LiberaAwards/"
-          className="instagram social"
-          target="_blank"
-          rel="noopener noreferrer"
-          legacyBehavior>
-          <FontAwesomeIcon icon={faInstagram} size="2x" />
-        </Link>
-      </motion.button>
-      <motion.button 
-      whileHover={{scale: 1.04}}
-      whileTap={{scale: 0.95}}>
-        <Link
-          href="https://www.linkedin.com/company/a2im-american-association-of-independent-music"
-          className="linkedin social"
-          target="_blank"
-          rel="noopener noreferrer"
-          legacyBehavior>
-          <FontAwesomeIcon icon={faLinkedin} size="2x" />
-        </Link>
-      </motion.button>
-  </div>
+            <SocialFollowWhite/>
         </div>
         </div>
         <div className="sponsorbox max-w-6xl mx-auto">
