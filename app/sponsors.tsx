@@ -14,7 +14,6 @@ export function SponsorTier1() {
       }});
       if (loading) return <p>Loading...</p>
       if (error) return <p>Error</p>
-      console.log(data)
     return (
         <div className="flex flex-col md:flex-row mx-auto justify-center gap-10 items-center">
         {/* Map through the data */}
@@ -43,7 +42,6 @@ export function SponsorTier2() {
       }});
       if (loading) return <p>Loading...</p>
       if (error) return <p>Error</p>
-      console.log(data)
     return (
         <div className="flex flex-col md:flex-row mx-auto justify-center gap-10 items-center">
         {/* Map through the data */}
@@ -72,7 +70,6 @@ export function SponsorTier3() {
       }});
       if (loading) return <p>Loading...</p>
       if (error) return <p>Error</p>
-      console.log(data)
     return (
         <div className="flex flex-col md:flex-row mx-auto justify-center gap-10 items-center">
         {/* Map through the data */}
