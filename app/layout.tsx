@@ -1,7 +1,7 @@
-import Footer from './footer'
 import './globals.css'
 import MyNavbar from './navbar'
 import MyModal from "./modal"
+import { Providers } from './providers';
 
 
 export default function RootLayout({
@@ -9,6 +9,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  
+
   return (
     <html lang="en">
       {/*
@@ -17,10 +19,11 @@ export default function RootLayout({
       */}
       <head />
       <body className="min-h-screen z-0">
+      <Providers>
       <MyNavbar />
       {children}
-      <Footer />
       <MyModal />
+      </Providers>
       </body>
     </html>
   )
