@@ -2,7 +2,7 @@ import './globals.css'
 import MyNavbar from './navbar'
 import MyModal from "./modal"
 import { Providers } from './providers';
-
+import Footer from './footer';
 
 export default function RootLayout({
   children,
@@ -23,6 +23,7 @@ export default function RootLayout({
       <MyNavbar />
       {children}
       <MyModal />
+      <Footer />
       </Providers>
       </body>
     </html>

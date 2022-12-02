@@ -1,22 +1,11 @@
-'use client';
-
 import Image from "next/legacy/image";
 import Link from 'next/link'
 import React from "react";
 import { SocialFollowWhite } from "./SocialFollow";
 import AdBanner from "./ad-banner";
-import { useQuery } from '@apollo/client';
-import { GET_ALL_SPONSORS } from "../lib/queries";
+import { SponsorTier1, SponsorTier2, SponsorTier3 } from "./sponsors";
 
 export default function Footer() {
-  const { loading, error, data } = useQuery(GET_ALL_SPONSORS, { 
-    variables: {
-      Level: "Tier 2", 
-      Title: "2023 Libera Awards"
-    }});
-    if (loading) return <p>Loading...</p>
-    if (error) return <p>Error</p>
-    console.log(data)
   return (
     <footer className="z-1">
   <div className="pl-[100px] md:pl-[600px] -mb-2">
@@ -32,25 +21,12 @@ export default function Footer() {
             <SocialFollowWhite/>
         </div>
         </div>
-        <ul>
-        {/* Map through the data */}
-        {data.sponsors.data.map(sponsors => (
-          <li key={sponsors.id}>
-                <div>
-                  <Link href={sponsors.attributes?.URL}>
-                  <h2>{sponsors.attributes?.Name}</h2>
-                  </Link>
-                  <Image 
-      src={sponsors.attributes.Logo.data.attributes.url}
-      height={sponsors.attributes.Logo.data.attributes.height} 
-      width={sponsors.attributes.Logo.data.attributes.width} 
-      alt={sponsors.attributes.Logo.data.attributes.alternativeText} 
-      />
-                </div>
-                </li>
-              )
-            )}
-            </ul>
+        <div className="sponsorbox max-w-6xl mx-auto text-center">
+          <h3>Thank you to our Sponsors</h3>
+          <SponsorTier1/>
+          <SponsorTier2/>
+          <SponsorTier3/>
+</div>
     </footer>
   );
 }
