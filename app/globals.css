@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .ladyinfobg {
   position: absolute;
   top: 0;
@@ -312,8 +313,12 @@ font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
   padding-right: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
+  z-index: 80;
 }
-
+.react-multiple-carousel__arrow {
+  z-index: 30;
+  position: relative;
+}
 .sparkler {
   max-width: 10%;
   max-height: 10%;
@@ -350,19 +355,13 @@ font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
 }
 
 .LiberaBorder {
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border: 50px;
   padding: 10px;
 }
 
 .Borderswap1 {
   background: linear-gradient(-45deg, #F669A6, #7D45BC);
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 50px;
   padding: 10px;
   background-size: 300% 300%;
   animation: gradient 7s ease infinite;
@@ -371,10 +370,7 @@ font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
 .Borderswap1:hover {
   scale: 110%;
   background: linear-gradient(-90deg, #F669A6, #7D45BC);
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-radius: 50px;
   background-size: 300% 300%;
   animation: gradient 3s ease infinite;
   color: white;
@@ -398,10 +394,7 @@ font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
 
 .Borderswap2 {
   background: linear-gradient(-90deg, #F669A6, #7D45BC);
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 50px;
   padding: 10px;
   background-size: 300% 300%;
   animation: gradient 7s ease infinite;
@@ -410,10 +403,7 @@ font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
 .Borderswap2:hover {
   scale: 110%;
   background: linear-gradient(-120deg, #F669A6, #7D45BC);
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-radius: 50px;
   background-size: 300% 300%;
   animation: gradient 3s ease infinite;
   color: white;
@@ -436,26 +426,21 @@ font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
 
 .Borderswap3 {
   background: linear-gradient(45deg, #F669A6, #7D45BC);
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 50px;
   padding: 10px;
   background-size: 300% 300%;
   animation: gradient 7s ease infinite;
 }
 
 .Borderswap3:hover {
-  scale: 110%;
+  scale: 102%;
   background: linear-gradient(90deg, #F669A6, #7D45BC);
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-radius: 50px;
   background-size: 300% 300%;
   animation: gradient 3s ease infinite;
   color: white;
 }
+
 .Borderswap3nav {
   color:white;
 }
@@ -474,10 +459,7 @@ font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
 
 .Borderswap4 {
   background: linear-gradient(90deg, #F669A6, #7D45BC);
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 50px;
   padding: 10px;
   background-size: 300% 300%;
   animation: gradient 7s ease infinite;
@@ -486,10 +468,7 @@ font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
 .Borderswap4:hover {
   scale: 110%;
   background: linear-gradient(145deg, #F669A6, #7D45BC);
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-radius: 50px;
   background-size: 300% 300%;
   animation: gradient 3s ease infinite;
   color: white;
@@ -513,13 +492,12 @@ font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
 
 .Borderswap5 {
   background: linear-gradient(90deg, #F669A6, #7D45BC);
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding: 10px;
+  border-radius: 50px;
+  padding: 20px;
+  animation: gradient 7s ease infinite;
   background-size: 300% 300%;
   color: white;
+  z-index: 99;
 }
 
 @keyframes gradient {
@@ -674,14 +652,12 @@ td.wp-block-table {
   font-weight: bold; 
   letter-spacing: -0.05em;
   line-height: 1.25;
+  text-align: center;
 }
 
 .category {
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding: 10px;
+  border: 50px;
+  padding: 20px;
   background-color: #f0f9ff;
 }
 

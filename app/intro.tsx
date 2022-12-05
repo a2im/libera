@@ -7,7 +7,7 @@ import { LiberaButtonInternal } from "./button"
 export function Intro() {
   return (
     <>
-  <div className="max-w-4xl pt-20 grid grid-cols-4 justify-center gap-0 md:mx-auto relative">
+  <div className="max-w-2xl grid grid-cols-4 justify-center gap-0 md:mx-auto relative">
         <div className="col-span-1"></div>
         <motion.div 
           initial= {{
@@ -22,7 +22,7 @@ export function Intro() {
               repeat: Infinity,
               repeatType: "reverse", 
             }}}
-          className="col-span-2 mt-5 z-3">
+          className="col-span-2 z-3">
           <Image height={926} width={814} priority={true} 
             src="/images/dancing-lady.png" alt="Libera Awards Dancing Lady"/>
         </motion.div>
@@ -45,7 +45,7 @@ export function Intro() {
             src="/images/sparkles-2.png" alt="Libera sparkles"/>
         </motion.div>
             </div>
-            <div className=" max-w-4xl grid grid-cols-4 justify-center pb-8 gap-0 md:mx-auto">
+            <div className="max-w-2xl grid grid-cols-4 justify-center pb-8 gap-0 md:mx-auto">
         <motion.div
         initial= {{
             x: 100,
@@ -85,7 +85,7 @@ export function Intro() {
         <div className="col-span-1"></div>
   </div>
   <div className="justify-center  mx-auto">
-        <LiberaButtonInternal href="/submissions" variant="Borderswap3">SUBMIT NOW</LiberaButtonInternal>
+        <LiberaButtonInternal href="/submissions">SUBMIT NOW</LiberaButtonInternal>
         </div>
         </>
   )

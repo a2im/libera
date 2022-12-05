@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
           <Head />
-          <div className="">
+          <div className="pt-20">
           <Intro />
           <div className="py-8 md:hidden" />
           <Intro2 />

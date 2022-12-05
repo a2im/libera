@@ -11,7 +11,7 @@ export default function MyNavbar() {
   useOnClickOutside(ref, () => setNavbar(false));
   return (
       <nav className="liberanav w-full fixed z-50 shadow">
-        <div className="justify-between mx-auto lg:max-w-7xl items-center md:flex md:px-4">
+        <div className="justify-between mx-auto md:py-0 lg:max-w-5xl items-center md:flex md:px-4">
           <div>
             <div className="flex items-center justify-between md:block">
             <Link href={"/"} legacyBehavior>

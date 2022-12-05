@@ -7,7 +7,7 @@ import { SponsorTier1, SponsorTier2, SponsorTier3 } from "./sponsors";
 
 export default function Footer() {
   return (
-    <footer className="z-1">
+    <footer className="w-full z-1 absolute">
   <div className="pl-[100px] md:pl-[600px] -mb-2">
   <Image height={238} width={800} 
   src="/images/stairs.png" alt="Libera Awards stairs" priority={true} />

@@ -7,9 +7,9 @@ export default function Tickets() {
     <div>
           <Head />
           <Header>Tickets</Header>
-          <div className="max-w-4xl mx-auto mb-8"> 
+          <div className="bg-sky-50 mx-auto mb-8 py-20"> 
             <div className='flex max-w-4xl mb-10 mx-auto gap-10 justify-center'> 
-              <div className='LiberaBorder mx-auto pb-10 p-4'>
+              <div className='mx-auto pb-10 p-4'>
                 <h3 className="mb-6 text-center">
                   COMING SOON 
                 </h3>

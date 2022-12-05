@@ -13,7 +13,7 @@ export default function AwardCategories () {
 
 <div className="max-w-4xl mx-auto LiberaBorder">
                       <div className=" pb-3 pt-12">
-              <h3 className="px-5">AWARD CATEGORIES & DESCRIPTIONS</h3>
+                      <h3 className="px-5">AWARD CATEGORIES & DESCRIPTIONS</h3>
               <div>
             <Accordion>
             <AccordionItem>
@@ -132,7 +132,7 @@ Best Short-Form Video
 </AccordionItemHeading>
                 <AccordionItemPanel>
                 <h4>
-                    Best utilization of independent music in a short-form video, or, short-form video created by an independent artist or label. Video must have been made public for the first time within the submission period. All music featured must be independent per Libera Awards guidelines.
+                Best utilization of independent music in a short-form video, or, short-form video created by an independent artist or label. Video must have been made public for the first time within the submission period. All music featured must be independent per Libera Awards guidelines. Length of content must be two minutes or less.
                     </h4>
                 </AccordionItemPanel>
             </AccordionItem>

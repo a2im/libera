@@ -33,14 +33,14 @@ export default function Archive12() {
         <div className='Youtubebox'>
         <YouTube videoId="7weehasRE48" className="video-responsive" opts={opts} onReady={onPlayerReady} />
         </div>
-        <div className='mt-10 flex flex-wrap flex-row gap-5 p-8 justify-center mb-20'>
+        <div className='mt-10 flex flex-wrap flex-row gap-5 p-8 justify-center text-center mb-20'>
         {Awards2012.map(Awards2012 => (
-          <div key={Awards2012.id} className='category Borderswap1 p-5 flex flex-col hover:bg-libera-pink hover:text-white'>
+          <div key={Awards2012.id} className='category Borderswap1 flex flex-col hover:bg-libera-pink hover:text-white'>
           <motion.button 
           whileHover={{scale: 1.04}}
           whileTap={{scale: 0.95}}
           className="">
-          <h3 className='text-2xl text-white font-medium mb-2 w-32 tracking-tight'>
+          <h3 className='text-2xl text-white font-medium mb-2 tracking-tight'>
               {Awards2012.awardtitle}
           </h3>
           <h4 className='winnerstext w-40 text-xl'>

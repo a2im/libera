@@ -33,13 +33,13 @@ const imgVariants= {
           exit="initial"
           variants={imgVariants}
           className="grow shrink">
-          <Image height={537} width={1000} layout={'responsive'} objectFit={'contain'}
+          <Image height={215} width={400}
             src="/images/hand.png" alt="Libera Awards hand" priority={true}/>
         </motion.div>
         <div className="grow shrink"></div>
         </div>
 
-        <div className="max-w-6xl flex flex-col md:flex-row px-8 py-20 md:py-32 -mt-52 mx-auto justify-center">
+        <div className="max-w-6xl flex flex-col md:flex-row px-8 -mt-48 mx-auto justify-center">
             <div className="grow shrink"></div>
     <motion.div 
     initial= {{
@@ -56,7 +56,7 @@ const imgVariants= {
       }}}
       exit={{ scale: "100%", }}
       className="grow shrink content-center">
-<h1 className="grow font-bold align-middle text-center leading-tight">
+<h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
   {children}
   </h1>
   </motion.div>

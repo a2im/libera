@@ -18,14 +18,14 @@ export default function Submissions() {
           initial="initial"
           animate="animate"
           className="mx-auto">
-            <div className="max-w-3xl mx-auto">
-            <h4 className="p-8">Submit your music to be considered at the 2023 A2IM Libera Awards, the largest celebration of independent music globally. For discounts on bulk submissions (10 or more), email <span><Link href="mailto:sales@a2im.org">sales@a2im.org</Link></span></h4>
-            </div>
         <section className="mx-auto">
           <div className="flex flex-col md:flex-row justify-center text-center mx-auto items-center content-center">
-        <LiberaButtonExternal onClick={null} href='https://libera.awardsplatform.com/' variant="Borderswap3">CLICK HERE<br></br>TO SUBMIT</LiberaButtonExternal>
-        <LiberaButtonInternal href="/faq" variant="Borderswap3" onClick={null}>View all<br></br>categories</LiberaButtonInternal>
+        <LiberaButtonExternal onClick={null} href='https://libera.awardsplatform.com/'>CLICK HERE TO SUBMIT</LiberaButtonExternal>
+        <LiberaButtonInternal href="/faq" variant="Borderswap3">View all categories</LiberaButtonInternal>
         </div>
+        <div className="max-w-3xl mx-auto">
+            <h4 className="p-8">Submit your music to be considered at the 2023 A2IM Libera Awards, the largest celebration of independent music globally. For discounts on bulk submissions (10 or more), email <span><Link href="mailto:sales@a2im.org">sales@a2im.org</Link></span></h4>
+            </div>
         <AdBanner/>
         <br></br>
         <LiberaQualifications />

@@ -12,9 +12,9 @@ import {
 
 export default function LiberaQualifications () {
     return (
-      <div className="bg-sky-50 mx-auto p-8">
-                  <div className="max-w-4xl mx-auto LiberaBorder">
-                    <div className="px-5 pb-3 pt-12">
+      <div className="bg-sky-50 mx-auto">
+                  <div className="max-w-4xl text-left mx-auto LiberaBorder">
+                    <div className="mx-auto pb-3 pt-12 px-5">
                     <h3> GENERAL ELIGIBILITY RULES</h3>
                     <h4>Celebrating the best in independent music; All artists / submissions must be independently owned/controlled, and released in the United States and its Territories during the period between January 1, 2022 through December 31, 2022.</h4>
                     </div>

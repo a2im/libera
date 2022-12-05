@@ -2,7 +2,6 @@
 
 import React from "react"
 import Image from "next/legacy/image";
-import Link from "next/link"
 import { LiberaButtonExternal, LiberaButtonInternal } from "./button";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
