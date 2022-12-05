@@ -34,3 +34,30 @@ query getLiberaSponsorsList($Level: String!, $Title: String!) {
   `;
 
 export { GET_ALL_SPONSORS }  
+
+
+const GET_ALL_ADS = gql`
+query getLiberaAds($isActive: Boolean, $Name: String!) {
+  ads(filters: { isActive: { eq: $isActive }, apps: { Name: {eq: $Name}}}) {
+    data{
+      id
+      attributes {
+        Name
+        URL
+        Asset {
+          data {
+            id
+            attributes {
+              alternativeText
+              width
+              height
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+export { GET_ALL_ADS } 

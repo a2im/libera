@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.adbannercontainer{
+    height: 120px;
+    width: 728px;
+}
 
 .ladyinfobg {
   position: absolute;
