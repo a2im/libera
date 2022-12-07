@@ -2,17 +2,12 @@
 
 import Head from '../../../head'
 import Header from '../../../header'
-import { motion } from 'framer-motion'
 import { Awards2022 } from '../../../../lib/awards-data/awards-data';
 import YouTube, { YouTubeProps } from 'react-youtube';
 
-
 export default function Archive22({  }) {
 
-  console.log()
-
   const onPlayerReady: YouTubeProps['onReady'] = (event) => {
-    // access to player in all event handlers via event.target
     event.target.pauseVideo();
     event.target.playVideo();
   }
@@ -21,7 +16,6 @@ export default function Archive22({  }) {
     height: '390',
     width: '640',
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
   };
@@ -30,31 +24,26 @@ export default function Archive22({  }) {
     <div>
           <Head>Libera Awards - 2022 Archive</Head>
           <Header>Archive 2022</Header>
-          <motion.section exit={{ opacity: 0 }}>
+          <section>
       <div className="max-w-6xl mx-auto">
         <div className='Youtubebox'>
         <YouTube videoId="jKq4vdWwPeE" className="video-responsive" opts={opts} onReady={onPlayerReady} />
         </div>
-        <div className='mt-10 flex flex-wrap flex-row gap-5 p-8 justify-center mb-20'>
+        <div className='mt-10 grid grid-cols-2 md:grid-cols-4 gap-5 p-8 mb-20'>
         {Awards2022.map(Awards2022 => (
-          <div key={Awards2022.id} className='category Borderswap1 p-5 flex flex-col hover:bg-libera-pink hover:text-white'>
-          <motion.button 
-          whileHover={{scale: 1.04}}
-          whileTap={{scale: 0.95}}
-          className="">
-          <h3 className='text-2xl text-white font-medium mb-2 w-32 tracking-tight'>
+          <button key={Awards2022.id} className="p-10 drop-shadow-4xl hover:scale-105 max-w-64 Borderswap3 mx-auto my-auto hover:bg-libera-pink hover:text-white">
+          <h3 className='p-3 text-2xl text-white font-medium mb-2 tracking-tight'>
               {Awards2022.awardtitle}
           </h3>
-          <h4 className='winnerstext w-40 text-xl'>
+          <h4 className='p-2 mx-auto hover:font-bold w-40 text-xl'>
               {Awards2022.awardwinner}
           </h4>
-          </motion.button>
-      </div>
+          </button>
         ))}
           </div>
           </div>
           <div className="py-10" />
-      </motion.section>
+      </section>
     </div>
   )
 }
