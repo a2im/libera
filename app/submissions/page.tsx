@@ -12,7 +12,7 @@ import Link from 'next/link'
 export default function Submissions() {
   return (
     <div>
-          <Head />
+          <Head>Libera Awards - Submissions</Head>
           <Header>Submissions</Header>
           <motion.div
           initial="initial"

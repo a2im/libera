@@ -89,7 +89,7 @@ export default function Contact() {
    };
   return (
     <div>
-          <Head />
+          <Head>Libera Awards - Contact Us</Head>
           <Header>Contact</Header>
           <motion.div
           initial="initial"

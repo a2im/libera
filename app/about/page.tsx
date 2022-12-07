@@ -5,7 +5,7 @@ import Header from '../header'
 export default function About() {
   return (
     <div>
-          <Head />
+          <Head>About Us</Head>
           <Header>About</Header>
           <About1 />
           <About2 />

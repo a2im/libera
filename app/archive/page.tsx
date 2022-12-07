@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 export default function Archive(ref) {
   return (
     <div>
-          <Head />
+          <Head>Libera Awards - Archive</Head>
           <Header>Archive</Header>
           <motion.div
           initial="initial"

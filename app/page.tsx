@@ -6,7 +6,7 @@ import { Intro, Intro2, Intro3 } from './intro'
 export default function Home() {
   return (
     <div>
-          <Head />
+          <Head>Libera Awards</Head>
           <div className="pt-20">
           <Intro />
           <div className="py-8 md:hidden" />

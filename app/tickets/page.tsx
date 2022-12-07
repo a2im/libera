@@ -5,7 +5,7 @@ import { SocialFollowBlack } from '../SocialFollow'
 export default function Tickets() {
   return (
     <div>
-          <Head />
+          <Head>Libera Awards - Tickets</Head>
           <Header>Tickets</Header>
           <div className="bg-sky-50 mx-auto mb-8 py-20"> 
             <div className='flex max-w-4xl mb-10 mx-auto gap-10 justify-center'> 

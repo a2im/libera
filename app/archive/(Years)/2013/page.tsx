@@ -28,7 +28,7 @@ export default function Archive13({  }) {
   
   return (
     <div>
-          <Head />
+          <Head>Libera Awards - 2013 Archive</Head>
           <Header>Archive 2013</Header>
           <motion.section exit={{ opacity: 0 }}>
       <div className="max-w-6xl mx-auto">

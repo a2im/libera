@@ -29,7 +29,7 @@ export default function Archive19({  }) {
   
   return (
     <div>
-          <Head />
+          <Head>Libera Awards - 2019 Archive</Head>
           <Header>Archive 2019</Header>
           <motion.section exit={{ opacity: 0 }}>
       <div className="max-w-6xl mx-auto">

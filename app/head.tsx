@@ -1,9 +1,10 @@
-export default function Head() {
+import Meta from "./meta"
+export default function Head({children}) {
   return (
     <>
-      <title>Title</title>
+      <title>{children}</title>
+      <Meta/>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <meta name="description" content="Libera Awards" />
       <link rel="icon" href="/favicon/favicon.ico" />
     </>
   )
