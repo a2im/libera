@@ -1,6 +1,6 @@
 'use client';
 
-import { GET_ALL_SPONSORS } from "../lib/queries";
+import { GET_ALL_SPONSORS } from "../lib/gql/queries";
 import { useQuery } from '@apollo/client';
 import Link from "next/link";
 import Image from "next/image";

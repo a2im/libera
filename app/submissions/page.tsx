@@ -1,8 +1,5 @@
-'use client';
-
 import Head from '../head'
 import Header from '../header'
-import { motion } from 'framer-motion'
 import { LiberaButtonExternal, LiberaButtonInternal } from '../button'
 import AdBanner from '../ad-banner'
 import LiberaQualifications from '../qualifications'
@@ -14,10 +11,7 @@ export default function Submissions() {
     <div>
           <Head>Libera Awards - Submissions</Head>
           <Header>Submissions</Header>
-          <motion.div
-          initial="initial"
-          animate="animate"
-          className="mx-auto">
+          <div className="mx-auto">
         <section className="mx-auto">
           <div className="flex flex-col md:flex-row justify-center text-center mx-auto items-center content-center">
         <LiberaButtonExternal onClick={null} href='https://libera.awardsplatform.com/'>CLICK HERE TO SUBMIT</LiberaButtonExternal>
@@ -46,7 +40,7 @@ export default function Submissions() {
               <h4>(If you did not use the platform in the previous years, you can register at this time.)</h4>
             </div>
             <div className="flex-initial w-96">
-              <Image src="/images/login-1.png" alt='libera awards submission login screen' height={631} width={400} layout={'responsive'} objectFit={'contain'} />
+              <Image src="/images/login-1.png" alt='libera awards submission login screen' height={631} width={400} />
               </div>
           </div>
         </section>
@@ -60,7 +54,7 @@ export default function Submissions() {
               <h4>Select a category and please fill out all required information.</h4>
             </div>
             <div className="my-10 content-center max-w-xl">
-              <Image src='/images/startanentry.png' alt='Start an entry' height={176} width={300} layout={'responsive'} objectFit={'contain'} />
+              <Image src='/images/startanentry.png' alt='Start an entry' height={176} width={300}/>
             </div>
           </div>
           </div>
@@ -75,7 +69,7 @@ export default function Submissions() {
               <h4>In order to submit, (1) attachment/link is required for all entries. If this is a genre category submission, you must upload at least (1) audio file <strong>in addition</strong> to your attachment/link.</h4>
             </div>
             <div className="my-10 content-center max-w-xl">
-              <Image src="/images/addattachments.png" alt='add attachments' height={176} width={300} layout={'responsive'} objectFit={'contain'} />
+              <Image src="/images/addattachments.png" alt='add attachments' height={176} width={300} />
             </div>
           </div>
           </div>
@@ -91,7 +85,7 @@ export default function Submissions() {
                 <br></br><br></br>(A2IM Members receive a <span className="font-bold">discounted submission rate. </span>Check the special offers in the infohub for your discount code)</h4>
             </div>
             <div className="my-10 content-center max-w-xl">
-              <Image src="/images/submitentry.png" alt='Submit an entry' height={176} width={300} layout={'responsive'} objectFit={'contain'} />
+              <Image src="/images/submitentry.png" alt='Submit an entry' height={176} width={300} />
             </div>
           </div>
           </div>
@@ -113,7 +107,7 @@ export default function Submissions() {
               <LiberaButtonInternal onClick={null} href="/contact" variant="Borderswap4">Click to email</LiberaButtonInternal>
               </div>
         </section>
-      </motion.div>
+      </div>
     </div>
   )
 }
