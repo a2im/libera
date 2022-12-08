@@ -7,11 +7,10 @@ import { useState, useRef, useEffect } from "react";
 
 
 export default function MyModal (){
-    const componentRef = useRef<HTMLInputElement>(null);
+    const ref = useRef();
     const [isModalOpen, setModalOpen] = useState(false)
     const close = () => setModalOpen(false);
-    const open = () => setModalOpen(true);
-    useOnClickOutside(componentRef, () => setModalOpen(false));
+    useOnClickOutside(ref, () => setModalOpen(false));
     const dropIn = {
         hidden: {
             x: -320,
@@ -41,7 +40,7 @@ export default function MyModal (){
             {isModalOpen ? (
                 <AnimatePresence>
                 <motion.div
-                ref={componentRef}
+                ref={ref}
                 onClick={(e) => e.stopPropagation()}
                 className="fixed Borderswap5 p-5 ladymodal w-96"
                 variants={dropIn}
@@ -74,7 +73,6 @@ export default function MyModal (){
                     </div>
                 </motion.div>
                 </AnimatePresence> ) : (
-                
                 <motion.button 
                 whileTap={{scale: 0.95}}
                 className="save-button"
@@ -91,7 +89,6 @@ export default function MyModal (){
         useEffect(
           () => {
             const listener = (event) => {
-              // Do nothing if clicking ref's element or descendent elements
               if (!ref.current || ref.current.contains(event.target)) {
                 return;
               }
@@ -104,12 +101,6 @@ export default function MyModal (){
               document.removeEventListener("touchstart", listener);
             };
           },
-          // Add ref and handler to effect dependencies
-          // It's worth noting that because passed in handler is a new ...
-          // ... function on every render that will cause this effect ...
-          // ... callback/cleanup to run every render. It's not a big deal ...
-          // ... but to optimize you can wrap handler in useCallback before ...
-          // ... passing it into this hook.
           [ref, handler]
         );
       }

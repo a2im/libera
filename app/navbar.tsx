@@ -2,8 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect, useRef} from 'react';
-import Image from "next/legacy/image";
-
+import Image from "next/image";
 
 export default function MyNavbar() {
   const ref = useRef();
@@ -137,12 +136,6 @@ function useOnClickOutside(ref, handler) {
         document.removeEventListener("touchstart", listener);
       };
     },
-    // Add ref and handler to effect dependencies
-    // It's worth noting that because passed in handler is a new ...
-    // ... function on every render that will cause this effect ...
-    // ... callback/cleanup to run every render. It's not a big deal ...
-    // ... but to optimize you can wrap handler in useCallback before ...
-    // ... passing it into this hook.
     [ref, handler]
   );
 }

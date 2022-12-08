@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from "react";
 import { SocialFollowWhite } from "./SocialFollow";
 import AdBanner from "./ad-banner";
-import { SponsorTier1, SponsorTier2, SponsorTier3 } from "./sponsors";
+import SponsorFooter from "./sponsors";
 
 export default function Footer() {
   return (
@@ -21,11 +21,9 @@ export default function Footer() {
             <SocialFollowWhite/>
         </div>
         </div>
-        <div className="sponsorbox max-w-6xl mx-auto text-center">
+        <div className="sponsorbox max-w-5xl mx-auto text-center">
           <h3>Thank you to our Sponsors</h3>
-          <SponsorTier1/>
-          <SponsorTier2/>
-          <SponsorTier3/>
+          <SponsorFooter />
 </div>
     </footer>
   );

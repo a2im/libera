@@ -1,6 +1,5 @@
 'use client';
 
-import Head from '../../../head'
 import Header from '../../../header'
 import { Awards2012 } from '../../../../lib/awards-data/awards-data';
 import YouTube, { YouTubeProps } from 'react-youtube';
@@ -22,7 +21,7 @@ export default function Archive12() {
   
   return (
     <div>
-          <Head>Libera Awards - 2012 Archive</Head>
+          <title>Libera Awards - 2012 Archive</title>
           <Header>Archive 2012</Header>
           <section>
       <div className="max-w-6xl mx-auto">

@@ -5,7 +5,7 @@ sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 async function sendEmail(req, res) {
   try {
     await sendgrid.send({
-      to: "support@a2im.org", // Your email where you'll receive emails
+      to: "ross@a2im.org", // Your email where you'll receive emails
       from: "support@a2im.org", // your website email address here
       subject: `[Libera Contact]: ${req.body.subject}`,
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

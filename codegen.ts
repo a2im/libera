@@ -4,7 +4,7 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 const config: CodegenConfig = {
   overwrite: true,
   schema: "https://cms.a2im.org/graphql",
-  documents: "lib/gql/*/**.tsx",
+  documents: "lib/gql/queries.tsx",
   generates: {
     "lib/gql": {
       preset: "client",

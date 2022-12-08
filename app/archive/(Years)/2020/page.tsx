@@ -1,6 +1,5 @@
 'use client';
 
-import Head from '../../../head'
 import Header from '../../../header'
 import { Awards2020 } from '../../../../lib/awards-data/awards-data';
 import YouTube, { YouTubeProps } from 'react-youtube';
@@ -22,7 +21,7 @@ export default function Archive20({  }) {
   
   return (
     <div>
-          <Head>Libera Awards - 2020 Archive</Head>
+          <title>Libera Awards - 2020 Archive</title>
           <Header>Archive 2020</Header>
           <section>
       <div className="max-w-6xl mx-auto">

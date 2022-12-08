@@ -138,7 +138,7 @@ Celebrate the Independent Community</h2>
 
   </div>
   <div className="justify-center bg-sky-50 mx-auto">
-        <LiberaButtonInternal href="/about" variant="Borderswap3">LEARN MORE</LiberaButtonInternal>
+        <LiberaButtonInternal href="/about">LEARN MORE</LiberaButtonInternal>
         </div>
   </div>
   )
@@ -170,7 +170,19 @@ Join us in New York City & Online</h2>
 exclusively on YouTube.</h4>
         </motion.div>
   </div>
-  <LiberaButtonInternal href="/tickets" variant="Borderswap1">GET TICKETS</LiberaButtonInternal>
+  <LiberaButtonInternal href="/tickets">GET TICKETS</LiberaButtonInternal>
   </div>
+  )
+}
+
+export default function MyIntro () {
+  return (
+    <div className="pt-20">
+          <Intro />
+          <div className="py-8 md:hidden" />
+          <Intro2 />
+          <div className="py-8 md:hidden" />
+          <Intro3 />
+        </div>
   )
 }

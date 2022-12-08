@@ -1,4 +1,4 @@
-import Head from '../head'
+import React from 'react'
 import Header from '../header'
 import { LiberaButtonExternal, LiberaButtonInternal } from '../button'
 import AdBanner from '../ad-banner'
@@ -9,13 +9,13 @@ import Link from 'next/link'
 export default function Submissions() {
   return (
     <div>
-          <Head>Libera Awards - Submissions</Head>
+          <title>Libera Awards - Submissions</title>
           <Header>Submissions</Header>
           <div className="mx-auto">
         <section className="mx-auto">
           <div className="flex flex-col md:flex-row justify-center text-center mx-auto items-center content-center">
-        <LiberaButtonExternal onClick={null} href='https://libera.awardsplatform.com/'>CLICK HERE TO SUBMIT</LiberaButtonExternal>
-        <LiberaButtonInternal href="/faq" variant="Borderswap3">View all categories</LiberaButtonInternal>
+        <LiberaButtonExternal href='https://libera.awardsplatform.com/'>CLICK HERE TO SUBMIT</LiberaButtonExternal>
+        <LiberaButtonInternal href="/faq">View all categories</LiberaButtonInternal>
         </div>
         <div className="max-w-3xl mx-auto">
             <h4 className="p-8">Submit your music to be considered at the 2023 A2IM Libera Awards, the largest celebration of independent music globally. For discounts on bulk submissions (10 or more), email <span><Link href="mailto:sales@a2im.org">sales@a2im.org</Link></span></h4>
@@ -96,7 +96,7 @@ export default function Submissions() {
               HAD A LOT OF RELEASES THIS YEAR?
             </h3>
             <h4>We&apos;ve got a discount for you!</h4>
-            <LiberaButtonExternal onClick={null} href='mailto:sales@a2im.org' variant="Borderswap1"> Click to email</LiberaButtonExternal>
+            <LiberaButtonExternal href='mailto:sales@a2im.org'> Click to email</LiberaButtonExternal>
           </div>
           <div className='LiberaBorder bg-sky-50 flex flex-col mx-auto p-4'>
             <h3 className="md:mb-6">
@@ -104,7 +104,7 @@ export default function Submissions() {
             </h3>
 
             <h4>If you continue to experience issues with submissions after this guide, please contact support.</h4>
-              <LiberaButtonInternal onClick={null} href="/contact" variant="Borderswap4">Click to email</LiberaButtonInternal>
+              <LiberaButtonInternal href="/contact">Click to email</LiberaButtonInternal>
               </div>
         </section>
       </div>

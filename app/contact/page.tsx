@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useId, useState } from 'react'
-import Head from '../head'
 import Header from '../header'
 import { motion } from "framer-motion"
 import Link from 'next/link'
@@ -89,7 +88,7 @@ export default function Contact() {
    };
   return (
     <div>
-          <Head>Libera Awards - Contact Us</Head>
+          <title>Libera Awards - Contact Us</title>
           <Header>Contact</Header>
           <motion.div
           initial="initial"

@@ -72,7 +72,7 @@ export function About2 () {
   <Image src="/images/showfloor.jpg" alt='libera awards in person gala' width={2048} height={1365} layout='responsive' objectFit={'contain'} />
     </div>
 </Carousel>
-<LiberaButtonExternal onClick={null} href='https://www.facebook.com/independentlabels/photos_albums' variant="Borderswap2">VIEW MORE</LiberaButtonExternal>
+<LiberaButtonExternal href='https://www.facebook.com/independentlabels/photos_albums'>VIEW MORE</LiberaButtonExternal>
         </div>
       </div>
   )
@@ -99,7 +99,7 @@ up to date.</h4>
               <Image className="roundedimage" src="/images/awards2.jpg" alt='libera awards in person gala' height={100} width={100} layout='responsive' objectFit='contain' />
             </div>
           </div>
-          <LiberaButtonInternal onClick={null} href='/tickets' variant="Borderswap1">GET TICKETS</LiberaButtonInternal>
+          <LiberaButtonInternal href='/tickets'>GET TICKETS</LiberaButtonInternal>
         </div>
       </div>
   )

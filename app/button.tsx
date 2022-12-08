@@ -1,47 +1,35 @@
-'use client';
-
-import React, { FC } from "react";
+import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
-interface ButtonProps {
-  children: React.ReactNode
-  href: string
-  [name: string]: any;
-}
-
-export const LiberaButtonExternal: React.FC<ButtonProps>= ({ children, href }: ButtonProps) => {
+export function LiberaButtonExternal ({ children, href }) {
   return <div className="text-center p-8">
         <Link
           href={href}
-          passHref
           target="_blank"
           rel="noopener noreferrer">
           <div className="p-7 drop-shadow-2xl max-h-21 justify-center leading-tight mx-auto">
-              <motion.button 
-              whileTap={{scale: 0.95}}
-              className="Borderswap3">
+              <button 
+              className="Borderswap3 hover:scale-105">
                 <h3 className="align-middle font-normal px-4 text-white truncate tracking-tighter leading-tight">
                 {children}
                 </h3>
-              </motion.button>
+              </button>
           </div>
 
         </Link>
     </div>
 }
 
-export const LiberaButtonInternal: React.FC<ButtonProps>= ({ children, href}: ButtonProps) => {
+export function LiberaButtonInternal ({ children, href}) {
   return <div className="text-center p-8">
-        <Link href={href} passHref>
+        <Link href={href}>
         <div className="p-7 drop-shadow-2xl max-h-21 justify-center leading-tight mx-auto">
-            <motion.button 
-            whileTap={{scale: 0.95}}
-            className="Borderswap3">
+            <button 
+            className="Borderswap3 hover:scale-105">
               <h3 className="align-middle font-normal px-4 text-white truncate tracking-tighter leading-tight">
               {children}
               </h3>
-            </motion.button>
+            </button>
         </div>
         </Link>
     </div>
