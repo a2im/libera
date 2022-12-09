@@ -4,13 +4,14 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 const config: CodegenConfig = {
   overwrite: true,
   schema: "https://cms.a2im.org/graphql",
-  documents: "lib/gql/**/*.tsx",
+  documents: "./lib/gql/**/*.tsx",
+  ignoreNoDocuments: true,
   generates: {
-    "lib/gql": {
+    "./lib/gql/": {
       preset: "client",
       plugins: []
     },
-    "./graphql.schema.json": {
+    "./lib/gql/graphql.schema.json": {
       plugins: ["introspection"]
     }
   }
