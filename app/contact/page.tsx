@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useId, useState } from 'react'
-import Header from '../header'
 import { motion } from "framer-motion"
 import Link from 'next/link'
 
@@ -89,7 +88,11 @@ export default function Contact() {
   return (
     <div>
           <title>Libera Awards - Contact Us</title>
-          <Header>Contact</Header>
+          <div className="grow shrink content-center">
+<h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
+  Contact
+  </h1>
+  </div>
           <motion.div
           initial="initial"
           animate="animate"

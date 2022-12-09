@@ -1,8 +1,8 @@
+import MyHead from './head';
 import './globals.css'
 import MyNavbar from './navbar'
 import MyModal from "./modal"
 import { Providers } from './providers';
-import MyHead from './head';
 
 
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <MyHead/>
+        <MyHead></MyHead>
         </head>
       <body className="min-h-screen z-0">
       <Providers>

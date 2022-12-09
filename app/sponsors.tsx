@@ -16,7 +16,7 @@ export function SponsorTier1() {
     return (
         <div className="max-w-4xl relative py-5 grid grid-cols-2 auto-cols-max mx-auto justify-evenly gap-10">
         {/* Map through the data */}
-        {data?.sponsors?.data.map(sponsors => (
+        {data?.sponsors.data.map(sponsors => (
                 <div key={sponsors.id} className="relative hover:scale-105 w-[300px] h-[300px] p4 justify-evenly">
                   <Link href={sponsors.attributes?.URL} target="_blank" rel="noopener noreferrer">
                     <div className="relative w-[300px] h-[300px] mx-auto justify-evenly">
@@ -49,7 +49,7 @@ export function SponsorTier2() {
     return (
         <div className="px-10 max-w-4xl relative grid md:grid-cols-2 auto-cols-max mx-auto justify-evenly gap-5">
         {/* Map through the data */}
-        {data?.sponsors?.data.map(sponsors => (
+        {data.sponsors.data.map(sponsors => (
                 <div key={sponsors.id} className="relative hover:scale-105 w-[300px] h-[300px] p4 justify-evenly">
                   <Link className="relative" href={sponsors.attributes?.URL} target="_blank" rel="noopener noreferrer">
                   <div className="relative w-[300px] h-[300px] mx-auto justify-evenly">

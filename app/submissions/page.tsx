@@ -1,5 +1,5 @@
+
 import React from 'react'
-import Header from '../header'
 import { LiberaButtonExternal, LiberaButtonInternal } from '../button'
 import AdBanner from '../ad-banner'
 import LiberaQualifications from '../qualifications'
@@ -10,12 +10,16 @@ export default function Submissions() {
   return (
     <div>
           <title>Libera Awards - Submissions</title>
-          <Header>Submissions</Header>
+          <div className="grow shrink content-center">
+<h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
+ Submissions
+  </h1>
+  </div>
           <div className="mx-auto">
         <section className="mx-auto">
           <div className="flex flex-col md:flex-row justify-center text-center mx-auto items-center content-center">
         <LiberaButtonExternal href='https://libera.awardsplatform.com/'>CLICK HERE TO SUBMIT</LiberaButtonExternal>
-        <LiberaButtonInternal href="/faq">View all categories</LiberaButtonInternal>
+        <LiberaButtonInternal href='/faq'>View all categories</LiberaButtonInternal>
         </div>
         <div className="max-w-3xl mx-auto">
             <h4 className="p-8">Submit your music to be considered at the 2023 A2IM Libera Awards, the largest celebration of independent music globally. For discounts on bulk submissions (10 or more), email <span><Link href="mailto:sales@a2im.org">sales@a2im.org</Link></span></h4>

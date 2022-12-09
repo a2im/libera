@@ -1,9 +1,8 @@
-import Head from 'next/head'
 import { HOME_OG_IMAGE_URL } from '../lib/constants'
 
 export default function MyHead() {
   return (
-    <Head>
+    <head>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -38,6 +37,7 @@ export default function MyHead() {
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-</Head>
+      <meta property="og:title" key={"title"} />
+</head>
   )
 }

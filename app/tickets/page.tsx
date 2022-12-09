@@ -1,11 +1,14 @@
-import Header from '../header'
 import { SocialFollowBlack } from '../SocialFollow'
 
 export default function Tickets() {
   return (
     <div>
           <title>Libera Awards - Tickets</title>
-          <Header>Tickets</Header>
+          <div className="grow shrink content-center">
+<h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
+Tickets
+  </h1>
+  </div>
           <div className="bg-sky-50 mx-auto mb-8 py-20"> 
             <div className='flex max-w-4xl mb-10 mx-auto gap-10 justify-center'> 
               <div className='mx-auto pb-10 p-4'>

@@ -1,13 +1,15 @@
-import Header from '../header'
+
 import Link from 'next/link'
-
-
 
 export default function Archive() {
   return (
     <div>
           <title>Libera Awards - Archive</title>
-          <Header>Archive</Header>
+          <div className="grow shrink content-center">
+<h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
+  Archive
+  </h1>
+  </div>
           <div
           className="bg-sky-50">
             <div className="max-w-4xl p-8 mx-auto">

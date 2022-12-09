@@ -50,17 +50,16 @@ return(
   transitionDuration={2000}
   arrows={false}
   showDots={false}
-  itemClass="carousel-item-padding-40-px"
 >
         {/* Map through the data */}
         {data.ads.data.map(ads => (
                 <div key={ads.id} className="mx-auto">
                   <Link href={ads.attributes?.URL} target="_blank" rel="noopener noreferrer">
                   <Image 
-                    src={ads.attributes.Asset.data.attributes?.url}
-                    height={ads.attributes.Asset.data.attributes?.height} 
-                    width={ads.attributes.Asset.data.attributes?.width} 
-                    alt={ads.attributes.Asset.data.attributes?.alternativeText} 
+                    src={ads.attributes.Asset.data.attributes.url}
+                    height={ads.attributes.Asset.data.attributes.height} 
+                    width={ads.attributes.Asset.data.attributes.width} 
+                    alt={ads.attributes.Asset.data.attributes.alternativeText} 
                     className="mx-auto"
                     />
                     </Link>

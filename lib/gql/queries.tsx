@@ -76,6 +76,33 @@ query AllPosts($PublicationState: PublicationState){
 }`
 ;
 
+export const GET_MY_POST = gql`
+query MyPostBySlug($slug: String!) {
+  posts(filters: { Slug: { eq: $slug }}) {
+    data {
+      id
+      attributes {
+        Title
+        coverImage {
+          data {
+            id
+            attributes {
+              alternativeText
+              width
+              height
+              url
+            }
+          }
+        }
+        Excerpt
+        Slug
+        Body
+      }
+    }
+  }
+}`
+;
+
 export const GET_POST_AND_MOREPOSTS = gql`
 fragment PostFields on Post {
   Title
@@ -114,20 +141,12 @@ fragment PostFields on Post {
   }
 }
 query PostBySlug($slug: String!) {
-  main: posts(filters: { Slug: { eq: $slug }}) {
+  posts(filters: { Slug: { eq: $slug }}) {
     data {
       id
       attributes {
         ...PostFields
         Body
-      }
-    }
-  }
-  recent: posts(pagination: { start: 0, limit: 3}, sort: "id:desc", publicationState: LIVE) {
-    data {
-      id
-      attributes {
-        ...PostFields
       }
     }
   }
