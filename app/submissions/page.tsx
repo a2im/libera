@@ -5,6 +5,7 @@ import AdBanner from '../ad-banner'
 import LiberaQualifications from '../qualifications'
 import Image from 'next/image'
 import Link from 'next/link'
+import Footer from '../footer'
 
 export default function Submissions() {
   return (
@@ -112,6 +113,7 @@ export default function Submissions() {
               </div>
         </section>
       </div>
+      <Footer/>
     </div>
   )
 }

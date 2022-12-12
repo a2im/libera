@@ -1,4 +1,5 @@
 import { SocialFollowBlack } from '../SocialFollow'
+import Footer from '../footer'
 
 export default function Tickets() {
   return (
@@ -23,6 +24,7 @@ to the Libera Awards mailing list to hear first about ticket availability!</h4>
               </div>
               </div>
           </div>
+          <Footer/>
     </div>
   )
 }

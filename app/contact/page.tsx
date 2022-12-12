@@ -3,6 +3,7 @@
 import React, { useId, useState } from 'react'
 import { motion } from "framer-motion"
 import Link from 'next/link'
+import Footer from '../footer';
 
 export default function Contact() {
   const id = useId();
@@ -141,6 +142,7 @@ export default function Contact() {
         </section>
         </div>
       </motion.div>
+      <Footer/>
     </div>
   )
 }

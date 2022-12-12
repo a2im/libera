@@ -2,6 +2,7 @@
 import AwardCategories from '../award-categories'
 import LiberaQualifications from '../qualifications'
 import { LiberaButtonExternal } from '../button'
+import Footer from '../footer'
 
 export default function FAQ() {
   return (
@@ -15,6 +16,7 @@ export default function FAQ() {
           <AwardCategories/>
           <LiberaQualifications/>
           <LiberaButtonExternal href='http://libera.awardsplatform.com'>CLICK HERE TO SUBMIT</LiberaButtonExternal>
+          <Footer/>
     </>
   )
 }
