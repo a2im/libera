@@ -31,18 +31,7 @@ export default function Archive12() {
         <div className='Youtubebox'>
         <YouTube videoId="7weehasRE48" className="video-responsive" opts={opts} onReady={onPlayerReady} />
         </div>
-        <div className='mt-10 grid grid-cols-2 md:grid-cols-4 gap-5 p-8 mb-20'>
-        {Awards2012.map(Awards2012 => (
-          <button key={Awards2012.id} className="p-10 drop-shadow-4xl hover:scale-105 max-w-64 Borderswap3 mx-auto my-auto hover:bg-libera-pink hover:text-white">
-          <h3 className='p-3 text-2xl text-white font-medium mb-2 tracking-tight'>
-              {Awards2012.awardtitle}
-          </h3>
-          <h4 className='p-2 mx-auto hover:font-bold w-40 text-xl'>
-              {Awards2012.awardwinner}
-          </h4>
-          </button>
-        ))}
-          </div>
+        
           </div>
           <div className="py-10" />
       </section>

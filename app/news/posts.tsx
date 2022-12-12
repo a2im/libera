@@ -15,7 +15,7 @@ export function LiberaPostsList() {
     if (error) return <p>Error</p>
     return (
       <>
-      <div className="flex flex-col mx-auto max-w-5xl p-10 gap-10">
+      <div className="relative flex flex-col mx-auto max-w-5xl p-10 gap-10 z-0">
        {/* Map through the data */}
        {data.posts.data.map(posts => (
                 <div key={posts.id} className="mx-auto Borderswap5 p-10">
