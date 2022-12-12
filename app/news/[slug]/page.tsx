@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { PostRelationResponseCollection, PostEntityResponseCollection } from "../../../lib/gql/types";
+import Footer from '../../footer'
 
 export default async function MyPost({params,}: { params: { 
   slug : String,
@@ -29,6 +30,7 @@ const posts: PostRelationResponseCollection = await res.json()
   )
   )}
         </div>
+        <Footer />
     </div>
 }
 

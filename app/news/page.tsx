@@ -1,5 +1,6 @@
 
 import { LiberaPostsList } from './posts'
+import Footer from '../footer'
 
 export default function News() {
   return (
@@ -11,6 +12,7 @@ export default function News() {
   </h1>
   </div>
           <LiberaPostsList/>
+          <Footer />
     </div>
   )
 }
