@@ -1,45 +1,50 @@
 import Link from "next/link";
 import Image from "next/image";
+import { PostRelationResponseCollection, PostEntityResponseCollection } from "../../../lib/gql/types";
 
-export default async function Post({params,}: { params: { 
-  slug: string
+export default async function MyPost({params,}: { params: { 
+  slug : String,
  }}) {
-const res = await fetch(`https://cms.a2im.org/api/posts?filters[Slug][$eq]=${params.slug}`)
-const thispost = await res.json()
-console.log(thispost)
+
+const res = await fetch(`https://cms.a2im.org/api/posts?filters[Slug][$eq]=${params.slug}`);
+const posts: PostRelationResponseCollection = await res.json()
+console.log()
   return <>
   <div className="mx-auto max-w-5xl p-10 gap-10">
-            <div key={thispost?.id} className="mx-auto">
-              <Link href={`/posts/${thispost.attributes?.Slug}`}>{thispost.attributes?.Title}</Link>
+  {posts?.data.map(posts => (
+            <div key={posts.id} className="mx-auto">
+              <Link href={`/news/${posts?.attributes?.Slug}`}>{posts.attributes?.Title}</Link>
               <Image 
-                src={thispost.attributes?.coverImage.data.attributes?.url}
-                height={thispost.attributes?.coverImage.data.attributes?.height} 
-                width={thispost.attributes?.coverImage.data.attributes?.width} 
-                alt={thispost.attributes?.coverImage.data.attributes?.alternativeText} 
+                src={posts.attributes?.coverImage?.data?.attributes?.url}
+                height={posts.attributes?.coverImage?.data?.attributes?.height} 
+                width={posts.attributes?.coverImage?.data?.attributes?.width} 
+                alt={posts.attributes?.coverImage?.data?.attributes?.alternativeText} 
                 className="mx-auto"
                 />
                 <p>
-                {thispost.attributes?.Excerpt}
+                {posts.attributes?.Excerpt}
                 </p>
                 <p>
-                    {thispost.attributes?.Body}
+                    {posts.attributes?.Body}
                 </p>
             </div>
+  )
+  )}
         </div>
     </>
 }
 
 export async function generateStaticParams() {
   const res = await fetch(`https://cms.a2im.org/api/posts?populate=*`);
-  const data = await res.json()
+  const data: PostEntityResponseCollection = await res.json();
   return data?.data?.map((data) => ({
     slug: data.attributes.Slug,
     id: data.id,
     Title: data.attributes.Title,
-    url: data.attributes.coverImage.data.url,
-    height: data.attributes.coverImage.data.height,
-    width: data.attributes.coverImage.data.width,
-    alternativeText: data.attributes.coverImage.data.alternativeText,
+    url: data.attributes.coverImage.data.attributes.url,
+    height: data.attributes.coverImage.data.attributes.height,
+    width: data.attributes.coverImage.data.attributes.width,
+    alternativeText: data.attributes.coverImage.data.attributes.alternativeText,
     Excerpt: data.attributes.Excerpt,
     Body: data.attributes.Body,
   }))
