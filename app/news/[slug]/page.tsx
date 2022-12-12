@@ -13,14 +13,15 @@ const posts: PostRelationResponseCollection = await res.json()
   <div className="mx-auto Borderswap5 max-w-5xl p-10 gap-10">
   {posts?.data.map(posts => (
             <div key={posts.id} className="mx-auto">
-              <Link href={`/news/${posts?.attributes?.Slug}`}><h2>{posts.attributes?.Title}</h2></Link>
+             
               <Image 
                 src={posts.attributes?.coverImage?.data?.attributes?.url}
                 height={posts.attributes?.coverImage?.data?.attributes?.height}
                 width={posts.attributes?.coverImage?.data?.attributes?.width}
                 alt={posts.attributes?.coverImage?.data?.attributes?.alternativeText}
                 className="mx-auto"
-                />
+                /> 
+                <Link href={`/news/${posts?.attributes?.Slug}`}><h2>{posts.attributes?.Title}</h2></Link>
                 <p>
                 {posts.attributes?.Excerpt}
                 </p>
