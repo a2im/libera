@@ -8,30 +8,28 @@ export default async function MyPost({params,}: { params: {
 
 const res = await fetch(`https://cms.a2im.org/api/posts?filters[Slug][$eq]=${params.slug}`);
 const posts: PostRelationResponseCollection = await res.json()
-console.log()
-  return <>
-  <div className="mx-auto max-w-5xl p-10 gap-10">
+  return <div className="pt-20">
+  <div className="mx-auto Borderswap5 max-w-5xl p-10 gap-10">
   {posts?.data.map(posts => (
             <div key={posts.id} className="mx-auto">
-              <Link href={`/news/${posts?.attributes?.Slug}`}>{posts.attributes?.Title}</Link>
+              <Link href={`/news/${posts?.attributes?.Slug}`}><h2>{posts.attributes?.Title}</h2></Link>
               <Image 
                 src={posts.attributes?.coverImage?.data?.attributes?.url}
-                height={posts.attributes?.coverImage?.data?.attributes?.height} 
-                width={posts.attributes?.coverImage?.data?.attributes?.width} 
-                alt={posts.attributes?.coverImage?.data?.attributes?.alternativeText} 
+                height={posts.attributes?.coverImage?.data?.attributes?.height}
+                width={posts.attributes?.coverImage?.data?.attributes?.width}
+                alt={posts.attributes?.coverImage?.data?.attributes?.alternativeText}
                 className="mx-auto"
                 />
                 <p>
                 {posts.attributes?.Excerpt}
                 </p>
-                <p>
-                    {posts.attributes?.Body}
-                </p>
+                <div dangerouslySetInnerHTML={{__html: `${posts?.attributes?.Body}`}}>
+                </div>
             </div>
   )
   )}
         </div>
-    </>
+    </div>
 }
 
 export async function generateStaticParams() {
