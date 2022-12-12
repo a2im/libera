@@ -6,7 +6,7 @@ export default async function MyPost({params,}: { params: {
   slug : String,
  }}) {
 
-const res = await fetch(`https://cms.a2im.org/api/posts?filters[Slug][$eq]=${params.slug}`);
+const res = await fetch(`https://cms.a2im.org/api/posts?populate[0]=coverImage&filters[Slug][$eq]=${params.slug}`);
 const posts: PostRelationResponseCollection = await res.json()
   return <div className="pt-20">
   <div className="mx-auto Borderswap5 max-w-5xl p-10 gap-10">

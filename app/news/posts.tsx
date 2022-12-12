@@ -19,7 +19,7 @@ export function LiberaPostsList() {
        {/* Map through the data */}
        {data.posts.data.map(posts => (
                 <div key={posts.id} className="mx-auto Borderswap5 p-10">
-                  
+                  <div className="relative mx-auto max-w-2xl">
                   <Image 
                     src={posts.attributes.coverImage.data.attributes.url}
                     height={posts.attributes.coverImage.data.attributes.height} 
@@ -27,6 +27,7 @@ export function LiberaPostsList() {
                     alt={posts.attributes.coverImage.data.attributes.alternativeText} 
                     className="mx-auto"
                     />
+                    </div>
                     <Link href={`/news/${posts.attributes.Slug}`} onClick={() => router.push(`/news/${posts.attributes.Slug}`)}><h2>{posts.attributes?.Title}</h2></Link>
                     <p>
                     {posts.attributes?.Excerpt}
