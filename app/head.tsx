@@ -1,4 +1,5 @@
 import { HOME_OG_IMAGE_URL } from '../lib/constants'
+import Script from 'next/script'
 
 export default function MyHead() {
   return (
@@ -38,6 +39,23 @@ export default function MyHead() {
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta property="og:title" key={"title"} />
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        strategy="afterInteractive"
+      />
+      <Script 
+      id="google-analytics" 
+      strategy="afterInteractive"
+      dangerouslySetInnerHTML={{
+        __html:
+          `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+            page_path: window.location.pathname,
+          });
+        `
+      }}></Script>
 </head>
   )
 }

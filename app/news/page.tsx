@@ -1,4 +1,3 @@
-
 import { LiberaPostsList } from './posts'
 import Footer from '../footer'
 

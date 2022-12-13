@@ -5,6 +5,7 @@ module.exports = {
     SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
     WORDPRESS_API_URL: process.env.WORDPRESS_API_URL,
     A2IMCMS_API_URL: process.env.A2IMCMS_API_URL,
+    A2IMCMS_API_GQL_URL: process.env.A2IMCMS_API_GQL_URL,
   },
   images: {
     domains: [

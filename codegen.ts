@@ -3,7 +3,7 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
   overwrite: true,
-  schema: "https://cms.a2im.org/graphql",
+  schema: process.env.A2IMCMS_API_GQL_URL,
   documents: "./lib/gql/**/*.tsx",
   ignoreNoDocuments: true,
   generates: {

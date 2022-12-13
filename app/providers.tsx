@@ -5,7 +5,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache, HttpLink} from "@apollo/cl
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: `https://cms.a2im.org/graphql`
+  uri: process.env.A2IMCMS_API_GQL_URL
 });
 const client = new ApolloClient({
   cache,
