@@ -362,6 +362,10 @@ font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
   border: 50px;
   padding: 10px;
 }
+.LiberaBorder2 {
+  border-radius: 40px;
+  padding: 10px;
+}
 
 .Borderswap1 {
   background: linear-gradient(-45deg, #F669A6, #7D45BC);

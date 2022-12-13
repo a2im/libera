@@ -70,6 +70,7 @@ query AllPosts($PublicationState: PublicationState){
         Date
         Slug
         Body
+        Excerpt
       }
     }
   }

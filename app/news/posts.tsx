@@ -15,26 +15,26 @@ export function LiberaPostsList() {
     if (error) return <p>Error</p>
     return (
       <>
-      <div className="relative flex flex-col mx-auto max-w-5xl p-10 gap-10 z-0">
+      <div className="relative flex flex-col mx-auto max-w-3xl p-10 gap-10 z-0">
        {/* Map through the data */}
        {data.posts.data.map(posts => (
                 <div key={posts.id} className="mx-auto Borderswap5 p-10">
-                  <div className="relative mx-auto max-w-2xl">
+                  <div className="relative mx-auto p-5 h-[300] text-black">
                   <Image 
                     src={posts.attributes.coverImage.data.attributes.url}
-                    height={posts.attributes.coverImage.data.attributes.height} 
-                    width={posts.attributes.coverImage.data.attributes.width} 
+                    fill
+                    objectFit="contain"
                     alt={posts.attributes.coverImage.data.attributes.alternativeText} 
                     className="mx-auto"
                     />
                     </div>
-                    <Link href={`/news/${posts.attributes.Slug}`} onClick={() => router.push(`/news/${posts.attributes.Slug}`)}><h2>{posts.attributes?.Title}</h2></Link>
+                    <div className="p-10">
+                    <Link href={`/news/${posts.attributes.Slug}`} onClick={() => router.push(`/news/${posts.attributes.Slug}`)}><h3 className="hover:scale-105">{posts.attributes?.Title}</h3></Link>
                     <p>
                     {posts.attributes?.Excerpt}
                     </p>
-                    
+                    </div>
                 </div>
-                
               )
             )}
             </div>

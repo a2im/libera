@@ -10,22 +10,23 @@ export default async function MyPost({params,}: { params: {
 const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/posts?populate[0]=coverImage&filters[Slug][$eq]=${params.slug}`);
 const posts: PostRelationResponseCollection = await res.json()
   return <div className="pt-20">
-  <div className="mx-auto Borderswap5 max-w-5xl p-10 gap-10">
+  <div className="mx-auto Borderswap5 max-w-5xl p-10 gap-5">
   {posts?.data.map(posts => (
-            <div key={posts.id} className="mx-auto">
-             
+            <div key={posts.id} className="mx-auto p-20 LiberaBorder2 bg-white text-black">
+             <div className="flex flex-row justify-content-evenly">
+              <Link href={`/news/${posts?.attributes?.Slug}`}><h3 className="max-w-xl p-10">{posts.attributes?.Title}</h3></Link>
+              <div className="relative w-1/2">
               <Image 
                 src={posts.attributes?.coverImage?.data?.attributes?.url}
-                height={posts.attributes?.coverImage?.data?.attributes?.height}
-                width={posts.attributes?.coverImage?.data?.attributes?.width}
+                fill
+                objectFit="contain"
                 alt={posts.attributes?.coverImage?.data?.attributes?.alternativeText}
                 className="mx-auto"
                 /> 
-                <Link href={`/news/${posts?.attributes?.Slug}`}><h2>{posts.attributes?.Title}</h2></Link>
-                <p>
-                {posts.attributes?.Excerpt}
-                </p>
-                <div dangerouslySetInnerHTML={{__html: `${posts?.attributes?.Body}`}}>
+                </div>
+                
+                </div>
+                <div className="p-10" dangerouslySetInnerHTML={{__html: `${posts?.attributes?.Body}`}}>
                 </div>
             </div>
   )
