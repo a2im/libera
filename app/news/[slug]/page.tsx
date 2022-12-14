@@ -1,7 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { PostRelationResponseCollection, PostEntityResponseCollection } from "../../../lib/gql/types";
 import Footer from '../../footer'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 export default async function MyPost({params,}: { params: { 
   slug : String,
@@ -9,19 +11,25 @@ export default async function MyPost({params,}: { params: {
 
 const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/posts?populate[0]=coverImage&filters[Slug][$eq]=${params.slug}`);
 const posts: PostRelationResponseCollection = await res.json()
-  return <div className="pt-20">
-  <div className="mx-auto Borderswap5 max-w-5xl p-10 gap-5">
+
+  return <div className="pt-16 bg-sky-50 pb-20">
+    <div className="max-w-5xl mx-auto text-4xl ">
+<Link href="/news">
+    <FontAwesomeIcon icon="arrow-left-long" className="ml-16 hover:scale-105"/>
+</Link>
+</div>
+  <div className="mx-auto Borderswap5 max-w-5xl p-10 gap-5 mb-20">
   {posts?.data.map(posts => (
             <div key={posts.id} className="mx-auto p-20 LiberaBorder2 bg-white text-black">
              <div className="flex flex-row justify-content-evenly">
-              <Link href={`/news/${posts?.attributes?.Slug}`}><h3 className="max-w-xl p-10">{posts.attributes?.Title}</h3></Link>
+              <Link href={`/news/${posts?.attributes?.Slug}`}><h3 className="max-w-xl p-10 hover:scale-105">{posts.attributes?.Title}</h3></Link>
               <div className="relative w-1/2">
               <Image 
                 src={posts.attributes?.coverImage?.data?.attributes?.url}
-                fill
+                layout="fill"
                 objectFit="contain"
                 alt={posts.attributes?.coverImage?.data?.attributes?.alternativeText}
-                className="mx-auto"
+                className="mx-auto hover:scale-105"
                 /> 
                 </div>
                 

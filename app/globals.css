@@ -131,7 +131,7 @@
 
 @layer base {
   html {
-      font-family: Inter, BebasNeue-Regular, sans-serif, system-ui;
+      font-family: BebasNeue-Regular, NinetiesDisplay, sans-serif, system-ui;
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
     }
@@ -362,6 +362,7 @@ font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
   border: 50px;
   padding: 10px;
 }
+
 .LiberaBorder2 {
   border-radius: 40px;
   padding: 10px;

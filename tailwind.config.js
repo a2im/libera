@@ -9,6 +9,11 @@ module.exports = {
   presets: [],
   darkMode: 'media', // or 'class'
   theme: {
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-NinetiesDisplay)']
+      },
+    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -364,35 +369,6 @@ module.exports = {
     flexShrink: {
       0: '0',
       DEFAULT: '1',
-    },
-    fontFamily: {
-      sans: [
-        'ui-sans-serif',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        '"Noto Sans"',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ],
-      serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-      mono: [
-        'ui-monospace',
-        'SFMono-Regular',
-        'Menlo',
-        'Monaco',
-        'Consolas',
-        '"Liberation Mono"',
-        '"Courier New"',
-        'monospace',
-      ],
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

@@ -7,12 +7,9 @@ import SponsorFooter from "./sponsors";
 
 export default function Footer() {
   return (
-    <footer className="w-full z-1 absolute">
-  <div className="pl-[100px] md:pl-[600px] -mb-2">
-  <Image height={238} width={800} 
-  src="/images/stairs.png" alt="Libera Awards stairs" priority={true} />
-  </div>
-    <div className="bg-black md:py-10">
+    <footer className="w-full absolute">
+          <SponsorFooter />
+    <div className="bg-black md:py-10 z-1">
       <AdBanner/>
         <div className="liberaFooter py-10 max-w-4xl grid grid-cols-1 md:grid-cols-2 mx-auto justify-center md:gap-9 px-10">
             <Link href="https://liberaawards.com">
@@ -21,10 +18,7 @@ export default function Footer() {
             <SocialFollowWhite/>
         </div>
         </div>
-        <div className="sponsorbox max-w-5xl mx-auto text-center">
-          <h3>Thank you to our Sponsors</h3>
-          <SponsorFooter />
-</div>
+        
     </footer>
   );
 }

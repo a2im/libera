@@ -1,5 +1,6 @@
 
 import Link from 'next/link'
+import Footer from '../footer'
 
 export default function Archive() {
   return (
@@ -98,6 +99,7 @@ export default function Archive() {
             </div>
             </div>
       </div>
+      <Footer/>
     </div>
   )
 }

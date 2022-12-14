@@ -20,7 +20,7 @@ export default function MyNavbar() {
                 <Image src="/logos/A2IM-button-white-sm.png" alt="a2im logo button" height={50} width={50} />
                 </div>
                 <div className="mt-1">
-                <h2 className="text-2xl hover:text-libera-pink text-white font-bold mt-1 text-center align-middle -ml-5 tracking-wider">LIBERA AWARDS</h2>
+                <h2 className="text-2xl hover:text-libera-pink text-white font-bold mt-1 truncate text-center align-middle -ml-5 tracking-wider">LIBERA AWARDS</h2>
                 </div>
               </div>
               </a>
@@ -92,12 +92,6 @@ export default function MyNavbar() {
                   className="ml-6 p-1 text-center text-2xl text-white Borderswap4nav">
                   <Link href="/archive" onClick={() => setNavbar(false)} >
                     Archive
-                  </Link>
-                </li>
-                <li
-                    className="ml-6 p-1 text-center text-2xl text-white Borderswap2nav">
-                  <Link href="/submissions" onClick={() => setNavbar(false)}>
-                    Submissions
                   </Link>
                 </li>
                 <li

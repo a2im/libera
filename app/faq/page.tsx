@@ -15,7 +15,6 @@ export default function FAQ() {
   </div>
           <AwardCategories/>
           <LiberaQualifications/>
-          <LiberaButtonExternal href='http://libera.awardsplatform.com'>CLICK HERE TO SUBMIT</LiberaButtonExternal>
           <Footer/>
     </>
   )
