@@ -9,7 +9,8 @@ export function LiberaPostsList() {
   const router = useRouter()
   const { loading, error, data } = useQuery(GET_ALL_POSTS, { 
     variables: {
-      PublicationState: "LIVE"
+      PublicationState: "LIVE",
+      Name: "Libera Awards"
     }});
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error</p>
