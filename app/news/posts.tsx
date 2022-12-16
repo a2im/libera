@@ -29,7 +29,7 @@ export function LiberaPostsList() {
                     />
                     </div>
                     <div className="p-10">
-                    <Link href={`/news/${posts.attributes.Slug}`} onClick={() => router.push(`/news/${posts.attributes.Slug}`)}><h3>{posts.attributes?.Title}</h3></Link>
+                    <Link href={`/news/${posts.attributes.slug}`} onClick={() => router.push(`/news/${posts.attributes.slug}`)}><h3>{posts.attributes?.Title}</h3></Link>
                     <p>
                     {posts.attributes?.Excerpt}
                     </p>
