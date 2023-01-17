@@ -2,7 +2,10 @@
 import React from 'react'
 import { LiberaButtonExternal, LiberaButtonInternal } from '../button'
 import Image from 'next/image'
-import Link from 'next/link'
+import clickjudge from '../images/click-judge.gif';
+import selectcategory from '../images/select-category.gif';
+import choosesubmission from '../images/choose-submission.gif';
+import castvote from '../images/cast-vote.gif';
 import Footer from '../footer'
 
 export default function Voting() {
@@ -54,10 +57,9 @@ export default function Voting() {
               <p>At the top of your screen you&apos;ll find a tab that says Judge</p>
             </div>
             <div className="relative mx-auto w-[400px] h-[250px]">
-              <Image src='/images/click-judge.gif' 
+              <Image src={clickjudge}
               alt='Click Judge at the top of the window' 
               fill
-              unoptimized
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
@@ -76,10 +78,9 @@ export default function Voting() {
               <p>Select the categories that you would like to vote in from the list provided.</p>
             </div>
             <div className="relative mx-auto w-[400px] h-[250px]">
-              <Image src="/images/select-category.gif" 
+              <Image src={selectcategory}
               alt='select a category' 
               fill
-              unoptimized
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
@@ -98,10 +99,9 @@ export default function Voting() {
               <p>You can listen to audio, watch video, and view links for each entry by clicking on the Entry Name.</p>
             </div>
             <div className="relative mx-auto w-[400px] h-[250px]">
-              <Image src="/images/choose-submission.gif" 
+              <Image src={choosesubmission}
               alt='Choose a Submission' 
               fill
-              unoptimized
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
@@ -123,10 +123,9 @@ export default function Voting() {
                 </p>
             </div>
             <div className="relative mx-auto w-[400px] h-[250px]">
-              <Image src="/images/cast-vote.gif" 
+              <Image src={castvote}
               alt='Cast your vote' 
               fill
-              unoptimized
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
