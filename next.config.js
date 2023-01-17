@@ -21,6 +21,27 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
+<<<<<<< HEAD
+=======
+        hostname: 'images.liberaawards.com',
+        port: '80',
+        pathname: '/wp-content/uploads/***',
+      },
+      {
+        protocol: 'https',
+        hostname: 'liberaawards.com',
+        port: '80',
+        pathname: '/wp-content/uploads/***',
+      },
+      {
+        protocol: 'https',
+        hostname: 'liberaawards.a2im.xyz',
+        port: '80',
+        pathname: '/wp-content/uploads/***',
+      },
+      {
+        protocol: 'https',
+>>>>>>> 88d2ae3 (updating next config)
         hostname: 'a2im-strapi-cms-images.s3.amazonaws.com',
         port: '80',
         pathname: '/***',
@@ -30,12 +51,15 @@ module.exports = {
         hostname: 'liberaawards.xyz',
         port: '80',
         pathname: '/***',
+<<<<<<< HEAD
       },
       {
         protocol: 'https',
         hostname: 'cms.a2im.org',
         port: '80',
         pathname: '/***',
+=======
+>>>>>>> 88d2ae3 (updating next config)
       }
     ],
     dangerouslyAllowSVG: true,
