@@ -57,6 +57,7 @@ export default function Voting() {
               <Image src='/images/click-judge.gif' 
               alt='Click Judge at the top of the window' 
               fill
+              unoptimized
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
@@ -78,6 +79,7 @@ export default function Voting() {
               <Image src="/images/select-category.gif" 
               alt='select a category' 
               fill
+              unoptimized
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
@@ -99,6 +101,7 @@ export default function Voting() {
               <Image src="/images/choose-submission.gif" 
               alt='Choose a Submission' 
               fill
+              unoptimized
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
@@ -123,6 +126,7 @@ export default function Voting() {
               <Image src="/images/cast-vote.gif" 
               alt='Cast your vote' 
               fill
+              unoptimized
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
