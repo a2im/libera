@@ -1,8 +1,6 @@
 
 import React from 'react'
 import { LiberaButtonExternal, LiberaButtonInternal } from '../button'
-import AdBanner from '../ad-banner'
-import LiberaQualifications from '../qualifications'
 import Image from 'next/image'
 import Link from 'next/link'
 import Footer from '../footer'
@@ -35,7 +33,13 @@ export default function Voting() {
               <p>(If you are an active A2IM member and have not already registered to vote in the first round, please contact membership@a2im.org)</p>
             </div>
             <div className="relative">
-              <Image src="/images/login-1.png" alt='libera awards submission login screen' height={631} width={400} />
+              <Image src="/images/login.png" 
+              alt='libera awards submission login screen' 
+              height={500} 
+              width={800}
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw" />
               </div>
           </div>
           </div>
@@ -51,7 +55,13 @@ export default function Voting() {
               <p>At the top of your screen you&apos;ll find a tab that says Judge</p>
             </div>
             <div className="relative mx-auto">
-              <Image src='/images/startanentry.png' alt='Start an entry' height={176} width={300}/>
+              <Image src='/images/click-judge.gif' 
+              alt='Click Judge at the top of the window' 
+              height={500} 
+              width={800} 
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw" />
             </div>
           </div>
           </div>
@@ -67,7 +77,13 @@ export default function Voting() {
               <p>Select the categories that you would like to vote in from the list provided.</p>
             </div>
             <div className="relative mx-auto">
-              <Image src="/images/addattachments.png" alt='add attachments' height={176} width={300} />
+              <Image src="/images/select-category.gif" 
+              alt='select a category' 
+              height={500} 
+              width={800} 
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw" />
             </div>
           </div>
           </div>
@@ -83,7 +99,13 @@ export default function Voting() {
               <p>You can listen to audio, watch video, and view links for each entry by clicking on the Entry Name.</p>
             </div>
             <div className="relative mx-auto">
-              <Image src="/images/submitentry.png" alt='Submit an entry' height={176} width={300} />
+              <Image src="/images/choose-submission.gif" 
+              alt='Choose a Submission' 
+              height={500} 
+              width={800} 
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"/>
             </div>
           </div>
           </div>
@@ -102,7 +124,13 @@ export default function Voting() {
                 </p>
             </div>
             <div className="relative mx-auto">
-              <Image src="/images/submitentry.png" alt='Submit an entry' height={176} width={300} />
+              <Image src="/images/cast-vote.gif" 
+              alt='Cast your vote' 
+              height={500} 
+              width={800} 
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"/>
             </div>
           </div>
           </div>
@@ -121,7 +149,13 @@ export default function Voting() {
                 </p>
             </div>
             <div className="relative mx-auto">
-              <Image src="/images/submitentry.png" alt='Submit an entry' height={176} width={300} />
+              <Image src="/images/thats-all-folks.gif" 
+              alt='Thats all folks' 
+              height={277} 
+              width={498} 
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"/>
             </div>
           </div>
           </div>
