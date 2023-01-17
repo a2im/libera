@@ -69,45 +69,45 @@ export default function MyNavbar() {
                 navbar ? 'block' : 'hidden'
               }`}
             >
-              <ul ref={ref} className="items-center justify-center space-x-6 space-y-0 md:flex">
+              <ul ref={ref} className="items-center justify-center space-x-4 space-y-0 md:flex">
                 <li 
-                  className="ml-6 p-1 text-center text-2xl text-white Borderswap2nav">
+                  className="text-center text-xl text-white Borderswap2nav uppercase font-bold tracking-tighter">
                   <Link href="/about" onClick={() => setNavbar(false)} >
                     About
                   </Link>
                 </li>
                 <li
-                    className="ml-6 p-1 text-center text-2xl text-white Borderswap1nav">
+                    className="text-center text-xl text-white Borderswap1nav uppercase font-bold">
                   <Link href="/news" onClick={() => setNavbar(false)} >
                     News
                   </Link>
                 </li>
                 <li 
-                  className="ml-6 p-1 text-center text-2xl text-white Borderswap3nav">
+                  className="text-center text-xl text-white Borderswap3nav uppercase font-bold">
                   <Link href="/tickets" onClick={() => setNavbar(false)} >
                     Tickets
                   </Link>
                 </li>
                 <li
-                  className="ml-6 p-1 text-center text-2xl text-white Borderswap1nav">
+                  className="text-center text-xl text-white Borderswap1nav uppercase font-bold">
                   <Link href="/voting" onClick={() => setNavbar(false)} >
                     VOTE
                   </Link>
                 </li>
                 <li
-                  className="ml-6 p-1 text-center text-2xl text-white Borderswap4nav">
+                  className="text-center text-xl text-white Borderswap4nav uppercase font-bold">
                   <Link href="/archive" onClick={() => setNavbar(false)} >
                     Archive
                   </Link>
                 </li>
                 <li
-                  className="ml-6 p-1 text-center text-2xl text-white Borderswap1nav">
+                  className="text-center text-xl text-white Borderswap1nav uppercase font-bold">
                   <Link href="/faq" onClick={() => setNavbar(false)} >
                     FAQ
                   </Link>
                 </li>
                 <li
-                  className="ml-6 p-1 text-center text-2xl text-white Borderswap4nav">
+                  className="text-center text-xl text-white Borderswap4nav uppercase font-bold">
                   <Link href="/contact" onClick={() => setNavbar(false)} >
                     Contact
                   </Link>
