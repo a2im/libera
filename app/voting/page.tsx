@@ -26,17 +26,16 @@ export default function Voting() {
             LOG IN
           </h3>
           <hr className="mt-3 mb-8 Hrswap"></hr>
-          <div className="grid grid-cols-0 md:grid-cols-2 max-w-4xl mx-auto justify-center gap-3">
+          <div className="grid grid-cols-0 md:grid-cols-2 mx-auto justify-center gap-3">
             <div>
               <p>Log in at <a href="https://libera.awardsplatform.com">libera.awardsplatform.com</a>
               </p>
               <p>(If you are an active A2IM member and have not already registered to vote in the first round, please contact membership@a2im.org)</p>
             </div>
-            <div className="relative">
+            <div className="relative w-[400px] h-[359px]">
               <Image src="/images/login.png" 
               alt='libera awards submission login screen' 
-              height={500} 
-              width={800}
+              fill
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
@@ -54,11 +53,10 @@ export default function Voting() {
           <div>
               <p>At the top of your screen you&apos;ll find a tab that says Judge</p>
             </div>
-            <div className="relative mx-auto">
+            <div className="relative mx-auto w-[400px] h-[250px]">
               <Image src='/images/click-judge.gif' 
               alt='Click Judge at the top of the window' 
-              height={500} 
-              width={800} 
+              fill
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
@@ -76,11 +74,10 @@ export default function Voting() {
             <div>
               <p>Select the categories that you would like to vote in from the list provided.</p>
             </div>
-            <div className="relative mx-auto">
+            <div className="relative mx-auto w-[400px] h-[250px]">
               <Image src="/images/select-category.gif" 
               alt='select a category' 
-              height={500} 
-              width={800} 
+              fill
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
@@ -98,11 +95,10 @@ export default function Voting() {
             <div>
               <p>You can listen to audio, watch video, and view links for each entry by clicking on the Entry Name.</p>
             </div>
-            <div className="relative mx-auto">
+            <div className="relative mx-auto w-[400px] h-[250px]">
               <Image src="/images/choose-submission.gif" 
               alt='Choose a Submission' 
-              height={500} 
-              width={800} 
+              fill
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
@@ -123,11 +119,10 @@ export default function Voting() {
                 If you made a mistake, you can revoke your vote by clicking the heart again to remove the &quot;+1&quot;.
                 </p>
             </div>
-            <div className="relative mx-auto">
+            <div className="relative mx-auto w-[400px] h-[250px]">
               <Image src="/images/cast-vote.gif" 
               alt='Cast your vote' 
-              height={500} 
-              width={800} 
+              fill
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
@@ -148,11 +143,10 @@ export default function Voting() {
                 Thank you for your participation this year!
                 </p>
             </div>
-            <div className="relative mx-auto">
+            <div className="relative mx-auto w-[400px] h-[222px]">
               <Image src="/images/thats-all-folks.gif" 
               alt='Thats all folks' 
-              height={277} 
-              width={498} 
+              fill
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
