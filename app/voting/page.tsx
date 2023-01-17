@@ -2,10 +2,6 @@
 import React from 'react'
 import { LiberaButtonExternal, LiberaButtonInternal } from '../button'
 import Image from 'next/image'
-import clickjudge from '../images/click-judge.gif';
-import selectcategory from '../images/select-category.gif';
-import choosesubmission from '../images/choose-submission.gif';
-import castvote from '../images/cast-vote.gif';
 import Footer from '../footer'
 
 export default function Voting() {
@@ -56,10 +52,11 @@ export default function Voting() {
           <div>
               <p>At the top of your screen you&apos;ll find a tab that says Judge</p>
             </div>
-            <div className="relative mx-auto w-[400px] h-[250px]">
-              <Image src={clickjudge}
+            <div className="relative mx-auto">
+              <Image src='/images/click-judge.gif'
               alt='Click Judge at the top of the window' 
-              fill
+              width={400}
+              height={250}
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
@@ -77,10 +74,11 @@ export default function Voting() {
             <div>
               <p>Select the categories that you would like to vote in from the list provided.</p>
             </div>
-            <div className="relative mx-auto w-[400px] h-[250px]">
-              <Image src={selectcategory}
+            <div className="relative mx-auto">
+              <Image src='/images/select-category.gif'
               alt='select a category' 
-              fill
+              width={400}
+              height={250}
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
@@ -98,10 +96,11 @@ export default function Voting() {
             <div>
               <p>You can listen to audio, watch video, and view links for each entry by clicking on the Entry Name.</p>
             </div>
-            <div className="relative mx-auto w-[400px] h-[250px]">
-              <Image src={choosesubmission}
+            <div className="relative mx-auto">
+              <Image src='/images/choose-submission.gif'
               alt='Choose a Submission' 
-              fill
+              width={400}
+              height={250}
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
@@ -122,10 +121,11 @@ export default function Voting() {
                 If you made a mistake, you can revoke your vote by clicking the heart again to remove the &quot;+1&quot;.
                 </p>
             </div>
-            <div className="relative mx-auto w-[400px] h-[250px]">
-              <Image src={castvote}
+            <div className="relative mx-auto">
+              <Image src='/images/cast-vote.gif'
               alt='Cast your vote' 
-              fill
+              width={400}
+              height={250}
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
