@@ -89,6 +89,12 @@ export default function MyNavbar() {
                   </Link>
                 </li>
                 <li
+                  className="ml-6 p-1 text-center text-2xl text-white Borderswap1nav">
+                  <Link href="/voting" onClick={() => setNavbar(false)} >
+                    VOTE
+                  </Link>
+                </li>
+                <li
                   className="ml-6 p-1 text-center text-2xl text-white Borderswap4nav">
                   <Link href="/archive" onClick={() => setNavbar(false)} >
                     Archive
