@@ -75,7 +75,7 @@ export default function Voting() {
         <section className='p-8 mx-auto'>
         <div className='max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl'>
           <h3>
-          Click on a Submission
+          Choose a Submission
           </h3>
           <hr className="mt-3 mb-8 Hrswap"></hr>
           <div className="grid grid-cols-0 md:grid-cols-2 max-w-4xl mx-auto content-center justify-center gap-3">
@@ -91,7 +91,7 @@ export default function Voting() {
         <section className='p-8 mx-auto'>
         <div className='max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl'>
           <h3>
-          Cast your Votes
+          Cast your Vote
           </h3>
           <hr className="mt-3 mb-8 Hrswap"></hr>
           <div className="grid grid-cols-0 md:grid-cols-2 max-w-4xl mx-auto content-center justify-center gap-3">
@@ -126,7 +126,7 @@ export default function Voting() {
           </div>
           </div>
         </section>
-        <section className='bg-sky-50 flex flex-col md:flex-row mb-10 mx-auto py-20 gap-10'> 
+        <section className='bg-sky-50 flex flex-col md:flex-row mb-10 mx-auto py-20 gap-10 p-8'> 
           <div className='flex flex-col mx-auto p-4 max-w-lg shadow-2xl'>
             <h3 className="md:mb-6">
               NEED ADDITIONAL HELP?
