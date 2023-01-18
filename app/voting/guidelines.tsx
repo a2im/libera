@@ -21,7 +21,7 @@ export default function VoterGuidelines() {
                   <hr className="mt-3 mb-8 Hrswap"></hr>
                   <div className="grid grid-cols-0 md:grid-cols-2 mx-auto justify-center gap-3">
                     <div>
-                  <ReactMarkdown>{steps.attributes.Description}</ReactMarkdown>
+                  <ReactMarkdown className="line-break">{steps.attributes.Description}</ReactMarkdown>
                   </div>
                     <div className="relative mx-auto">
                       <Image src={steps.attributes.image.data.attributes.url} 

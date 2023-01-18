@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.line-break {
+  white-space: pre-wrap;
+}
+
 .adbannercontainer{
     height: 120px;
     width: 728px;
