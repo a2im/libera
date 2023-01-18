@@ -168,3 +168,29 @@ query RecentNews ($PublicationState: PublicationState){
   }
 }
 `;
+
+export const GET_VOTING_STEPS = gql`
+query getVotingSteps($PublicationState: PublicationState) {
+    liberaVotingSteps(sort: "Step:asc", publicationState: $PublicationState) {
+      data {
+        id
+        attributes {
+          Step
+          Title
+          image {
+            data {
+              id
+              attributes {
+                width
+                height
+                alternativeText
+                url
+              }
+            }
+          }
+          Description
+        }
+      }
+    }
+  }
+  `;
