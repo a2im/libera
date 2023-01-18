@@ -10,6 +10,8 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 library.add(fas)
 
+
+
 export default function RootLayout({
   children,
 }: {
