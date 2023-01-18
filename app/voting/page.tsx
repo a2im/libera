@@ -31,10 +31,11 @@ export default function Voting() {
               </p>
               <p>(If you are an active A2IM member and have not already registered to vote in the first round, please contact membership@a2im.org)</p>
             </div>
-            <div className="relative w-[400px] h-[359px]">
+            <div className="relative mx-auto">
               <Image src="/images/login.png" 
               alt='libera awards submission login screen' 
-              fill
+              width={400}
+              height={359}
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
@@ -57,6 +58,7 @@ export default function Voting() {
               alt='Click Judge at the top of the window' 
               width={400}
               height={250}
+              unoptimized
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
@@ -79,6 +81,7 @@ export default function Voting() {
               alt='select a category' 
               width={400}
               height={250}
+              unoptimized
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
@@ -101,6 +104,7 @@ export default function Voting() {
               alt='Choose a Submission' 
               width={400}
               height={250}
+              unoptimized
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
@@ -126,6 +130,7 @@ export default function Voting() {
               alt='Cast your vote' 
               width={400}
               height={250}
+              unoptimized
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
