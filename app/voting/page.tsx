@@ -1,16 +1,18 @@
-
 import React from 'react'
 import { LiberaButtonExternal, LiberaButtonInternal } from '../button'
 import Image from 'next/image'
-import Footer from '../footer'
 import { Suspense } from 'react'
-import Loading  from './loading'
+import Loading from '../loading'
+import MyNavbar from '../navbar'
+
 
 export default function Voting() {
   return (
     <>
     <div>
           <title>Libera Awards - Voting</title>
+          <Suspense fallback={<Loading start={0} end={10}/>}>
+              <MyNavbar/>
           <div className="grow shrink content-center">
 <h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
  Voting
@@ -32,7 +34,6 @@ export default function Voting() {
               <p>(If you are an active A2IM member and have not already registered to vote in the first round, please contact membership@a2im.org)</p>
             </div>
             <div className="relative mx-auto">
-            <Suspense fallback={<Loading/>}>
               <Image src="/images/login.png" 
               alt='libera awards submission login screen' 
               width={400}
@@ -40,7 +41,6 @@ export default function Voting() {
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
-              </Suspense>
               </div>
           </div>
           </div>
@@ -56,18 +56,14 @@ export default function Voting() {
               <p>At the top of your screen you&apos;ll find a tab that says Judge</p>
             </div>
             <div className="relative mx-auto">
-            <Suspense fallback={<Loading/>}>
-              <Image src='/images/click-judge.gif'
+              <Image src='/images/clickjudge.GIF'
               alt='Click Judge at the top of the window' 
               width={400}
               height={250}
-              priority
-              loading="eager"
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
-              33vw" />
-              </Suspense>
-            </div>
+              33vw" />            
+              </div>
           </div>
           </div>
         </div>
@@ -82,18 +78,14 @@ export default function Voting() {
               <p>Select the categories that you would like to vote in from the list provided.</p>
             </div>
             <div className="relative mx-auto">
-            <Suspense fallback={<Loading/>}>
-              <Image src='/images/select-category.gif'
+              <Image src='/images/selectcategory.GIF'
               alt='select a category' 
               width={400}
               height={250}
-              priority
-              loading="eager"
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
-              </Suspense>
-            </div>
+              </div>
           </div>
           </div>
         </div>
@@ -108,18 +100,14 @@ export default function Voting() {
               <p>You can listen to audio, watch video, and view links for each entry by clicking on the Entry Name.</p>
             </div>
             <div className="relative mx-auto">
-            <Suspense fallback={<Loading/>}>
-              <Image src='/images/choose-submission.gif'
+              <Image src='/images/choosesubmission.GIF'
               alt='Choose a Submission' 
               width={400}
               height={250}
-              priority
-              loading="eager"
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
-              </Suspense>
-            </div>
+              </div>
           </div>
           </div>
         </div>
@@ -137,18 +125,14 @@ export default function Voting() {
                 </p>
             </div>
             <div className="relative mx-auto">
-            <Suspense fallback={<Loading/>}>
-              <Image src='/images/cast-vote.gif'
+              <Image src='/images/castvote.GIF'
               alt='Cast your vote' 
               width={400}
               height={250}
-              priority
-              loading="eager"
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
-              </Suspense>
-            </div>
+              </div>
           </div>
           </div>
         </div>
@@ -186,7 +170,7 @@ export default function Voting() {
               <LiberaButtonInternal href="/contact">Click to email</LiberaButtonInternal>
               </div>
         </div>
-      <Footer/>
+      </Suspense>
     </div>
     </>
   )

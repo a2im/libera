@@ -2,6 +2,9 @@
 
 import { Awards2015 } from '../../../../lib/awards-data/awards-data';
 import YouTube, { YouTubeProps } from 'react-youtube';
+import { Suspense } from 'react'
+import Loading from '../../../loading'
+import MyNavbar from '../../../navbar'
 
 export default function Archive15({  }) {
 
@@ -21,6 +24,8 @@ export default function Archive15({  }) {
   return (
     <div>
           <title>Libera Awards - 2015 Archive</title>
+          <Suspense fallback={<Loading start={0} end={10}/>}>
+      <MyNavbar/>
           <div className="grow shrink content-center">
 <h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
   2015
@@ -46,6 +51,7 @@ export default function Archive15({  }) {
           </div>
           <div className="py-10" />
       </section>
+      </Suspense>
     </div>
   )
 }

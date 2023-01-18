@@ -3,6 +3,9 @@ import Image from "next/legacy/image";
 import { PostRelationResponseCollection, PostEntityResponseCollection } from "../../../lib/gql/types";
 import Footer from '../../footer'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Suspense } from 'react'
+import Loading from '../../loading'
+import MyNavbar from '../../navbar'
 
 
 export default async function MyPost({params,}: { params: { 
@@ -12,7 +15,10 @@ export default async function MyPost({params,}: { params: {
 const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/posts?populate[0]=coverImage&filters[slug][$eq]=${params.slug}`);
 const posts: PostRelationResponseCollection = await res.json()
 
-  return <div className="pt-16 bg-sky-50 pb-20">
+  return <>
+  <Suspense fallback={<Loading start={0} end={10}/>}>
+  <MyNavbar/>
+  <div className="pt-16 bg-sky-50 pb-20">
     <div className="max-w-5xl mx-auto text-4xl ">
 <Link href="/news">
     <FontAwesomeIcon icon="arrow-left-long" className="ml-16 hover:scale-105"/>
@@ -40,8 +46,9 @@ const posts: PostRelationResponseCollection = await res.json()
   )
   )}
         </div>
-        <Footer />
-    </div>
+        </div>
+</Suspense>
+    </>
 }
 
 export async function generateStaticParams() {

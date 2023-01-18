@@ -3,7 +3,9 @@
 import React, { useId, useState } from 'react'
 import { motion } from "framer-motion"
 import Link from 'next/link'
-import Footer from '../footer';
+import { Suspense } from 'react'
+import Loading from '../loading'
+import MyNavbar from '../navbar'
 
 export default function Contact() {
   const id = useId();
@@ -89,6 +91,8 @@ export default function Contact() {
   return (
     <div>
           <title>Libera Awards - Contact Us</title>
+          <Suspense fallback={<Loading start={0} end={10}/>}>
+      <MyNavbar/>
           <div className="grow shrink content-center">
 <h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
   Contact
@@ -142,7 +146,7 @@ export default function Contact() {
         </section>
         </div>
       </motion.div>
-      <Footer/>
+</Suspense>
     </div>
   )
 }

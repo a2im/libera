@@ -1,10 +1,14 @@
 import { SocialFollowBlack } from '../SocialFollow'
-import Footer from '../footer'
+import { Suspense } from 'react'
+import Loading from '../loading'
+import MyNavbar from '../navbar'
 
 export default function Tickets() {
   return (
     <div>
           <title>Libera Awards - Tickets</title>
+          <Suspense fallback={<Loading start={0} end={10}/>}>
+              <MyNavbar/>
           <div className="grow shrink content-center">
 <h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
 Tickets
@@ -24,7 +28,7 @@ to the Libera Awards mailing list to hear first about ticket availability!</h4>
               </div>
               </div>
           </div>
-          <Footer/>
+          </Suspense>
     </div>
   )
 }

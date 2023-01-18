@@ -7,12 +7,23 @@ import Image from "next/image";
 
 export function LiberaPostsList() {
   const router = useRouter()
+  const dummydata = [1,2,3,4,5,6,7,8,9,10]
   const { loading, error, data } = useQuery(GET_ALL_POSTS, { 
     variables: {
       PublicationState: "LIVE",
       Name: "Libera Awards"
     }});
-    if (loading) return <p>Loading...</p>
+    if (loading) return (
+      <>
+      <div className="relative animate-pulse grid grid-cols-1 mx-auto p-10 gap-10 z-0 max-w-3xl">
+      {dummydata.map(data => (
+          <div key={data} className="animate-pulse bg-gray-200 rounded-2xl dark:bg-gray-700 w-full h-[600px]">
+          </div>
+            )
+          )}
+          </div>
+          </>
+  )
     if (error) return <p>Error</p>
     return (
       <div className="bg-sky-50 mb-20">
