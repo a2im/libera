@@ -1,11 +1,14 @@
-
 import Link from 'next/link'
-import Footer from '../footer'
+import { Suspense } from 'react'
+import Loading from '../loading'
+import MyNavbar from '../navbar'
 
 export default function Archive() {
   return (
     <div>
           <title>Libera Awards - Archive</title>
+          <Suspense fallback={<Loading start={0} end={10}/>}>
+      <MyNavbar/>
           <div className="grow shrink content-center">
 <h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
   Archive
@@ -99,7 +102,7 @@ export default function Archive() {
             </div>
             </div>
       </div>
-      <Footer/>
+      </Suspense>
     </div>
   )
 }

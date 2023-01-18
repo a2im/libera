@@ -4,6 +4,7 @@ import { GET_ALL_SPONSORS } from "../lib/gql/queries";
 import { useQuery } from '@apollo/client';
 import Link from "next/link";
 import Image from "next/image";
+import { Suspense } from 'react'
 
 export function SponsorTier1() {
     const { loading, error, data } = useQuery(GET_ALL_SPONSORS, { 
@@ -11,7 +12,7 @@ export function SponsorTier1() {
         Level: "Tier 1", 
         Title: "2023 Libera Awards"
       }});
-      if (loading) return <p>Loading...</p>
+      if (loading) return <div className="animate-pulse h-[300px] w-[300px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
       if (error) return <p>Error</p>
     return (
         <div className="max-w-4xl relative py-5 flex flex-col md:flex-row mx-auto justify-evenly gap-10">
@@ -44,7 +45,7 @@ export function SponsorTier2() {
         Level: "Tier 2", 
         Title: "2023 Libera Awards"
       }});
-      if (loading) return <p>Loading...</p>
+      if (loading) return <div className="animate-pulse h-[300px] w-[300px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
       if (error) return <p>Error</p>
     return (
         <div className="px-10 max-w-4xl relative flex flex-col md:flex-row mx-auto gap-5">
@@ -76,7 +77,7 @@ export function SponsorTier3() {
         Level: "Tier 3", 
         Title: "2023 Libera Awards"
       }});
-      if (loading) return <p>Loading...</p>
+      if (loading) return <div className="animate-pulse h-[128px] w-[128px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
       if (error) return <p>Error</p>
     return (
         <div className="max-w-4xl relative pb-20 py-5 flex flex-col md:flex-row gap-20 mx-auto">
