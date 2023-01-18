@@ -6,6 +6,7 @@ import Footer from '../footer'
 
 export default function Voting() {
   return (
+    <>
     <div>
           <title>Libera Awards - Voting</title>
           <div className="grow shrink content-center">
@@ -13,13 +14,10 @@ export default function Voting() {
  Voting
   </h1>
   </div>
-          <div className="mx-auto">
-        <section className="mx-auto">
           <div className="flex flex-col md:flex-row justify-center text-center mx-auto items-center content-center">
         <LiberaButtonExternal href='https://libera.awardsplatform.com/'>CLICK HERE TO VOTE</LiberaButtonExternal>
         </div>
-        </section>
-        <section className='p-8 mx-auto'>
+        <div className='p-8 mx-auto'>
         <div className='max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl'>
           <h3>
             LOG IN
@@ -42,8 +40,8 @@ export default function Voting() {
               </div>
           </div>
           </div>
-        </section>
-        <section className='p-8 mx-auto'>
+        </div>
+        <div className='p-8 mx-auto'>
         <div className='max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl'>
           <h3>
           Click Judge
@@ -58,15 +56,15 @@ export default function Voting() {
               alt='Click Judge at the top of the window' 
               width={400}
               height={250}
-              unoptimized
+              priority
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
             </div>
           </div>
           </div>
-        </section>
-        <section className='p-8 mx-auto'>
+        </div>
+        <div className='p-8 mx-auto'>
         <div className='max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl'>
           <h3>
           Select a Category to judge
@@ -81,15 +79,15 @@ export default function Voting() {
               alt='select a category' 
               width={400}
               height={250}
-              unoptimized
+              priority
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw" />
             </div>
           </div>
           </div>
-        </section>
-        <section className='p-8 mx-auto'>
+        </div>
+        <div className='p-8 mx-auto'>
         <div className='max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl'>
           <h3>
           Choose a Submission
@@ -104,15 +102,15 @@ export default function Voting() {
               alt='Choose a Submission' 
               width={400}
               height={250}
-              unoptimized
+              priority
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
             </div>
           </div>
           </div>
-        </section>
-        <section className='p-8 mx-auto'>
+        </div>
+        <div className='p-8 mx-auto'>
         <div className='max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl'>
           <h3>
           Cast your Vote
@@ -130,15 +128,15 @@ export default function Voting() {
               alt='Cast your vote' 
               width={400}
               height={250}
-              unoptimized
+              priority
               sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>
             </div>
           </div>
           </div>
-        </section>
-        <section className='p-8 mx-auto mb-20'>
+        </div>
+        <div className='p-8 mx-auto mb-20'>
         <div className='max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl'>
           <h3>
           That&apos;s all Folks!
@@ -161,19 +159,19 @@ export default function Voting() {
             </div>
           </div>
           </div>
-        </section>
-        <section className='bg-sky-50 flex flex-col md:flex-row mb-10 mx-auto py-20 gap-10 p-8'> 
+        
+      </div>
+      <div className='bg-sky-50 flex flex-col md:flex-row mb-10 mx-auto py-20 gap-10 p-8'> 
           <div className='flex flex-col mx-auto p-4 max-w-lg shadow-2xl'>
             <h3 className="md:mb-6">
               NEED ADDITIONAL HELP?
             </h3>
-
             <h4>If you continue to experience issues with submissions after this guide, please contact support.</h4>
               <LiberaButtonInternal href="/contact">Click to email</LiberaButtonInternal>
               </div>
-        </section>
-      </div>
+        </div>
       <Footer/>
     </div>
+    </>
   )
 }
