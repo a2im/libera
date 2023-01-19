@@ -17,17 +17,16 @@ const posts: PostRelationResponseCollection = await res.json()
   return <>
   <Suspense fallback={<Loading start={0} end={10}/>}>
   <MyNavbar/>
-  <div className="pt-16 bg-sky-50 pb-20">
-    <div className="max-w-5xl mx-auto text-4xl ">
+    <div className="max-w-5xl mx-auto text-4xl pt-20">
 <Link href="/news">
-    <FontAwesomeIcon icon="arrow-left-long" className="ml-16 hover:scale-105"/>
+    <FontAwesomeIcon icon="arrow-left-long" className="ml-10 mb-2 hover:scale-105"/>
 </Link>
 </div>
-  <div className="mx-auto Borderswap5 rounded-2xl max-w-5xl p-10 gap-5 mb-20">
+  <div className=" max-w-5xl p-8 mx-auto bg-sky-50 shadow-2xl rounded-2xl">
   {posts?.data.map(posts => (
-            <div key={posts.id} className="mx-auto p-20 LiberaBorder2 bg-white text-black">
+            <div key={posts.id} className="mx-auto text-black">
              <div className="flex flex-row justify-content-evenly">
-              <Link href={`/news/${posts?.attributes?.slug}`}><h3 className="max-w-xl p-10 hover:scale-105">{posts.attributes?.Title}</h3></Link>
+              <Link href={`/news/${posts?.attributes?.slug}`}><h3 className="max-w-xl hover:scale-105">{posts.attributes?.Title}</h3></Link>
               <div className="relative w-1/2">
               <Image 
                 src={posts.attributes?.coverImage?.data?.attributes?.url}
@@ -39,12 +38,12 @@ const posts: PostRelationResponseCollection = await res.json()
                 </div>
                 
                 </div>
-                <div className="p-10" dangerouslySetInnerHTML={{__html: `${posts?.attributes?.Body}`}}>
+                <hr className="mt-3 mb-8 Hrswap"></hr>
+                <div dangerouslySetInnerHTML={{__html: `${posts?.attributes?.Body}`}}>
                 </div>
             </div>
   )
   )}
-        </div>
         </div>
 </Suspense>
     </>

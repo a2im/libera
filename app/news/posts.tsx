@@ -26,12 +26,12 @@ export function LiberaPostsList() {
   )
     if (error) return <p>Error</p>
     return (
-      <div className="bg-sky-50 mb-20">
+      <div className="mb-20">
       <div className="relative flex flex-col mx-auto max-w-3xl p-10 gap-10 z-0">
        {/* Map through the data */}
        {data.posts.data.map(posts => (
-                <div key={posts.id} className="mx-auto Borderswap5 rounded-2xl p-10 hover:scale-105 shadow-2xl">
-                  <div className="relative LiberaBorder2 bg-white mx-auto p-5 h-[300] overflow-hidden">
+                <div key={posts.id} className="max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl rounded-2xl">
+                  <div className="relative rounded-lg bg-white mx-auto p-5 h-[300] overflow-hidden">
                   <Image 
                     src={posts.attributes.coverImage.data.attributes.url}
                     fill
@@ -40,10 +40,11 @@ export function LiberaPostsList() {
                     className="mx-auto"
                     />
                     </div>
-                    <div className="p-10">
-                    <Link href={`/news/${posts.attributes.slug}`} onClick={() => router.push(`/news/${posts.attributes.slug}`)}><h3>{posts.attributes?.Title}</h3></Link>
+                    <div>
+                    <Link href={`/news/${posts.attributes.slug}`} onClick={() => router.push(`/news/${posts.attributes.slug}`)}><h3 className="mt-2">{posts.attributes?.Title}</h3></Link>
+                    <hr className="mt-3 mb-5 Hrswap"></hr>
                     <p>
-                    {posts.attributes?.Excerpt}
+                    {posts.attributes?.Excerpt} <Link href={`/news/${posts.attributes.slug}`} className="text-liberapurple" onClick={() => router.push(`/news/${posts.attributes.slug}`)}>Read More..</Link>
                     </p>
                     </div>
                 </div>
