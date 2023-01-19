@@ -23,7 +23,7 @@ const posts: PostRelationResponseCollection = await res.json()
     <FontAwesomeIcon icon="arrow-left-long" className="ml-16 hover:scale-105"/>
 </Link>
 </div>
-  <div className="mx-auto Borderswap5 max-w-5xl p-10 gap-5 mb-20">
+  <div className="mx-auto Borderswap5 rounded-2xl max-w-5xl p-10 gap-5 mb-20">
   {posts?.data.map(posts => (
             <div key={posts.id} className="mx-auto p-20 LiberaBorder2 bg-white text-black">
              <div className="flex flex-row justify-content-evenly">

@@ -30,7 +30,7 @@ export function LiberaPostsList() {
       <div className="relative flex flex-col mx-auto max-w-3xl p-10 gap-10 z-0">
        {/* Map through the data */}
        {data.posts.data.map(posts => (
-                <div key={posts.id} className="mx-auto Borderswap5 p-10 hover:scale-105 shadow-2xl">
+                <div key={posts.id} className="mx-auto Borderswap5 rounded-2xl p-10 hover:scale-105 shadow-2xl">
                   <div className="relative LiberaBorder2 bg-white mx-auto p-5 h-[300] overflow-hidden">
                   <Image 
                     src={posts.attributes.coverImage.data.attributes.url}
