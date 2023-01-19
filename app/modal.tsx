@@ -53,15 +53,15 @@ export default function MyModal (){
                     <h4 className="text-white font-medium text-xl">
                     SEP 27, 2022 - SUBMISSIONS OPEN<br></br>
                     DEC 05, 2022 - SUBMISSIONS CLOSE<br></br>
-                    JAN 18, 2023 - 1ST ROUND VOTING BEGINS<br></br>
-                    JAN 31, 2023 - 1ST ROUND VOTING ENDS<br></br>
-                    MAR 23, 2023 - NOMINEES ANNOUNCEMENT & FINAL ROUND VOTING BEGINS<br></br>
-                    APR 05, 2023 - FINAL ROUND VOTING ENDS<br></br>
-                    JUN 15, 2023 - 2022 LIBERA AWARDS CEREMONY<br></br><br></br>
-        
-                    If you need help or are stuck somewhere, click below to view our submissions guide
+                    JAN 19, 2023 - 1ST ROUND VOTING BEGINS<br></br>
+                    FEB 1, 2023 - 1ST ROUND VOTING ENDS<br></br>
+                    MAR 2023 - NOMINEES ANNOUNCEMENT & FINAL ROUND VOTING BEGINS<br></br>
+                    APR 2023 - FINAL ROUND VOTING ENDS<br></br>
+                    JUN 15, 2023 - 2023 LIBERA AWARDS CEREMONY<br></br><br></br>
+
+                    Click below for more info on voting
                     </h4>
-                        <Link href="/submissions" legacyBehavior>
+                        <Link href="/voting" legacyBehavior>
                             <motion.button
                             onClick={close}
                             whileHover={{scale: 1.1}}
