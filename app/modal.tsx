@@ -42,7 +42,7 @@ export default function MyModal () {
                 <motion.div
                 ref={ref}
                 onClick={(e) => e.stopPropagation()}
-                className="fixed Borderswap5 p-5 w-96 rounded-xl"
+                className="fixed Borderswap5 p-5 w-96 rounded-xl shadow-2xl"
                 variants={dropIn}
                 initial="hidden"
                 animate="visible"
