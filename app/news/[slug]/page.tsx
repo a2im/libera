@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/legacy/image";
 import { PostRelationResponseCollection, PostEntityResponseCollection } from "../../../lib/gql/types";
-import Footer from '../../footer'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Suspense } from 'react'
 import Loading from '../../loading'

@@ -194,3 +194,16 @@ query getVotingSteps($PublicationState: PublicationState) {
     }
   }
   `;
+
+export const GET_INFO_BUTTON = gql`
+query getInfoButton($PublicationState: PublicationState, $Name: String! ) {
+    infoButtons(filters: { apps: { Name: { eq: $Name }}},publicationState: $PublicationState) {
+      data {
+        id
+        attributes {
+          Info
+        }
+      }
+    }
+  }
+  `;

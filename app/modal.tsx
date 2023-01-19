@@ -1,12 +1,13 @@
 'use client';
 
 import React from "react"
-import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
+import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
+import { useQuery } from "@apollo/client";
+import { GET_INFO_BUTTON } from "../lib/gql/queries";
 
-
-export default function MyModal (){
+export default function MyModal () {
     const ref = useRef();
     const [isModalOpen, setModalOpen] = useState(false)
     const close = () => setModalOpen(false);
@@ -38,41 +39,18 @@ export default function MyModal (){
         <>
             <div className="flex fixed ladymodalbg bottom-5 right-5">
             {isModalOpen ? (
-                <AnimatePresence>
                 <motion.div
                 ref={ref}
                 onClick={(e) => e.stopPropagation()}
-                className="fixed Borderswap5 p-5 ladymodal w-96"
+                className="fixed Borderswap5 p-5 w-96 rounded-xl"
                 variants={dropIn}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 >
-                    <div className="grid grid-cols-0">
-                    <h2 className="text-white text-3xl">LIBERA AWARDS 2023 TIMELINE</h2>
-                    <h4 className="text-white font-medium text-xl">
-                    SEP 27, 2022 - SUBMISSIONS OPEN<br></br>
-                    DEC 05, 2022 - SUBMISSIONS CLOSE<br></br>
-                    JAN 19, 2023 - 1ST ROUND VOTING BEGINS<br></br>
-                    FEB 1, 2023 - 1ST ROUND VOTING ENDS<br></br>
-                    MAR 2023 - NOMINEES ANNOUNCEMENT & FINAL ROUND VOTING BEGINS<br></br>
-                    APR 2023 - FINAL ROUND VOTING ENDS<br></br>
-                    JUN 15, 2023 - 2023 LIBERA AWARDS CEREMONY<br></br><br></br>
-
-                    Click below for more info on voting
-                    </h4>
-                        <Link href="/voting" legacyBehavior>
-                            <motion.button
-                            onClick={close}
-                            whileHover={{scale: 1.1}}
-                            whileTap={{scale: 0.95}}
-                            className="bg-black mx-auto px-5 rounded">
-                                click here!
-                            </motion.button>
-                        </Link> 
-                    </div>
+                <ModalInfo/>
                 </motion.div>
-                </AnimatePresence> ) : (
+                 ) : (
                 <motion.button 
                 whileTap={{scale: 0.95}}
                 className="save-button"
@@ -106,5 +84,23 @@ export default function MyModal (){
       }
       
 
-
+function ModalInfo(){
+    const { loading, error, data } = useQuery(GET_INFO_BUTTON, { 
+        variables: {
+          PublicationState: "LIVE", 
+          Name: "Libera Awards"
+        }});
+        if (loading) return <div className="animate-pulse h-[150px] w-[100px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
+        if (error) return <p>Error</p>
+    return (
+        <div>
+            {data?.infoButtons.data.map(info => (
+            <div key={info.id} className="p4 justify-evenly rounded-xl">
+                <ReactMarkdown className="line-break">{info.attributes.Info}</ReactMarkdown>
+                </div>
+                              )
+            )}
+        </div>
+    )
+}
 

@@ -169,6 +169,10 @@
   p {
       font-family: sans-serif, system-ui;
     }
+  li {
+    font-family: sans-serif, system-ui;
+    line-height: 1;
+  }
   html::-webkit-scrollbar {
     display: none;
   }
@@ -513,7 +517,6 @@ font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
 
 .Borderswap5 {
   background: linear-gradient(90deg, #F669A6, #7D45BC);
-  border-radius: 50px;
   padding: 20px;
   animation: gradient 7s ease infinite;
   background-size: 300% 300%;

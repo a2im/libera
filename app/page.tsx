@@ -4,6 +4,7 @@ import MyNavbar from './navbar'
 import MyIntro from './intro'
 
 export default function Home() {
+  
   return (
     <div>
       <title>Libera Awards - Home</title>

@@ -884,6 +884,34 @@ export type IndieWeekSponsorFooterEntityResponse = {
   data?: Maybe<IndieWeekSponsorFooterEntity>;
 };
 
+export type InfoButton = {
+  apps?: Maybe<AppRelationResponseCollection>;
+  Info?: String
+  createdAt?: Maybe<Scalars['DateTime']>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+  publishedAt?: Maybe<Scalars['DateTime']>;
+}
+
+export type InfoButtonEntity = {
+  id?: Maybe<Scalars['ID']>;
+  attributes: InfoButton
+}
+
+export type InfoButtonEntityResponse = {
+  data: InfoButtonEntity
+}
+
+export type InfoButtonEntityResponseCollection = {
+  __typename?: 'InfoButtonEntityResponseCollection';
+  data: Array<InfoButtonEntity>;
+  meta: ResponseCollectionMeta;
+}
+
+export type InfoButtonRelationResponseCollection = {
+  __typename?: 'InfoButtonRelationResponseCollection';
+  data: Array<InfoButtonEntity>;
+}
+
 export type LiberaCategoryFiltersInput = {
   id?: InputMaybe<IdFilterInput>;
   Name?: InputMaybe<StringFilterInput>;

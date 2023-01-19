@@ -4,7 +4,7 @@ import { GET_ALL_SPONSORS } from "../lib/gql/queries";
 import { useQuery } from '@apollo/client';
 import Link from "next/link";
 import Image from "next/image";
-import { Suspense } from 'react'
+
 
 export function SponsorTier1() {
     const { loading, error, data } = useQuery(GET_ALL_SPONSORS, { 
