@@ -4,6 +4,7 @@ import { GET_VOTING_STEPS } from "../../lib/gql/queries";
 import { useQuery } from '@apollo/client';
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
 
 export default function VoterGuidelines() {
     const { loading, error, data } = useQuery(GET_VOTING_STEPS,{});
@@ -21,7 +22,7 @@ export default function VoterGuidelines() {
                   <hr className="mt-3 mb-8 Hrswap"></hr>
                   <div className="grid grid-cols-0 md:grid-cols-2 mx-auto justify-center gap-3">
                     <div>
-                  <ReactMarkdown className="line-break">{steps.attributes.Description}</ReactMarkdown>
+                  <ReactMarkdown className="line-break" remarkPlugins={[remarkGfm]}>{steps.attributes.Description}</ReactMarkdown>
                   </div>
                     <div className="relative mx-auto">
                       <Image src={steps.attributes.image.data.attributes.url} 

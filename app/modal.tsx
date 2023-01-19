@@ -4,6 +4,7 @@ import React from "react"
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
 import { useQuery } from "@apollo/client";
 import { GET_INFO_BUTTON } from "../lib/gql/queries";
 
@@ -96,7 +97,7 @@ function ModalInfo(){
         <div>
             {data?.infoButtons.data.map(info => (
             <div key={info.id} className="p4 justify-evenly rounded-xl">
-                <ReactMarkdown className="line-break">{info.attributes.Info}</ReactMarkdown>
+                <ReactMarkdown className="line-break" remarkPlugins={[remarkGfm]}>{info.attributes.Info}</ReactMarkdown>
                 </div>
                               )
             )}
