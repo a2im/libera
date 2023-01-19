@@ -19,9 +19,6 @@ export default function Voting() {
  Voting
   </h1>
   </div>
-          <div className="flex flex-col md:flex-row justify-center text-center mx-auto items-center content-center">
-        <LiberaButtonExternal href='https://libera.awardsplatform.com/'>CLICK HERE TO VOTE</LiberaButtonExternal>
-        </div>
         
       <VoterGuidelines/>
       <div className='bg-sky-50 flex flex-col md:flex-row mb-10 mx-auto py-20 gap-10 p-8'> 
