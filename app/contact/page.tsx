@@ -102,40 +102,40 @@ export default function Contact() {
           initial="initial"
           animate="animate"
           exit="exit"
-          className="bg-sky-50 px-8 py-20 mx-auto">
+          className="px-8 py-20 mx-auto">
             <div className="max-w-4xl mx-auto">
-            <section className='max-w-4xl mb-10 mx-auto gap-10'> 
+            <section className='max-w-3xl mb-10 mx-auto gap-10'> 
             <form
-            className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white">
-      <h2 className="text-center pb-10">
+            className="rounded-2xl shadow-xl flex flex-col px-8 py-8 bg-sky-50">
+      <h3 className="pb-3">
         Send us a message
-        </h2>
-
+        </h3>
+        <hr className="mb-8 Hrswap"></hr>
       <label 
       htmlFor="fullname" 
-      className="text-2xl">
+      className="text-2xl bg-white rounded-t-xl px-2">
         Full name
-        <span className="text-red-500 dark:text-gray-50">*</span>
+        <span className="text-liberapink dark:text-gray-50">*</span>
         </label>
       <input 
       id={id} 
       type="text" 
       value={fullname} 
-      onChange={e => setFullname(e.target.value)} name="fullname" className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500" />
+      onChange={e => setFullname(e.target.value)} name="fullname" className="bg-white py-2 mb-2 pb-2 pl-4 focus:outline-none rounded-b-xl focus:rounded-md focus:ring-2 ring-liberapurple font-light text-gray-500" />
 
-      <label htmlFor="email" className="text-2xl">E-mail<span className="text-red-500">*</span></label>
-      <input id={id} type="email" value={email} onChange={e => setEmail(e.target.value)} name="email" className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500" />
+      <label htmlFor="email" className="text-2xl bg-white px-2 rounded-t-xl">E-mail<span className="text-liberapink ">*</span></label>
+      <input id={id} type="email" value={email} onChange={e => setEmail(e.target.value)} name="email" className="bg-white p-2 py-2 mb-2 pb-2 pl-4 rounded-b-xl focus:outline-none focus:rounded-md focus:ring-2 ring-liberapurple font-light text-gray-500" />
 
-      <label htmlFor="subject" className="text-2xl">Subject<span className="text-red-500">*</span></label>
-      <input id={id} type="text" value={subject} onChange={e => setSubject(e.target.value)} name="subject" className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500" />
+      <label htmlFor="subject" className="text-2xl bg-white px-2 rounded-t-xl">Subject<span className="text-liberapink ">*</span></label>
+      <input id={id} type="text" value={subject} onChange={e => setSubject(e.target.value)} name="subject" className=" bg-white p-2 py-2 mb-2 pb-2 pl-4 rounded-b-xl focus:outline-none focus:rounded-md focus:ring-2 ring-liberapurple font-light text-gray-500" />
 
-      <label htmlFor="message" className="text-2xl">Message<span className="text-red-500">*</span></label>
-      <textarea id={id} value={message} onChange={e => setMessage(e.target.value)} name="message" className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"></textarea>
+      <label htmlFor="message" className="text-2xl bg-white px-2 rounded-t-xl">Message<span className="text-liberapink">*</span></label>
+      <textarea id={id} value={message} onChange={e => setMessage(e.target.value)} name="message" rows={6} className="bg-white p-2 py-2 mb-2 pb-2 pl-4 rounded-b-xl focus:outline-none focus:rounded-md focus:ring-2 ring-liberapurple font-light text-gray-500"></textarea>
       <div className="flex flex-row items-center justify-start">
         <motion.button 
             whileTap={{scale: 0.95}} 
-            className="Borderswap3 p-7 drop-shadow-2xl max-h-21 justify-center leading-tight mx-auto mt-10"
-            onClick={handleSubmit}><h3 className="align-middle text-white p-3 truncate font-bold tracking-tighter leading-tight">
+            className="Borderswap5 rounded-2xl p-3 drop-shadow-2xl hover:scale-105 justify-center leading-tight mx-auto mt-10"
+            onClick={handleSubmit}><h3 className="align-middle text-white truncate font-bold tracking-tighter leading-tight">
             {buttonText}
             </h3>
         </motion.button>
