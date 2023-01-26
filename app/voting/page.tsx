@@ -22,10 +22,11 @@ export default function Voting() {
         
       <VoterGuidelines/>
       <div className='bg-sky-50 flex flex-col md:flex-row mb-10 mx-auto py-20 gap-10 p-8'> 
-          <div className='flex flex-col mx-auto p-4 max-w-lg shadow-2xl'>
-            <h3 className="md:mb-6">
+          <div className='flex flex-col mx-auto p-4 max-w-lg shadow-2xl rounded-2xl'>
+            <h3 className="">
               NEED ADDITIONAL HELP?
             </h3>
+            <hr className="mt-3 mb-4 Hrswap"></hr>
             <h4>If you continue to experience issues with submissions after this guide, please contact support.</h4>
               <LiberaButtonInternal href="/contact">Click to email</LiberaButtonInternal>
               </div>

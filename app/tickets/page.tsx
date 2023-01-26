@@ -19,12 +19,12 @@ Tickets
                 <div className='p-8 mx-auto'>
                 <div className='max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl rounded-2xl'>
                   <h3>
-                    Title
+                    Tickets Component Title
                   </h3>
                   <hr className="mt-3 mb-8 Hrswap"></hr>
                   <div className="grid grid-cols-0 md:grid-cols-2 mx-auto justify-center gap-3">
                     <div className="flex flex-col justify-between max-w-sm">
-                      <p>Description</p>
+                      <p>Tickets Component Description</p>
                       <div className="drop-shadow-2xl max-h-21 justify-center leading-tight mx-auto">
                         <Link
                           href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'

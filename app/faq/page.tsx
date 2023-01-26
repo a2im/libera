@@ -1,5 +1,4 @@
-import AwardCategories from './award-categories'
-import LiberaQualifications from './qualifications'
+import FAQCategories from './faq-categories'
 import { Suspense } from 'react'
 import Loading from '../loading'
 import MyNavbar from '../navbar'
@@ -17,9 +16,8 @@ export default function FAQ() {
   </h1>
   </div>
   <JumpTo/>
-          <AwardCategories/>
-          <LiberaQualifications/>
-</Suspense>
+  <FAQCategories/>
+  </Suspense>
     </>
   )
 }
