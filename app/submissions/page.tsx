@@ -1,7 +1,7 @@
 import React from 'react'
 import { LiberaButtonExternal, LiberaButtonInternal } from '../button'
 import AdBanner from '../ad-banner'
-import LiberaQualifications from '../faq/qualifications'
+import LiberaQualifications from '../faq/faq-categories'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Suspense } from 'react'
