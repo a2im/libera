@@ -207,3 +207,17 @@ query getInfoButton($PublicationState: PublicationState, $Name: String! ) {
     }
   }
   `;
+
+export const GET_ALL_FAQ = gql`
+query getLiberaFAQs($PublicationState: PublicationState, $Name: String!, $Category: String!) {
+    faqItems(filters: { apps: { Name: { eq: $Name }}, Category: { eq: $Category}},publicationState: $PublicationState, pagination: { page: 1, pageSize: 50 }) {
+      data {
+        id
+        attributes {
+          Question
+          Answer
+        }
+      }
+    }
+  }
+  `; 

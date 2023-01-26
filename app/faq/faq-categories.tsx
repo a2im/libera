@@ -1,7 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-
+import { GET_ALL_FAQ } from "../../lib/gql/queries";
+import { useQuery } from '@apollo/client';
+import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
 import {
     Accordion,
     AccordionItem,
@@ -10,7 +13,45 @@ import {
     AccordionItemPanel,
   } from 'react-accessible-accordion';
 
-export function AwardCategories () {
+  export function AwardCategories() {
+    const { loading, error, data } = useQuery(GET_ALL_FAQ, { 
+      variables: {
+        PublicationState: "LIVE",
+        Name: "Libera Awards",
+        Category: "Award Categories & Descriptions"
+      }});
+      if (loading) return <div className="animate-pulse h-[50px] w-[300px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
+      if (error) return <p>Error</p>
+    return (
+<div id="Award Categories & Descriptions" className="max-w-4xl bg-sky-50 rounded-2xl shadow-2xl mx-auto LiberaBorder my-5">
+                      <div className=" pb-3 pt-12">
+                      <h3 className="px-5">AWARD CATEGORIES & DESCRIPTIONS</h3>
+                      <hr className="mt-3 mx-6 mb-3 Hrswap"></hr>
+        <Accordion>
+        {data?.faqItems.data.map(faqItems => (
+                    <AccordionItem key={faqItems.id}>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                      {faqItems.attributes.Question}
+                    </AccordionItemButton>                
+                  </AccordionItemHeading>
+                <AccordionItemPanel>
+                    <h4>
+                <ReactMarkdown className="line-break" remarkPlugins={[remarkGfm]}>
+                    {faqItems.attributes.Answer}
+                    </ReactMarkdown>
+                    </h4>
+                </AccordionItemPanel>
+            </AccordionItem>
+              )
+            )}
+            </Accordion>
+        </div>
+        </div>
+    );
+}
+
+export function AwardCategories2 () {
     return (
 
 <div id="Award Categories & Descriptions" className="max-w-4xl mx-auto LiberaBorder">
@@ -466,7 +507,53 @@ Best Spiritual Record
     )
 }
 
-export function LiberaQualifications () {
+export function LiberaQualifications() {
+    const { loading, error, data } = useQuery(GET_ALL_FAQ, { 
+      variables: {
+        PublicationState: "LIVE",
+        Name: "Libera Awards",
+        Category: "General Award Eligibility Rules"
+      }});
+      if (loading) return <div className="animate-pulse h-[50px] w-[300px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
+      if (error) return <p>Error</p>
+    return (
+        <div id="General Award Eligibility Rules" className="max-w-4xl bg-sky-50 rounded-2xl shadow-2xl mx-auto LiberaBorder my-5">
+        <div className="max-w-4xl text-left mx-auto LiberaBorder">
+          <div className="mx-auto pb-3 pt-12">
+          <h3 className="px-5"> GENERAL ELIGIBILITY RULES</h3>
+          <hr className="mt-3 mx-6 mb-3 Hrswap"></hr>
+          <h4 className="px-5">Celebrating the best in independent music; All artists / submissions must be independently owned/controlled, and released in the United States and its Territories during the period between January 1, 2022 through December 31, 2022.</h4>
+          </div>
+        <Accordion>
+        {data?.faqItems.data.map(faqItems => (
+                    <AccordionItem key={faqItems.id}>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                      {faqItems.attributes.Question}
+                    </AccordionItemButton>                
+                  </AccordionItemHeading>
+                <AccordionItemPanel>
+                    <h4>
+                <ReactMarkdown className="line-break" remarkPlugins={[remarkGfm]}>
+                    {faqItems.attributes.Answer}
+                    </ReactMarkdown>
+                    </h4>
+                </AccordionItemPanel>
+            </AccordionItem>
+              )
+            )}
+            </Accordion>
+            <div className="px-5 pb-3 pt-8">
+<h4 className="font-bold">**Please keep in mind that if nominated, the content that you submit will be used for video modules, promotional graphics, or advertisement for The Libera Awards.**
+          </h4>
+          </div>
+
+        </div>
+        </div>
+    );
+}
+
+export function LiberaQualifications2 () {
     return (
       <div id="General Award Eligibility Rules" className="bg-sky-50 mx-auto">
                   <div className="max-w-4xl text-left mx-auto LiberaBorder">
@@ -560,7 +647,51 @@ If your submissions have not been paid for at close of entry they will not be in
     );
  }
 
- export function AttachmentsCriteria(){
+ export function AttachmentsCriteria() {
+    const { loading, error, data } = useQuery(GET_ALL_FAQ, { 
+      variables: {
+        PublicationState: "LIVE",
+        Name: "Libera Awards",
+        Category: "Award Attachments Criteria"
+      }});
+      if (loading) return <div className="animate-pulse h-[50px] w-[300px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
+      if (error) return <p>Error</p>
+    return (
+        <div id="Award Attachments Criteria" className="max-w-4xl bg-sky-50 rounded-2xl shadow-2xl mx-auto LiberaBorder my-5">
+        <div className="max-w-4xl text-left mx-auto LiberaBorder">
+          <div className="mx-auto pb-3 pt-12">
+        <h3 className="px-5">ATTACHMENTS CRITERIA</h3>
+        <hr className="mt-3 mx-6 mb-3 Hrswap"></hr>
+        <h4 className="px-5">The following attachments are required in order to complete submission</h4>
+          </div>
+        <Accordion>
+        {data?.faqItems.data.map(faqItems => (
+                    <AccordionItem key={faqItems.id}>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                      {faqItems.attributes.Question}
+                    </AccordionItemButton>                
+                  </AccordionItemHeading>
+                <AccordionItemPanel>
+                    <h4>
+                <ReactMarkdown className="line-break" remarkPlugins={[remarkGfm]}>
+                    {faqItems.attributes.Answer}
+                    </ReactMarkdown>
+                    </h4>
+                </AccordionItemPanel>
+            </AccordionItem>
+              )
+            )}
+            </Accordion>
+            <div className="px-5 pb-3 pt-8">
+<h4 className="font-bold">**Please keep in mind that if nominated, the content that you submit will be used for video modules, promotional graphics, or advertisement for The Libera Awards.**
+          </h4>
+          </div>
+        </div>
+        </div>
+    );
+}
+ export function AttachmentsCriteria2(){
     return (
         <div id="Award Attachments Criteria" className="mx-auto">
                   <div className="max-w-4xl text-left mx-auto LiberaBorder">
@@ -634,84 +765,126 @@ If your submissions have not been paid for at close of entry they will not be in
     );
  }
 
- export function TicketsFAQ () {
+ export function TicketsFAQ() {
+    const { loading, error, data } = useQuery(GET_ALL_FAQ, { 
+      variables: {
+        PublicationState: "LIVE",
+        Name: "Libera Awards",
+        Category: "Tickets"
+      }});
+      if (loading) return <div className="animate-pulse h-[50px] w-[300px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
+      if (error) return <p>Error</p>
     return (
-
-<div id="Tickets" className="max-w-4xl mx-auto LiberaBorder">
-                      <div className=" pb-3 pt-12">
+<div id="Tickets" className="max-w-4xl bg-sky-50 rounded-2xl shadow-2xl mx-auto LiberaBorder my-5">
+                      <div className="max-w-4xl mx-auto pb-3 pt-12">
                       <h3 className="px-5">Tickets FAQ</h3>
+                      <hr className="mt-3 mx-6 mb-3 Hrswap"></hr>
               <div>
-            <Accordion>
-            <AccordionItem>
+        <Accordion>
+        {data?.faqItems.data.map(faqItems => (
+                    <AccordionItem key={faqItems.id}>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                      Ticket Question 1
+                      {faqItems.attributes.Question}
                     </AccordionItemButton>                
                   </AccordionItemHeading>
                 <AccordionItemPanel>
                     <h4>
-                    Ticket Answer 1
+                <ReactMarkdown className="line-break" remarkPlugins={[remarkGfm]}>
+                    {faqItems.attributes.Answer}
+                    </ReactMarkdown>
                     </h4>
                 </AccordionItemPanel>
             </AccordionItem>
-        </Accordion>
+              )
+            )}
+            </Accordion>
+            </div>
         </div>
         </div>
-        </div>
-    )
+    );
 }
 
-export function VenueFAQ () {
+export function VenueFAQ() {
+    const { loading, error, data } = useQuery(GET_ALL_FAQ, { 
+      variables: {
+        PublicationState: "LIVE",
+        Name: "Libera Awards",
+        Category: "Venue"
+      }});
+      if (loading) return <div className="animate-pulse h-[50px] w-[300px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
+      if (error) return <p>Error</p>
     return (
-      <div id="Venue" className="bg-sky-50 mx-auto">
-                  <div className="max-w-4xl text-left mx-auto LiberaBorder">
-                    <div className="mx-auto pb-3 pt-12 px-5">
-                    <h3>Venue FAQ</h3>
-                    </div>
-                    <Accordion>
-            <AccordionItem>
+<div id="Venue" className="max-w-4xl bg-sky-50 rounded-2xl shadow-2xl mx-auto LiberaBorder my-5">
+                      <div className=" pb-3 pt-12">
+                      <h3 className="px-5">Venue FAQ</h3>
+                      <hr className="mt-3 mx-6 mb-3 Hrswap"></hr>
+              <div>
+        <Accordion>
+        {data?.faqItems.data.map(faqItems => (
+                    <AccordionItem key={faqItems.id}>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                      Venue Question 1
+                      {faqItems.attributes.Question}
                     </AccordionItemButton>                
                   </AccordionItemHeading>
                 <AccordionItemPanel>
                     <h4>
-                    Venue Answer 1
+                <ReactMarkdown className="line-break" remarkPlugins={[remarkGfm]}>
+                    {faqItems.attributes.Answer}
+                    </ReactMarkdown>
                     </h4>
                 </AccordionItemPanel>
             </AccordionItem>
-        </Accordion>
+              )
+            )}
+            </Accordion>
+            </div>
         </div>
         </div>
     );
- }
+}
 
- export function VotingFAQ(){
+export function VotingFAQ() {
+    const { loading, error, data } = useQuery(GET_ALL_FAQ, { 
+      variables: {
+        PublicationState: "LIVE",
+        Name: "Libera Awards",
+        Category: "Voting"
+      }});
+      if (loading) return <div className="animate-pulse h-[50px] w-[300px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
+      if (error) return <p>Error</p>
     return (
-        <div id="Award Attachments Criteria" className="mx-auto">
-                  <div className="max-w-4xl text-left mx-auto LiberaBorder">
-                    <div className="mx-auto pb-3 pt-12 px-5">
-        <h3>Voting FAQ</h3>
-          </div>
-          <Accordion>
-            <AccordionItem>
+<div id="Voting" className="max-w-4xl bg-sky-50 rounded-2xl shadow-2xl mx-auto LiberaBorder my-5">
+                      <div className=" pb-3 pt-12">
+                      <h3 className="px-5">Voting FAQ</h3>
+                      <hr className="mt-3 mx-6 mb-3 Hrswap"></hr>
+              <div>
+        <Accordion>
+        {data?.faqItems.data.map(faqItems => (
+                    <AccordionItem key={faqItems.id}>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                      Voting Question 1
+                      {faqItems.attributes.Question}
                     </AccordionItemButton>                
                   </AccordionItemHeading>
                 <AccordionItemPanel>
                     <h4>
-                    Voting Answer 1
+                <ReactMarkdown className="line-break" remarkPlugins={[remarkGfm]}>
+                    {faqItems.attributes.Answer}
+                    </ReactMarkdown>
                     </h4>
                 </AccordionItemPanel>
             </AccordionItem>
-        </Accordion>
+              )
+            )}
+            </Accordion>
+            </div>
         </div>
         </div>
     );
- }
+}
+
 export default function FAQCategories(){
     return(
         <>
@@ -724,3 +897,4 @@ export default function FAQCategories(){
         </>
     )
 }
+
