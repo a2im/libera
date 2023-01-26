@@ -12,7 +12,7 @@ import {
 
 export default function LiberaQualifications () {
     return (
-      <div className="bg-sky-50 mx-auto">
+      <div id="2" className="bg-sky-50 mx-auto">
                   <div className="max-w-4xl text-left mx-auto LiberaBorder">
                     <div className="mx-auto pb-3 pt-12 px-5">
                     <h3> GENERAL ELIGIBILITY RULES</h3>
@@ -94,7 +94,7 @@ If your submissions have not been paid for at close of entry they will not be in
               </AccordionItemPanel>
           </AccordionItem>
           </Accordion>
-          <div className="px-5 pb-3 pt-12">
+          <div id="3" className="px-5 pb-3 pt-12">
 <h3>ATTACHMENTS CRITERIA</h3>
 <h4>The following attachments are required in order to complete submission</h4>
           </div>

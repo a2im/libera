@@ -11,7 +11,7 @@ import {
 export default function AwardCategories () {
     return (
 
-<div className="max-w-4xl mx-auto LiberaBorder">
+<div id="1" className="max-w-4xl mx-auto LiberaBorder">
                       <div className=" pb-3 pt-12">
                       <h3 className="px-5">AWARD CATEGORIES & DESCRIPTIONS</h3>
               <div>

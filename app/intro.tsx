@@ -7,17 +7,18 @@ import LiberaHand from '../public/images/hand.png'
 export function Intro() {
   return (
     <>
-  <div className="max-w-2xl flex flex-col justify-center gap-0 md:mx-auto relative mb-20">
-    <div className="mx-auto relative w-[300px]">
+      <div className="max-w-2xl flex flex-col justify-center gap-0 md:mx-auto relative mb-20">
+        <div className="mx-auto relative w-[300px]">
           <Image priority={true} 
             src={LiberaAwardsLady} alt="Libera Awards Dancing Lady"/>
-            </div>
-            <div className="mx-auto relative w-[300px]">
-        <Image priority={true} 
+        </div>
+        <div className="mx-auto relative w-[300px]">
+          <Image priority={true} 
             src={LiberaAwardsLogo} alt="Libera Awards Logo"/>
-            </div>
-  </div>
-        </>
+        </div>
+      </div>
+      <LiberaButtonInternal href='/tickets'>Get Tickets</LiberaButtonInternal>
+    </>
   )
 }
 
