@@ -14,11 +14,9 @@ export default function Archive() {
   Archive
   </h1>
   </div>
-          <div
-          className="bg-sky-50">
-            <div className="max-w-4xl p-8 mx-auto">
-        <div className="LiberaBorder mx-auto">
-        <h3 className='mb-8 text-center p-8'>Click below to view past Libera Awards nominees & winners.</h3>
+            <div className="max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl rounded-2xl'">
+        <h3>Click below to view past Libera Awards nominees & winners.</h3>
+        <hr className="mt-3 mb-8 Hrswap"></hr>
             <section className='flex flex-col md:flex-row flex-wrap max-w-6xl mb-10 mx-auto gap-10 justify-center content-center'> 
               <Link
                 href="/archive/2022"
@@ -99,8 +97,6 @@ export default function Archive() {
                   </div>
                 </Link>
             </section>
-            </div>
-            </div>
       </div>
       </Suspense>
     </div>

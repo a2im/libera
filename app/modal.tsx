@@ -15,13 +15,9 @@ export default function MyModal () {
     useOnClickOutside(ref, () => setModalOpen(false));
     const dropIn = {
         hidden: {
-            x: -320,
-            y: 100,
             opacity: 0,
         },
         visible: {
-            x: -360,
-            y: -410,
             opacity: 1,
             transition: {
                 duration: 0.1,
@@ -38,12 +34,12 @@ export default function MyModal () {
 
     return (
         <>
-            <div className="flex fixed ladymodalbg bottom-5 right-5">
+            <div className="flex fixed bottom-5 right-5 w-20 h-20 rounded-full bg-black border-4 border-white hover:border-liberapurple">
             {isModalOpen ? (
                 <motion.div
                 ref={ref}
                 onClick={(e) => e.stopPropagation()}
-                className="fixed Borderswap5 p-5 w-96 rounded-xl shadow-2xl"
+                className="fixed Borderswap5 p-5 w-96 rounded-xl shadow-2xl bottom-16 right-16"
                 variants={dropIn}
                 initial="hidden"
                 animate="visible"
@@ -56,7 +52,7 @@ export default function MyModal () {
                 whileTap={{scale: 0.95}}
                 className="save-button"
                 onClick={() => (setModalOpen(true))}>
-                <h2 className="text-7xl ml-4 mt-2 hover:text-libera-pink text-white text-center font-black">   ?   </h2>
+                <h2 className="text-7xl ml-3 mt-2 hover:text-liberapink text-white text-center font-black hover:scale-105">   ?   </h2>
             </motion.button>
                 )}
             </div>
