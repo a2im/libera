@@ -1,8 +1,8 @@
-import FAQCategories from './faq-categories'
+import GetFAQ from './faq-categories'
 import { Suspense } from 'react'
 import Loading from '../loading'
 import MyNavbar from '../navbar'
-import { JumpTo } from './jump-to'
+import { JumpTo } from './faq-categories'
 
 export default function FAQ() {
   return (
@@ -16,7 +16,12 @@ export default function FAQ() {
   </h1>
   </div>
   <JumpTo/>
-  <FAQCategories/>
+  <GetFAQ Category='GENERAL'/>
+  <GetFAQ Category='TICKETING'/>
+  <GetFAQ Category='ACCESSIBILITY'/>
+  <GetFAQ Category='ACCOMODATIONS'/>
+  <GetFAQ Category='PRESS'/>
+  <GetFAQ Category='AWARDS & CATEGORIES'/>
   </Suspense>
     </>
   )
