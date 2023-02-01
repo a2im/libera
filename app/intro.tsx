@@ -10,26 +10,28 @@ export function Intro() {
       <div className="max-w-2xl flex flex-col justify-center gap-0 md:mx-auto relative mb-20">
         <div className="mx-auto relative w-[300px]">
           <Image priority={true} 
-            src={LiberaAwardsLady} alt="Libera Awards Dancing Lady"/>
+            src={LiberaAwardsLady} alt="Libera Awards Dancing Lady" className="hover:animate-pulse"/>
         </div>
         <div className="mx-auto relative w-[300px]">
           <Image priority={true} 
             src={LiberaAwardsLogo} alt="Libera Awards Logo"/>
         </div>
       </div>
+      <div className="animate-bounce">
       <LiberaButtonInternal href='/tickets'>Get Tickets</LiberaButtonInternal>
+    </div>
     </>
   )
 }
 
 export function Intro2() {
   return (
-<div className="bg-sky-50 pt-10">      
-  <div className=" max-w-5xl grid gap-8 md:grid-cols-2 md:mx-auto p-5 py-15">
-        <div 
-          className="w-[400px] mx-auto">
-          <Image priority={true}
+    <div className='p-8 mx-auto'>
+    <div className='max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl rounded-2xl'>
+    <div className="grid grid-cols-0 md:grid-cols-2 items-center md:justify-around mx-auto gap-10 p-5">
+          <div><Image priority={true}
             src={LiberaHand} alt="Libera Awards Hand"/>
+            <LiberaButtonInternal href="/about">LEARN MORE</LiberaButtonInternal>
         </div>
         <div
           className="px-8 md:px-20 mx-auto">
@@ -40,25 +42,40 @@ Celebrate the Independent Community</h2>
 
   </div>
   <div className="justify-center bg-sky-50 mx-auto">
-        <LiberaButtonInternal href="/about">LEARN MORE</LiberaButtonInternal>
-        </div>
+        
+  </div>
+  </div>
   </div>
   )
 }
 
 export function Intro3() {
   return (
-    <div className="pb-20 max-w-5xl mx-auto">
-<div className="pt-10 gap-10 p-8 md:mt-20">
-      <div className="px-8 md:px-20 justify-center mx-auto center-content">
-<h2 className="mb-9 md:mt-10 font-bold leading-tight">
-Join us in New York City & Online</h2>
-  <h4 className="max-w-xl">Historically held in New York City, the Libera Awards went virtual in 2020 in response to the pandemic. Moving forward with a hybrid format, we return to our in-person ceremony in NYC, and virtual ceremony
-exclusively on YouTube.</h4>
-        </div>
+    <div className='p-8 mx-auto'>
+    <div className='max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl rounded-2xl'>
+      <h3>Join us in New York City & Online</h3>
+      <hr className="mt-3 mb-8 Hrswap"></hr>
+      <div className="grid grid-cols-0 md:grid-cols-2 items-center md:justify-around mx-auto gap-10 p-5">
+      <div className="relative order-last md:order-first">
+  <h4>Historically held in New York City, the Libera Awards went virtual in 2020 in response to the pandemic. Moving forward with a hybrid format, we return to our in-person ceremony in NYC, and virtual ceremony
+exclusively on YouTube.</h4><LiberaButtonInternal href="/tickets">GET TICKETS</LiberaButtonInternal>
+</div>
+<div className="image-cropper">
+              <Image className="roundedimage" 
+              src="/images/liberaonline.jpg" 
+              alt='libera awards on YouTube'
+              width={500}
+              height={500}
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"/>
+            </div>
+            </div>
+            
   </div>
-  <LiberaButtonInternal href="/tickets">GET TICKETS</LiberaButtonInternal>
+  
   </div>
+
   )
 }
 

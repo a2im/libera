@@ -9,7 +9,7 @@ export function LiberaButtonExternal ({ children, href }) {
           rel="noopener noreferrer">
           <div className="p-7 drop-shadow-2xl max-h-21 justify-center leading-tight mx-auto">
               <button 
-              className="Borderswap3 hover:scale-105">
+              className="Borderswap3 hover:scale-105 active:animate-ping">
                 <h3 className="align-middle font-normal px-4 text-white truncate tracking-tighter leading-tight">
                 {children}
                 </h3>
@@ -25,8 +25,8 @@ export function LiberaButtonInternal ({ children, href}) {
         <Link href={href}>
         <div className="p-7 drop-shadow-2xl max-h-21 justify-center leading-tight mx-auto">
             <button 
-            className="Borderswap3 hover:scale-105">
-              <h3 className="align-middle font-normal px-4 text-white truncate tracking-tighter leading-tight">
+            className="Borderswap3 hover:scale-105 active:animate-ping">
+              <h3 className="align-middle font-normal px-4 text-white truncate tracking-tighter leading-tight animate-pulse">
               {children}
               </h3>
             </button>

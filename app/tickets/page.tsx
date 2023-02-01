@@ -19,12 +19,12 @@ Tickets
                 <div className='p-8 mx-auto'>
                 <div className='max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl rounded-2xl'>
                   <h3>
-                    Tickets Component Title
+                  Purchase Now to Save More
                   </h3>
                   <hr className="mt-3 mb-8 Hrswap"></hr>
                   <div className="grid grid-cols-0 md:grid-cols-2 mx-auto justify-center gap-3">
                     <div className="flex flex-col justify-between max-w-sm">
-                      <p>Tickets Component Description</p>
+                      <p>Each ticket purchase includes a seat at the A2IM Libera Awards ceremony at Town Hall, as well as admittance to our exclusive afterparty featuring an open bar and dinner.</p>
                       <div className="drop-shadow-2xl max-h-21 justify-center leading-tight mx-auto">
                         <Link
                           href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
