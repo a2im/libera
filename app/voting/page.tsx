@@ -10,11 +10,11 @@ import LoginButton from '../login'
 
 export default function Voting() {
   return (
-    <>
+    <><MyNavbar><LoginButton/></MyNavbar>
     <div>
           <title>Libera Awards - Voting</title>
           <Suspense fallback={<Loading start={0} end={10}/>}>
-          <MyNavbar><LoginButton/></MyNavbar>
+          
           <div className="grow shrink content-center">
 <h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
  Voting

@@ -8,9 +8,9 @@ export default function Home() {
   
   return (
     <div>
+      <MyNavbar><LoginButton/></MyNavbar>
       <title>Libera Awards - Home</title>
       <Suspense fallback={<Loading start={0} end={10}/>}>
-      <MyNavbar><LoginButton/></MyNavbar>
           <MyIntro/>
           </Suspense>
     </div>

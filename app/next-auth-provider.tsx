@@ -2,6 +2,7 @@
 
 import { SessionProvider } from "next-auth/react";
 import { useSession } from "next-auth/react";
+import Loading from "./loading";
 
 export default function AuthContext({ children }) {
   return (
@@ -18,7 +19,7 @@ function Auth({ children }) {
   const { status } = useSession()
 
   if (status === "loading") {
-    return <div>Loading...</div>
+    return <Loading/>
   }
 
   return children

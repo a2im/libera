@@ -11,12 +11,15 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 library.add(fas)
 
+export const runtime = 'nodejs'
 
 export default function RootLayout({
   children
 }: {
   children: React.ReactNode,
 }) { 
+
+ 
 
   return (
     <html lang="en">

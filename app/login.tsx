@@ -6,8 +6,8 @@ export default function LoginButton() {
     if (status === "authenticated") {
       return (
         <>
-        <div className="mx-auto max-w-md">
-          Hi, {session.user.name}!
+        <div className="flex flex-row mx-auto max-w-lg">
+          <p className="text-white">Hi, {session.user.name}!</p>
           <button className="text-black bg-white px-4 py-1 rounded-md mx-3" onClick={() => signOut()}>Sign out</button>
           </div>
         </>
