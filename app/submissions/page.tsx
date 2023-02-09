@@ -1,12 +1,12 @@
 import React from 'react'
 import { LiberaButtonExternal, LiberaButtonInternal } from '../button'
 import AdBanner from '../ad-banner'
-import LiberaQualifications from '../faq/faq-categories'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Suspense } from 'react'
 import Loading from '../loading'
-import MyNavbar from '../navbar'
+import MyNavbar from '../nav'
+import LoginButton from '../login'
 
 
 export default function Submissions() {
@@ -14,7 +14,7 @@ export default function Submissions() {
     <div>
           <title>Libera Awards - Submissions</title>
           <Suspense fallback={<Loading start={0} end={10}/>}>
-              <MyNavbar/>
+          <MyNavbar><LoginButton/></MyNavbar>
           <div className="grow shrink content-center">
 <h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
  Submissions
@@ -31,7 +31,6 @@ export default function Submissions() {
             </div>
         <AdBanner/>
         <br></br>
-        <LiberaQualifications />
         </section>
         <div className='max-w-4xl mx-auto'>
           <h2 className="grow mb-9 mt-10 font-bold text-center leading-tight pb-8">

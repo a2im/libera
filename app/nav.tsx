@@ -1,13 +1,20 @@
 'use client';
-
+import { useOnClickOutside } from 'usehooks-ts'
 import Link from 'next/link';
-import { useState, useEffect, useRef} from 'react';
 import Image from "next/image";
+import React, { useState, useRef } from "react";
 
-export default function MyNavbar() {
-  const ref = useRef();
+export default function MyNavbar({children}) {
+  const Navref = useRef();
   const [navbar, setNavbar] = useState(false);
-  useOnClickOutside(ref, () => setNavbar(false));
+  const handleClickOutside = () => {
+    setNavbar(false)
+  }
+  const handleClickInside = () => {
+    setNavbar(!navbar)
+  }
+  
+  useOnClickOutside(Navref, handleClickOutside)
   return (
       <nav className="liberanav w-full fixed z-50 shadow">
         <div className="justify-between mx-auto md:py-0 lg:max-w-5xl items-center md:flex md:px-4">
@@ -28,7 +35,7 @@ export default function MyNavbar() {
               <div className="md:hidden">
                 <button
                   className="pr-2 mr-2 pl-2 p-2 text-white rounded-md outline-none focus:border-white focus:border"
-                  onClick={() => setNavbar(!navbar)}
+                  onClick={handleClickInside}
                 >
                   {navbar ? (
                     <svg
@@ -69,73 +76,57 @@ export default function MyNavbar() {
                 navbar ? 'block' : 'hidden'
               }`}
             >
-              <ul ref={ref} className="items-center justify-center space-x-4 space-y-0 md:flex">
+              <ul ref={Navref} className="items-center justify-center space-x-4 space-y-0 md:flex">
                 <li 
                   className="text-center text-xl text-white Borderswap2nav uppercase font-bold tracking-tighter">
-                  <Link href="/about" onClick={() => setNavbar(false)} >
+                  <Link href="/about" onClick={handleClickOutside} >
                     About
                   </Link>
                 </li>
                 <li
                     className="text-center text-xl text-white Borderswap1nav uppercase font-bold">
-                  <Link href="/news" onClick={() => setNavbar(false)} >
+                  <Link href="/news" onClick={handleClickOutside} >
                     News
                   </Link>
                 </li>
                 <li 
                   className="text-center text-xl text-white Borderswap3nav uppercase font-bold">
-                  <Link href="/tickets" onClick={() => setNavbar(false)} >
+                  <Link href="/tickets" onClick={handleClickOutside} >
                     Tickets
                   </Link>
                 </li>
                 <li
                   className="text-center text-xl text-white Borderswap1nav uppercase font-bold">
-                  <Link href="/voting" onClick={() => setNavbar(false)} >
+                  <Link href="/voting" onClick={handleClickOutside} >
                     VOTE
                   </Link>
                 </li>
                 <li
                   className="text-center text-xl text-white Borderswap4nav uppercase font-bold">
-                  <Link href="/archive" onClick={() => setNavbar(false)} >
+                  <Link href="/archive" onClick={handleClickOutside} >
                     Archive
                   </Link>
                 </li>
                 <li
                   className="text-center text-xl text-white Borderswap1nav uppercase font-bold">
-                  <Link href="/faq" onClick={() => setNavbar(false)} >
+                  <Link href="/faq" onClick={handleClickOutside} >
                     FAQ
                   </Link>
                 </li>
                 <li
                   className="text-center text-xl text-white Borderswap4nav uppercase font-bold">
-                  <Link href="/contact" onClick={() => setNavbar(false)} >
+                  <Link href="/contact" onClick={handleClickOutside} >
                     Contact
                   </Link>
                 </li>
+                <li
+              className="text-center font-serif text-zinc-500 whitespace-nowrap hover:scale-105">
+          {children}
+            </li>
               </ul>
             </div>
           </div>
         </div>
       </nav>
-  );
-}
-function useOnClickOutside(ref, handler) {
-  useEffect(
-    () => {
-      const listener = (event) => {
-        // Do nothing if clicking ref's element or descendent elements
-        if (!ref.current || ref.current.contains(event.target)) {
-          return;
-        }
-        handler(event);
-      };
-      document.addEventListener("mousedown", listener);
-      document.addEventListener("touchstart", listener);
-      return () => {
-        document.removeEventListener("mousedown", listener);
-        document.removeEventListener("touchstart", listener);
-      };
-    },
-    [ref, handler]
   );
 }

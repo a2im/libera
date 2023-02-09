@@ -6,7 +6,7 @@ import { Providers } from './providers';
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import { InfoButtonEntityResponse } from '../lib/gql/types';
+import AuthContext from './next-auth-provider';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 library.add(fas)
@@ -24,11 +24,13 @@ export default function RootLayout({
         <MyHead></MyHead>
         </head>
       <body className="min-h-screen z-0">
+        <AuthContext>
       <Providers>
       {children}
       <Footer/>
       <MyModal />
       </Providers>
+      </AuthContext>
       </body>
     </html>
   )

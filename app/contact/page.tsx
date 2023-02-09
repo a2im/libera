@@ -5,7 +5,8 @@ import { motion } from "framer-motion"
 import Link from 'next/link'
 import { Suspense } from 'react'
 import Loading from '../loading'
-import MyNavbar from '../navbar'
+import MyNavbar from '../nav'
+import LoginButton from '../login';
 
 export default function Contact() {
   const id = useId();
@@ -92,7 +93,7 @@ export default function Contact() {
     <div>
           <title>Libera Awards - Contact Us</title>
           <Suspense fallback={<Loading start={0} end={10}/>}>
-      <MyNavbar/>
+          <MyNavbar><LoginButton/></MyNavbar>
           <div className="grow shrink content-center">
 <h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
   Contact
