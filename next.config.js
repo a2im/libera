@@ -10,7 +10,10 @@ module.exports = {
     AZURE_AD_TENANT_ID: process.env.AZURE_AD_TENANT_ID,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
-    NEXTAUTH_URL: process.env.NEXTAUTH_URL
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    NEXT_AUTH_AWS_REGION: process.env.NEXT_AUTH_AWS_REGION,
+    NEXT_AUTH_AWS_ACCESS_KEY: process.env.NEXT_AUTH_AWS_ACCESS_KEY,
+    NEXT_AUTH_AWS_SECRET_KEY: process.env.NEXT_AUTH_AWS_SECRET_KEY
   },
   images: {
     domains: [
