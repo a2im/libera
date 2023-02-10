@@ -152,7 +152,6 @@ export function NavbarAnnouncements(){
       PublicationState: "LIVE",
       Name: "Libera Awards",
     }});
-    if (loading) return <div className="animate-pulse h-[300px] w-[300px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
     if (error) return <p>Error</p>
     console.log(data)
   return (
