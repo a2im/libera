@@ -27,7 +27,7 @@ Tickets
                       <p>Each ticket purchase includes a seat at the A2IM Libera Awards ceremony at Town Hall, as well as admittance to our exclusive afterparty featuring an open bar and dinner.</p>
                       <div className="drop-shadow-2xl max-h-21 justify-center leading-tight mx-auto">
                         <Link
-                          href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+                          href='https://www.ticketmaster.com/a2im-libera-awards-2023-new-york-new-york-06-15-2023/event/03005E44984F3F1A'
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-center">
