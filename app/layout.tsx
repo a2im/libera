@@ -1,8 +1,8 @@
 import MyHead from './head';
 import './globals.css'
 import Footer from './footer';
-import MyModal from "./modal"
-import { Providers } from './providers';
+import MyModal from "../components/modal"
+import { Providers } from '../components/providers';
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'

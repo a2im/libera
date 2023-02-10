@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import Loading from '../loading'
-import MyNavbar from '../navbar'
+import MyNavbar from '../../components/navbar'
 import Image from 'next/image'
 import Link from 'next/link'
 

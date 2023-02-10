@@ -1,9 +1,9 @@
 import Image from "next/legacy/image";
 import Link from 'next/link'
 import React from "react";
-import { SocialFollowWhite } from "./SocialFollow";
-import AdBanner from "./ad-banner";
-import SponsorFooter from "./sponsors";
+import { SocialFollowWhite } from "../components/SocialFollow";
+import AdBanner from "../components/ad-banner";
+import SponsorFooter from "../components/sponsors";
 
 export default function Footer() {
   return (

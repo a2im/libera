@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import Loading from './loading'
-import MyNavbar from './navbar'
+import MyNavbar from '../components/navbar'
 import MyIntro from './intro'
 
 export default function Home() {

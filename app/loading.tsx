@@ -1,4 +1,4 @@
-import MyNavbar from "./navbar";
+import MyNavbar from "../components/navbar";
 import MyModal from "./archive/modal";
 
 

@@ -221,3 +221,16 @@ query getLiberaFAQs($PublicationState: PublicationState, $Name: String!, $Catego
     }
   }
   `; 
+
+export const GET_ANNOUNCEMENTS = gql`
+query getAnnouncements($PublicationState: PublicationState, $Name: String!) {
+    announcements(filters: { apps: { Name: { eq: $Name }}}, publicationState: $PublicationState, pagination: { page: 1, pageSize: 50 }) {
+      data {
+        id
+        attributes {
+          text
+        }
+      }
+    }
+  }
+  `; 

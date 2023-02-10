@@ -1,12 +1,12 @@
 import React from 'react'
 import { LiberaButtonExternal, LiberaButtonInternal } from '../button'
-import AdBanner from '../ad-banner'
+import AdBanner from '../components/ad-banner'
 import LiberaQualifications from '../faq/faq-categories'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Suspense } from 'react'
 import Loading from '../loading'
-import MyNavbar from '../navbar'
+import MyNavbar from '../../components/navbar'
 
 
 export default function Submissions() {

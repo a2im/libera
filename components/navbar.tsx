@@ -3,12 +3,15 @@
 import Link from 'next/link';
 import { useState, useEffect, useRef} from 'react';
 import Image from "next/image";
+import { GET_ANNOUNCEMENTS } from "../lib/gql/queries";
+import { useQuery } from '@apollo/client';
 
 export default function MyNavbar() {
   const ref = useRef();
   const [navbar, setNavbar] = useState(false);
   useOnClickOutside(ref, () => setNavbar(false));
   return (
+    <>
       <nav className="liberanav w-full fixed z-50 shadow">
         <div className="justify-between mx-auto md:py-0 lg:max-w-5xl items-center md:flex md:px-4">
           <div>
@@ -117,8 +120,11 @@ export default function MyNavbar() {
           </div>
         </div>
       </nav>
+      <NavbarAnnouncements/>
+      </>
   );
 }
+
 function useOnClickOutside(ref, handler) {
   useEffect(
     () => {
@@ -138,4 +144,47 @@ function useOnClickOutside(ref, handler) {
     },
     [ref, handler]
   );
+}
+
+export function NavbarAnnouncements(){
+  const { loading, error, data } = useQuery(GET_ANNOUNCEMENTS, { 
+    variables: {
+      PublicationState: "LIVE",
+      Name: "Libera Awards",
+    }});
+    if (loading) return <div className="animate-pulse h-[300px] w-[300px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
+    if (error) return <p>Error</p>
+    console.log(data)
+  return (
+    <>
+    <div className="w-full bg-a2imred">
+    <div className="z-40 mx-auto overflow-x-hidden relative flex max-w-5xl gap-10">
+    <div className="animate-marquee top-0 whitespace-nowrap">
+    {data?.announcements.data.map(announcements => (
+        <h3 key={announcements.id} className="text-white text-2xl px-5 mt-10 uppercase">{announcements.attributes.text}</h3>
+        )
+        )}
+    </div>
+    <div className="absolute top-0 animate-marquee2 whitespace-nowrap pt-10">
+    {data?.announcements.data.map(announcements => (
+        <h3 key={announcements.id} className="text-white text-2xl px-5 uppercase">{announcements.attributes.text}</h3>
+        )
+        )}
+    </div>
+    <div className="absolute top-0 animate-marquee3 whitespace-nowrap pt-10">
+    {data?.announcements.data.map(announcements => (
+        <h3 key={announcements.id} className="text-white text-2xl px-5 uppercase">{announcements.attributes.text}</h3>
+        )
+        )}
+    </div>
+    <div className="absolute top-0 animate-marquee4 whitespace-nowrap pt-10">
+    {data?.announcements.data.map(announcements => (
+        <h3 key={announcements.id} className="text-white text-2xl px-5 uppercase">{announcements.attributes.text}</h3>
+        )
+        )}
+    </div>
+    </div>
+    </div>
+    </>
+  )
 }

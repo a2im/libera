@@ -1,7 +1,7 @@
 import GetFAQ from './faq-categories'
 import { Suspense } from 'react'
 import Loading from '../loading'
-import MyNavbar from '../navbar'
+import MyNavbar from '../../components/navbar'
 import { JumpTo } from './faq-categories'
 
 export default function FAQ() {

@@ -4,7 +4,7 @@ import { Awards2013 } from '../../../../lib/awards-data/awards-data';
 import YouTube, { YouTubeProps } from 'react-youtube';
 import { Suspense } from 'react'
 import Loading from '../../../loading'
-import MyNavbar from '../../../navbar'
+import MyNavbar from '../../../../components/navbar'
 
 export default function Archive13({  }) {
 

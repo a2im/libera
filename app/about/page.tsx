@@ -1,7 +1,7 @@
 import { About1, About2, About3 } from './about-us'
 import { Suspense } from 'react'
 import Loading from '../loading'
-import MyNavbar from '../navbar'
+import MyNavbar from '../../components/navbar'
 
 export default function About() {
   return (

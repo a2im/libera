@@ -3,7 +3,7 @@ import { LiberaButtonExternal, LiberaButtonInternal } from '../button'
 import Image from 'next/image'
 import { Suspense } from 'react'
 import Loading from '../loading'
-import MyNavbar from '../navbar'
+import MyNavbar from '../../components/navbar'
 import VoterGuidelines from './guidelines'
 
 

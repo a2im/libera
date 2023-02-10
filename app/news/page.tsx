@@ -1,7 +1,7 @@
 import { LiberaPostsList } from './posts'
 import { Suspense } from 'react'
 import Loading from '../loading'
-import MyNavbar from '../navbar'
+import MyNavbar from '../../components/navbar'
 
 
 export default function News() {
