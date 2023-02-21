@@ -2,7 +2,7 @@
 
 import React from "react"
 import Image from "next/legacy/image";
-import { LiberaButtonExternal, LiberaButtonInternal } from "../button";
+import LiberaButton from "../button";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -75,7 +75,7 @@ export function About2 () {
   <Image src="/images/showfloor.jpg" alt='libera awards in person gala' width={2048} height={1365} layout='responsive' objectFit={'contain'} />
     </div>
 </Carousel>
-<LiberaButtonExternal href='https://www.facebook.com/independentlabels/photos_albums'>VIEW MORE</LiberaButtonExternal>
+<LiberaButton type="external" href='https://www.facebook.com/independentlabels/photos_albums'>VIEW MORE</LiberaButton>
         </div>
       </div>
       </div>
@@ -111,7 +111,7 @@ up to date.</h4>
               33vw"/>
             </div>
           </div>
-          <LiberaButtonInternal href='/tickets'>GET TICKETS</LiberaButtonInternal>
+          <LiberaButton type="external" href='/tickets'>GET TICKETS</LiberaButton>
       </div>
       </div>
   )

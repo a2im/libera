@@ -1,7 +1,7 @@
 import Image from "next/legacy/image";
 import Link from 'next/link'
 import React from "react";
-import { SocialFollowWhite } from "../components/SocialFollow";
+import SocialFollow from "../components/social-follow";
 import AdBanner from "../components/ad-banner";
 import SponsorFooter from "../components/sponsors";
 
@@ -15,7 +15,7 @@ export default function Footer() {
             <Link href="https://liberaawards.com">
               <Image src="/logos/A2IM-logo-white.png" alt='a2im logo' height={458} width={1024} priority={true}/>
             </Link>
-            <SocialFollowWhite/>
+            <SocialFollow color="white"/>
         </div>
         </div>
         

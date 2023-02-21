@@ -92,12 +92,6 @@ export default function MyNavbar() {
                   </Link>
                 </li>
                 <li
-                  className="text-center text-xl text-white Borderswap1nav uppercase font-bold">
-                  <Link href="/voting" onClick={() => setNavbar(false)} >
-                    VOTE
-                  </Link>
-                </li>
-                <li
                   className="text-center text-xl text-white Borderswap4nav uppercase font-bold">
                   <Link href="/archive" onClick={() => setNavbar(false)} >
                     Archive

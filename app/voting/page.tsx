@@ -1,5 +1,5 @@
 import React from 'react'
-import { LiberaButtonExternal, LiberaButtonInternal } from '../button'
+import LiberaButton from '../button'
 import Image from 'next/image'
 import { Suspense } from 'react'
 import Loading from '../loading'
@@ -28,7 +28,7 @@ export default function Voting() {
             </h3>
             <hr className="mt-3 mb-4 Hrswap"></hr>
             <h4>If you continue to experience issues with submissions after this guide, please contact support.</h4>
-              <LiberaButtonInternal href="/contact">Click to email</LiberaButtonInternal>
+              <LiberaButton type="internal" href="/contact">Click to email</LiberaButton>
               </div>
         </div>
       </Suspense>

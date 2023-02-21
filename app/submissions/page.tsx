@@ -1,5 +1,5 @@
 import React from 'react'
-import { LiberaButtonExternal, LiberaButtonInternal } from '../button'
+import LiberaButton from '../button'
 import AdBanner from '../../components/ad-banner'
 import LiberaQualifications from '../faq/faq-categories'
 import Image from 'next/image'
@@ -23,8 +23,8 @@ export default function Submissions() {
           <div className="mx-auto">
         <section className="mx-auto">
           <div className="flex flex-col md:flex-row justify-center text-center mx-auto items-center content-center">
-        <LiberaButtonExternal href='https://libera.awardsplatform.com/'>CLICK HERE TO SUBMIT</LiberaButtonExternal>
-        <LiberaButtonInternal href='/faq'>View all categories</LiberaButtonInternal>
+        <LiberaButton type="external" href='https://libera.awardsplatform.com/'>CLICK HERE TO SUBMIT</LiberaButton>
+        <LiberaButton type="internal" href='/faq'>View all categories</LiberaButton>
         </div>
         <div className="max-w-3xl mx-auto">
             <h4 className="p-8">Submit your music to be considered at the 2023 A2IM Libera Awards, the largest celebration of independent music globally. For discounts on bulk submissions (10 or more), email <span><Link href="mailto:sales@a2im.org">sales@a2im.org</Link></span></h4>
@@ -105,7 +105,7 @@ export default function Submissions() {
               HAD A LOT OF RELEASES THIS YEAR?
             </h3>
             <h4>We&apos;ve got a discount for you!</h4>
-            <LiberaButtonExternal href='mailto:sales@a2im.org'> Click to email</LiberaButtonExternal>
+            <LiberaButton type="external" href='mailto:sales@a2im.org'> Click to email</LiberaButton>
           </div>
           <div className='LiberaBorder bg-sky-50 flex flex-col mx-auto p-4'>
             <h3 className="md:mb-6">
@@ -113,7 +113,7 @@ export default function Submissions() {
             </h3>
 
             <h4>If you continue to experience issues with submissions after this guide, please contact support.</h4>
-              <LiberaButtonInternal href="/contact">Click to email</LiberaButtonInternal>
+              <LiberaButton type="internal" href="/contact">Click to email</LiberaButton>
               </div>
         </section>
       </div>
