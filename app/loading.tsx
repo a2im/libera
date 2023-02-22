@@ -1,5 +1,5 @@
 import MyNavbar from "../components/navbar";
-import MyModal from "./archive/modal";
+import MyModal from "./oldarchive/modal";
 
 
 export default function Loading(start, end) {

@@ -1,10 +1,18 @@
-import Link from 'next/link'
 import { Suspense } from 'react'
 import Loading from '../loading'
 import MyNavbar from '../../components/navbar'
+import Link from 'next/link'
+import { GetArchiveEvents } from '../../components/get-archives'
 
-export default function Archive() {
+export default async function ArchivePage({params}: { params: { 
+  Name : String,
+ }}) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/events?filters[Title][$contains]=Libera%20Awards&sort[Title]=desc&populate=*`, { next: { revalidate: 60 }});
+  const events = await res.json();
+  const title = await JSON.stringify(events.attributes?.Title)
+  const cleantitle = await title?.replace("Libera Awards", " ")
   return (
+    <>
     <div>
           <title>Libera Awards - Archive</title>
           <Suspense fallback={<Loading start={0} end={10}/>}>
@@ -13,92 +21,21 @@ export default function Archive() {
 <h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
   Archive
   </h1>
-  </div>
-            <div className="max-w-4xl p-8 mx-auto bg-sky-50 shadow-2xl rounded-2xl'">
-        <h3>Click below to view past Libera Awards nominees & winners.</h3>
-        <hr className="mt-3 mb-8 Hrswap"></hr>
-            <section className='flex flex-col md:flex-row flex-wrap max-w-6xl mb-10 mx-auto gap-10 justify-center content-center'> 
-              <Link
-                href="/archive/2022"
-                legacyBehavior>
-                <div 
-                className="Borderswap1 hover:content-center justify-center shadow-2xl w-96 p-20 bg-libera-purple hover:bg-libera-pink ">
-                  <h3 className="text-center hover:align-middle text-white whitespace-nowrap">2022 WINNERS</h3>
-                  </div>
-                </Link>
-              <Link
-                href="/archive/2021"
-                legacyBehavior>
-              <div className="Borderswap2 shadow-2xl w-96 p-20 bg-libera-purple hover:bg-libera-pink mygrow">
-                  <h3 className="text-center text-white mygrow whitespace-nowrap">2021 WINNERS</h3>
-                  </div>
-                </Link>
-              <Link
-                href="/archive/2020"
-                legacyBehavior>
-              <div className="Borderswap3 shadow-2xl w-96 p-20 bg-libera-purple hover:bg-libera-pink mygrow">
-                  <h3 className="text-center text-white mygrow whitespace-nowrap">2020 WINNERS</h3>
-                  </div>
-                </Link>
-              <Link
-                href="/archive/2019"
-                legacyBehavior>
-              <div className="Borderswap4 shadow-2xl w-96 p-20 bg-libera-purple hover:bg-libera-pink mygrow">
-                  <h3 className="text-center text-white mygrow whitespace-nowrap">2019 WINNERS</h3>
-                  </div>
-                </Link>
-              <Link 
-                href="/archive/2018"
-                legacyBehavior>
-              <div className="Borderswap4 shadow-2xl w-96 p-20 bg-libera-purple hover:bg-libera-pink mygrow">
-                  <h3 className="text-center text-white mygrow whitespace-nowrap">2018 WINNERS</h3>
-                  </div>
-                </Link>
-              <Link
-                href="/archive/2017"
-                legacyBehavior>
-              <div className="Borderswap3 shadow-2xl w-96 p-20 bg-libera-purple hover:bg-libera-pink mygrow">
-                  <h3 className="text-center text-white mygrow whitespace-nowrap">2017 WINNERS</h3>
-                  </div>
-                </Link>
-              <Link
-                href="/archive/2016"
-                legacyBehavior>
-              <div className="Borderswap2 shadow-2xl w-96 p-20 bg-libera-purple hover:bg-libera-pink mygrow">
-                  <h3 className="text-center text-white mygrow whitespace-nowrap">2016 WINNERS</h3>
-                  </div>
-                </Link>
-              <Link
-                href="/archive/2015"
-                legacyBehavior>
-              <div className="Borderswap1 shadow-2xl w-96 p-20 bg-libera-purple hover:bg-libera-pink mygrow">
-                  <h3 className="text-center text-white mygrow whitespace-nowrap">2015 WINNERS</h3>
-                  </div>
-                </Link>
-              <Link
-                href="/archive/2014"
-                legacyBehavior>
-              <div className="Borderswap1 shadow-2xl w-96 p-20 bg-libera-purple hover:bg-libera-pink mygrow">
-                  <h3 className="text-center text-white mygrow whitespace-nowrap">2014 WINNERS</h3>
-                  </div>
-                </Link>
-              <Link
-                href="/archive/2013"
-                legacyBehavior>
-              <div className="Borderswap2 shadow-2xl w-96 p-20 bg-libera-purple hover:bg-libera-pink mygrow">
-                  <h3 className="text-center text-white mygrow whitespace-nowrap">2013 WINNERS</h3>
-                  </div>
-                </Link>
-              <Link
-                href="/archive/2012"
-                legacyBehavior>
-              <div className="Borderswap3 shadow-2xl w-96 p-20 bg-libera-purple hover:bg-libera-pink mygrow">
-                  <h3 className="text-center text-white mygrow whitespace-nowrap">2012 WINNERS</h3>
-                  </div>
-                </Link>
-            </section>
-      </div>
-      </Suspense>
+    <div className="flex flex-col-reverse md:flex-row max-w-5xl mx-auto">
+      <div className="invisible md:visible md:display shrink">
     </div>
+    <div className="grid grid-cols-2 max-w-3xl relative py-5 mx-auto justify-evenly gap-10 px-5">
+        {/* Map through the data */}
+        {events?.data.map(events => (
+                <button id={events?.attributes?.Title} key={events.id} className=" text-stone-800 border-2 rounded-xl bg-stone-100 p-10 border-black">
+                  <h2 >{cleantitle}</h2>
+                  <Link href={`/archive/${events?.attributes?.Title}`}><h3 className="text-xl hover:scale-[1.01] px-3 -mt-3">{events?.attributes?.Title}</h3></Link>
+                </button>
+              )
+            )}
+        </div>
+        </div>
+        </div></Suspense></div>
+    </>
   )
 }

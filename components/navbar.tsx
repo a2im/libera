@@ -147,7 +147,7 @@ export function NavbarAnnouncements(){
       Name: "Libera Awards",
     }});
     if (error) return <p>Error</p>
-    console.log(data)
+    if (!data) 
   return (
     <>
     <div className="w-full bg-a2imred">
