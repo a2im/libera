@@ -12,12 +12,12 @@ export const dynamic = 'force-dynamic',
   preferredRegion = 'auto'
 
 export default async function ArchivePage({params}: { params: { 
-  Name : String,
+  Name : string,
  }}) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/events?filters[Title][$contains]=Libera%20Awards&sort[Title]=desc&populate=*`, { next: { revalidate: 60 }});
   const events = await res.json();
-  const title = await JSON.stringify(events.attributes?.Title)
-  const cleantitle = await title?.replace("Libera Awards", " ")
+  const eventtitle = await JSON.stringify(events.attributes?.Title);
+  const cleantitle = await eventtitle?.replace("Libera Awards", " ");
   return (
     <>
     <div>
