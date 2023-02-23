@@ -34,7 +34,7 @@ export default async function ArchivePage({params}: { params: {
     <div className="grid grid-cols-2 max-w-3xl relative py-5 mx-auto justify-evenly gap-10 px-5">
         {/* Map through the data */}
         {events?.data.map(events => (
-                <button id={events?.attributes?.Title} key={events.id} className=" text-stone-800 border-2 rounded-xl bg-stone-100 p-10 border-black">
+                <button id={events?.attributes?.Title} key={events.id} className=" relative grow p-8 mx-auto bg-sky-50 shadow-2xl rounded-2xl">
                   <h2 >{cleantitle}</h2>
                   <Link href={`/archive/${events?.attributes?.Title}`}><h3 className="text-xl hover:scale-[1.01] px-3 -mt-3">{events?.attributes?.Title}</h3></Link>
                 </button>
@@ -42,7 +42,9 @@ export default async function ArchivePage({params}: { params: {
             )}
         </div>
         </div>
-        </div></Suspense></div>
+        </div>
+        </Suspense>
+        </div>
     </>
   )
 }
