@@ -106,7 +106,7 @@ export function SponsorTier3() {
 
 export default function SponsorFooter () {
   return (
-    <div className="relative ">
+    <div className="relative">
     <div className="relative z-99 flex flex-col mx-auto py-20">
       <div className="absolute h-[190px] w-[640px] bottom-0 right-10">
   <Image fill={true} sizes="(max-width: 768px) 100vw,

@@ -25,19 +25,20 @@ export default async function ArchiveSinglePage({params}: { params: {
   const res2 = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/events?filters[Title][$eq]=${params.Name}&populate=*`, { next: { revalidate: 60 }})
   const categories = await res.json()
   const events = await res2.json()
+
   return (
     <>
     <MyNavbar/>
     <title>Libera Awards - Archive</title>
           <Suspense fallback={<Loading start={0} end={10}/>}>
     <h2 className="mx-auto pt-20 pb-10 text-center drop-shadow-2xl">{cleantitle}</h2>
-    <div className="flex md:flex-row mx-auto max-w-6xl items-center stretch">
-      {/* Map through the data */}
-      {events?.data.map(events => (
-        <div key={events.id}>
+    {events?.data.map(events => (
+        <div key={events.id} className="Youtubebox max-w-5xl mx-auto pb-10">
       <ArchiveVideo VideoURL={events.attributes.VideoURL}/>
       </div>
       ))}
+    <div className="flex md:flex-row mx-auto max-w-6xl items-center stretch">
+      
         <div className="flex flex-row flex-wrap relative mx-auto gap-5 justify-center ">
         {/* Map through the data */}
         {categories?.data.map(categories => (
@@ -75,8 +76,9 @@ export async function Nominations({EName, CatName}){
                             ))}
                         </div>
                         <ImageWithFallback
+                        width={300}
+                        height={300}
                         key={nominations.id}
-                        layout="fill"
                         src={nominations.attributes.Artwork?.data?.attributes?.url}
                         fallbackSrc={'/images/final-main-poster-1080x1080.jpg'}
                         />

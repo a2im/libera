@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-const ImageWithFallback = (props) => {
+export default function ImageWithFallback(props){
     const { src, fallbackSrc, ...rest } = props;
     const [imgSrc, setImgSrc] = useState(src);
 
@@ -12,6 +12,9 @@ const ImageWithFallback = (props) => {
             {...rest}
             src={imgSrc}
             alt="Libera Awards Category Card image"
+            sizes="(max-width: 768px) 100vw,
+            (max-width: 1200px) 50vw,
+            33vw"
             onError={() => {
                 setImgSrc(fallbackSrc);
             }}
@@ -20,4 +23,3 @@ const ImageWithFallback = (props) => {
     );
 };
 
-export default ImageWithFallback;

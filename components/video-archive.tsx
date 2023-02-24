@@ -2,23 +2,23 @@
 import YouTube, { YouTubeProps } from 'react-youtube';
 
 export default function ArchiveVideo({VideoURL}:{VideoURL: string}){
-    const onPlayerReady: YouTubeProps['onReady'] = (event) => {
-        event.target.pauseVideo();
-        event.target.playVideo();
-      }
-      
-      const opts: YouTubeProps['opts'] = {
-        height: '390',
-        width: '640',
-        playerVars: {
-          autoplay: 1,
-          origin: 'http://localhost:3000'
-        },
-      };
+  const YouTubeURL = VideoURL.replace("https://www.youtube.com/watch?v=","");
+  const onPlayerReady: YouTubeProps['onReady'] = (event) => {
+    event.target.pauseVideo();
+    event.target.playVideo();
+  }
+  const opts: YouTubeProps['opts'] = {
+    height: '390',
+    width: '640',
+    playerVars: {
+      autoplay: 1,
+
+    },
+  };
     return(
-        <div className='Youtubebox'>
-        <YouTube videoId={VideoURL} className="video-responsive" opts={opts} onReady={onPlayerReady} />
-        </div>
+      <>
+        <YouTube videoId={YouTubeURL} className="video-responsive" opts={opts} onReady={onPlayerReady} />
+        </>
     )
 }
 
