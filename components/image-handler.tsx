@@ -7,7 +7,7 @@ export default function ImageWithFallback(props){
     const [imgSrc, setImgSrc] = useState(src);
 
     return (
-        <div className="relative w-64 h-64 overflow-hidden rounded-xl mx-auto">
+        <div className="relative overflow-hidden rounded-xl mx-auto">
         <Image
             {...rest}
             src={imgSrc}

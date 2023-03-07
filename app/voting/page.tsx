@@ -3,7 +3,6 @@ import LiberaButton from '../button'
 import Image from 'next/image'
 import { Suspense } from 'react'
 import Loading from '../loading'
-import MyNavbar from '../../components/navbar'
 import VoterGuidelines from './guidelines'
 
 
@@ -13,7 +12,6 @@ export default function Voting() {
     <div>
           <title>Libera Awards - Voting</title>
           <Suspense fallback={<Loading start={0} end={10}/>}>
-              <MyNavbar/>
           <div className="grow shrink content-center">
 <h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
  Voting

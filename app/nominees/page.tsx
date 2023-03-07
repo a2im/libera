@@ -1,9 +1,7 @@
 import { Suspense } from 'react'
 import Loading from '../loading'
-import Footer from '../footer'
 import ReactMarkdown from "react-markdown";
 import remarkGfm from 'remark-gfm'
-import MyNavbar from '../../components/navbar'
 import Link from 'next/link'
 import Image from 'next/image'
 import ArchiveVideo from '../../components/video-archive'
@@ -23,7 +21,6 @@ export default async function NomineesPage() {
   const events = await res2.json()
   return (
     <>
-    <MyNavbar/>
     <title>Libera Awards - Nominees</title>
           <Suspense fallback={<Loading start={0} end={10}/>}>
     <h2 className="mx-auto pt-20 pb-10 text-center drop-shadow-2xl ">2023 Libera Awards Nominees</h2>
@@ -48,7 +45,6 @@ export default async function NomineesPage() {
             )}
         </div>
         </div>
-    <Footer/>
     </Suspense>
     </>
   )

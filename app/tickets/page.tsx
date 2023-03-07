@@ -1,6 +1,5 @@
 import { Suspense } from 'react'
 import Loading from '../loading'
-import MyNavbar from '../../components/navbar'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -9,7 +8,6 @@ export default function Tickets() {
     <div>
           <title>Libera Awards - Tickets</title>
           <Suspense fallback={<Loading start={0} end={10}/>}>
-              <MyNavbar/>
           <div className="grow shrink content-center">
 <h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
 Tickets

@@ -4,7 +4,7 @@ import { PostRelationResponseCollection, PostEntityResponseCollection } from "..
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Suspense } from 'react'
 import Loading from '../../loading'
-import MyNavbar from '../../../components/navbar'
+
 
 
 export default async function MyPost({params,}: { params: { 
@@ -16,7 +16,6 @@ const posts: PostRelationResponseCollection = await res.json()
 
   return <>
   <Suspense fallback={<Loading start={0} end={10}/>}>
-  <MyNavbar/>
     <div className="max-w-5xl mx-auto text-4xl pt-20">
 <Link href="/news">
     <FontAwesomeIcon icon="arrow-left-long" className="ml-10 mb-2 hover:scale-105"/>
