@@ -48,18 +48,3 @@ const posts: PostRelationResponseCollection = await res.json()
     </>
 }
 
-export async function generateStaticParams() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/posts?populate=*`);
-  const data: PostEntityResponseCollection = await res.json();
-  return data?.data?.map((data) => ({
-    slug: data.attributes.slug,
-    id: data.id,
-    Title: data.attributes.Title,
-    url: data.attributes.coverImage.data.attributes.url,
-    height: data.attributes.coverImage.data.attributes.height,
-    width: data.attributes.coverImage.data.attributes.width,
-    alternativeText: data.attributes.coverImage.data.attributes.alternativeText,
-    Excerpt: data.attributes.Excerpt,
-    Body: data.attributes.Body,
-  }))
-}
