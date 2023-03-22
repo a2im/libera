@@ -15,7 +15,7 @@ export function SponsorTier1() {
       if (loading) return <div className="animate-pulse h-[300px] w-[300px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
       if (error) return <p>Error</p>
     return (
-        <div className="max-w-4xl relative py-5 flex flex-col md:flex-row mx-auto justify-evenly gap-10">
+        <div className="relative py-5 flex flex-col md:flex-row mx-auto justify-evenly gap-10">
         {/* Map through the data */}
         {data?.sponsors.data.map(sponsors => (
                 <div key={sponsors.id} className="relative hover:scale-105 justify-evenly">
@@ -48,7 +48,7 @@ export function SponsorTier2() {
       if (loading) return <div className="animate-pulse h-[300px] w-[300px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
       if (error) return <p>Error</p>
     return (
-        <div className="px-10 max-w-4xl relative flex flex-col md:flex-row mx-auto gap-5">
+        <div className="px-10 relative flex flex-col md:flex-row mx-auto gap-5">
         {/* Map through the data */}
         {data.sponsors.data.map(sponsors => (
                 <div key={sponsors.id} className="relative hover:scale-105 p-4 grow shrink mx-auto">
@@ -80,7 +80,7 @@ export function SponsorTier3() {
       if (loading) return <div className="animate-pulse h-[128px] w-[128px] bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
       if (error) return <p>Error</p>
     return (
-        <div className="max-w-4xl relative pb-20 py-5 flex flex-col md:flex-row gap-20 mx-auto">
+        <div className="relative pb-20 py-5 flex flex-col md:flex-row gap-20 mx-auto">
         {/* Map through the data */}
         {data?.sponsors?.data.map(sponsors => (
                 <div key={sponsors.id} className="mx-auto relative hover:scale-105 w-[128px] h-[128px]">
