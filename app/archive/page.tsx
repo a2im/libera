@@ -1,13 +1,12 @@
 
 import { Suspense } from 'react'
 import Loading from '../loading'
-import MyNavbar from '../../components/navbar'
 import Link from 'next/link'
 import { GetArchiveEvents } from '../../components/get-archives'
 
 export const dynamic = 'force-dynamic',
   dynamicParams = true,
-  revalidate = false,
+  revalidate = true,
   fetchCache = 'auto',
   runtime = 'nodejs',
   preferredRegion = 'auto'
@@ -23,7 +22,6 @@ export default async function ArchivePage({params}: { params: {
     <div>
           <title>Libera Awards - Archive</title>
           <Suspense fallback={<Loading start={0} end={10}/>}>
-      <MyNavbar/>
           <div className="grow shrink content-center">
 <h1 className="py-20 grow font-bold align-middle text-center leading-tight">
   Archive
