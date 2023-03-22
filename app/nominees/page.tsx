@@ -49,8 +49,10 @@ export const dynamic = 'force-dynamic',
         <div className="flex flex-col w-full gap-8 max-w-5xl mx-auto">
         {categories.data.map(categories => (
           <div id={categories.attributes.Name} key={categories.id} className="flex flex-col justify-between bg-sky-50 rounded-2xl shadow-2xl LiberaBorder my-5 relative whitespace-normal p-3">
+            <div className="px-3 pt-3">
             <h3>{categories.attributes.Name}</h3>
             <hr className="mb-3 mt-3 Hrswap"></hr>
+            </div>
               <NomineeCards cleantitle={cleantitle} catname={categories.attributes.Name}/>
           </div>
                         ))}
@@ -63,9 +65,9 @@ export const dynamic = 'force-dynamic',
     const nominations = await getNominees({cleantitle, catname})
     return(
         <>
-              <div className="flex flex-row flex-wrap justify-center mx-auto gap-8 max-w-6xl p-3">
+              <div className="flex flex-row flex-wrap justify-evenly mx-auto gap-8 max-w-6xl p-3 pb-10 pt-5">
               {nominations.data.map(nominations => (
-                <div id={nominations.attributes.Name} key={nominations.id} className="flex w-64 justify-between">
+                <div id={nominations.attributes.Name} key={nominations.id} className="flex w-64 justify-between hover:scale-105 drop-shadow-lg">
                   <div className="flex flex-col relative">
                       <ImageWithFallback
                         width={300}
@@ -99,13 +101,12 @@ export default async function NomineesPage() {
     <>
     <title>Libera Awards - Nominees</title>
           <Suspense fallback={<Loading start={0} end={10}/>}>
-    <h2 className="mx-auto pt-20 pb-10 text-center drop-shadow-2xl">{cleantitle}</h2>
+    <h2 className="mx-auto pt-20 pb-10 text-center drop-shadow-2xl">{cleantitle} Nominees</h2>
     {events?.data.map(events => (
         <div key={events.id} className="Youtubebox max-w-5xl mx-auto pb-10">
       <ArchiveVideo VideoURL={events.attributes.VideoURL}/>
       </div>
       ))}
-      <h2 className="mx-auto pt-20 pb-10 text-center drop-shadow-2xl">{cleantitle} Nominees</h2>
       <CategoryCards cleantitle={cleantitle} />
     </Suspense>
     </>
