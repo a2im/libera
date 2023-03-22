@@ -1,4 +1,13 @@
 module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/nominees',
+        destination: '/news/libera-award-nominees-2023',
+        permanent: false,
+      },
+    ]
+  },
   output: 'standalone',
   env: {
     NEXT_PUBLIC_GOOGLE_ANALYTICS: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
