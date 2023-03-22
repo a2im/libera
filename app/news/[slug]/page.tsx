@@ -15,6 +15,14 @@ export const dynamic = 'force-dynamic',
   runtime = 'nodejs',
   preferredRegion = 'auto'
 
+
+export const dynamic = 'force-dynamic',
+  dynamicParams = true,
+  revalidate = false,
+  fetchCache = 'auto',
+  runtime = 'nodejs',
+  preferredRegion = 'auto'
+
 export default async function MyPost({params,}: { params: { 
   slug : String,
  }}) {
@@ -24,7 +32,6 @@ const posts: PostRelationResponseCollection = await res.json()
 
   return <>
   <Suspense fallback={<Loading start={0} end={10}/>}>
-  <MyNavbar/>
     <div className="max-w-5xl mx-auto text-4xl pt-20">
 <Link href="/news">
     <FontAwesomeIcon icon="arrow-left-long" className="ml-10 mb-2 hover:scale-105"/>

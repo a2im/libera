@@ -73,6 +73,12 @@ export default function MyNavbar() {
               }`}
             >
               <ul ref={ref} className="items-center justify-center space-x-4 space-y-0 md:flex">
+              <li 
+                  className="text-center text-xl text-white Borderswap2nav uppercase font-bold tracking-tighter">
+                  <Link href="/nominees" onClick={() => setNavbar(false)} >
+                    2023 Nominees
+                  </Link>
+                </li>
                 <li 
                   className="text-center text-xl text-white Borderswap2nav uppercase font-bold tracking-tighter">
                   <Link href="/about" onClick={() => setNavbar(false)} >
@@ -147,7 +153,7 @@ export function NavbarAnnouncements(){
       Name: "Libera Awards",
     }});
     if (error) return <p>Error</p>
-    console.log(data)
+    if (!data) 
   return (
     <>
     <div className="w-full bg-a2imred">

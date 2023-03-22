@@ -1,13 +1,8 @@
-import MyNavbar from "../components/navbar";
-import MyModal from "./archive/modal";
-
-
 export default function Loading(start, end) {
     const data = [1,2,3,4,5,6,7,8,9,10]
     const loadingdata = data.slice(start,end)
     return (
         <div className="mx-auto">
-         <MyNavbar />
          <div className="grow shrink content-center">
 <h1 className="animate-pulse pt-20 grow font-bold align-middle text-center leading-tight text-neutral-200">
   Loading
@@ -20,7 +15,6 @@ export default function Loading(start, end) {
               )
             )}
             </div>
-            <MyModal />
             </div>
     );
 }

@@ -234,3 +234,134 @@ query getAnnouncements($PublicationState: PublicationState, $Name: String!) {
     }
   }
   `; 
+
+export const GET_ARCHIVES = gql`
+query getArchives($PublicationState: PublicationState, $Name: String!) {
+    nominations(filters: { event: { Title: { eq: $Name }}}, publicationState: $PublicationState, pagination: {pageSize: 100}) {
+      data {
+        id
+        attributes {
+          Name
+          Description
+          Artwork {
+            data {
+              id
+              attributes {
+                alternativeText
+                width
+                height
+                url
+              }
+            }
+          }
+          event {
+            data {
+              id
+              attributes {
+                Title
+              }
+            }
+          }
+          record_labels {
+            data {
+              id 
+              attributes {
+                  Name
+                  Website
+                  Logo {
+                    data {
+                      id 
+                      attributes {
+                        alternativeText 
+                        width
+                        height
+                        url
+                        }
+                      }
+                    }
+                  }
+                }
+          }
+          libera_categories {
+            data {
+              id
+              attributes {
+                Name
+              }
+            }
+          }
+        }}}
+      }
+  `; 
+
+export const GET_ALL_ARCHIVES = gql`
+query getAllArchives($PublicationState: PublicationState) {
+    nominations(filters: { event: { Title: { contains: "Libera Awards"}}}, publicationState: $PublicationState, pagination: {pageSize: 100}) {
+      data {
+        id
+        attributes {
+          Name
+          Description
+          Artwork {
+            data {
+              id
+              attributes {
+                alternativeText
+                width
+                height
+                url
+              }
+            }
+          }
+          event {
+            data {
+              id
+              attributes {
+                Title
+              }
+            }
+          }
+          record_labels {
+            data {
+              id 
+              attributes {
+                  Name
+                  Website
+                  Logo {
+                    data {
+                      id 
+                      attributes {
+                        alternativeText 
+                        width
+                        height
+                        url
+                        }
+                      }
+                    }
+                  }
+                }
+          }
+          libera_categories {
+            data {
+              id
+              attributes {
+                Name
+              }
+            }
+          }
+        }}}
+      }
+  `; 
+
+export const GET_ARCHIVE_EVENTS = gql`
+query getArchiveEvents($PublicationState: PublicationState ) {
+    events(filters: { Title: { contains: "Libera Awards" }}, publicationState: $PublicationState, pagination: { page: 1, pageSize: 50 }, sort: "Title:asc") {
+      data {
+        id
+        attributes {
+          Title
+        }
+      }
+    }
+  }
+  `; 
