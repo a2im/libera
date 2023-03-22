@@ -4,7 +4,9 @@ import { PostRelationResponseCollection, PostEntityResponseCollection } from "..
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Suspense } from 'react'
 import Loading from '../../loading'
-
+import MyNavbar from '../../../components/navbar'
+import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
 
 
 export default async function MyPost({params,}: { params: { 
@@ -38,8 +40,7 @@ const posts: PostRelationResponseCollection = await res.json()
                 
                 </div>
                 <hr className="mt-3 mb-8 Hrswap"></hr>
-                <div dangerouslySetInnerHTML={{__html: `${posts?.attributes?.Body}`}}>
-                </div>
+                <ReactMarkdown className="line-break" remarkPlugins={[remarkGfm]}>{posts?.attributes?.Body}</ReactMarkdown>
             </div>
   )
   )}
