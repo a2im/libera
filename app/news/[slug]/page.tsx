@@ -8,6 +8,12 @@ import MyNavbar from '../../../components/navbar'
 import ReactMarkdown from "react-markdown";
 import remarkGfm from 'remark-gfm'
 
+export const dynamic = 'force-dynamic',
+  dynamicParams = true,
+  revalidate = false,
+  fetchCache = 'auto',
+  runtime = 'nodejs',
+  preferredRegion = 'auto'
 
 export default async function MyPost({params,}: { params: { 
   slug : String,
@@ -35,6 +41,9 @@ const posts: PostRelationResponseCollection = await res.json()
                 layout="fill"
                 objectFit="contain"
                 alt={posts.attributes?.coverImage?.data?.attributes?.alternativeText}
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                 className="mx-auto hover:scale-105"
                 /> 
                 </div>
@@ -50,18 +59,3 @@ const posts: PostRelationResponseCollection = await res.json()
     </>
 }
 
-export async function generateStaticParams() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/posts?populate=*`);
-  const data: PostEntityResponseCollection = await res.json();
-  return data?.data?.map((data) => ({
-    slug: data.attributes.slug,
-    id: data.id,
-    Title: data.attributes.Title,
-    url: data.attributes.coverImage.data.attributes.url,
-    height: data.attributes.coverImage.data.attributes.height,
-    width: data.attributes.coverImage.data.attributes.width,
-    alternativeText: data.attributes.coverImage.data.attributes.alternativeText,
-    Excerpt: data.attributes.Excerpt,
-    Body: data.attributes.Body,
-  }))
-}
