@@ -25,7 +25,7 @@ export function SponsorTier1() {
                     src={sponsors.attributes.Logo.data.attributes.url}
                     fill={true}
                     alt={sponsors.attributes.Logo.data.attributes.alternativeText} 
-                    style={{ objectFit: 'contain', position: 'absolute'}}
+                    style={{ objectFit: 'contain'}}
                     sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw"
@@ -58,7 +58,7 @@ export function SponsorTier2() {
                     src={sponsors.attributes.Logo.data.attributes.url}
                     alt={sponsors.attributes.Logo.data.attributes.alternativeText}
                     fill={true}
-                    style={{ objectFit: 'contain', position: 'absolute'}}
+                    style={{ objectFit: 'contain'}}
                     sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"/>

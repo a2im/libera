@@ -44,12 +44,11 @@ export const dynamic = 'force-dynamic',
   
   export async function CategoryCards({cleantitle}){
     const categories = await getCategories({cleantitle})
-    const cleanertitle = categories?.attributes?.Name.replace('"',"__")
     return(
         <>
         <div className="flex flex-col w-full gap-8 max-w-5xl mx-auto">
         {categories.data.map(categories => (
-          <div id={cleanertitle} key={categories.id} className="flex flex-col justify-between bg-sky-50 rounded-2xl shadow-2xl LiberaBorder my-5 relative whitespace-normal p-3">
+          <div id={categories.attributes.Name} key={categories.id} className="flex flex-col justify-between bg-sky-50 rounded-2xl shadow-2xl LiberaBorder my-5 relative whitespace-normal p-3">
             <div className="px-3 pt-3">
             <h3>{categories.attributes.Name}</h3>
             <hr className="mb-3 mt-3 Hrswap"></hr>
@@ -67,17 +66,27 @@ export const dynamic = 'force-dynamic',
     return(
         <>
               <div className="flex flex-row flex-wrap justify-evenly mx-auto gap-8 max-w-6xl p-3 pb-10 pt-5">
-              {nominations.data.map(nominations => (
-                <div id={nominations.attributes.Name} key={nominations.id} className="flex w-64 justify-between hover:scale-105 drop-shadow-lg">
+              {
+              nominations.data.map(nominations => (
+                <div id={decodeURI(nominations?.attributes?.Name.replace(/"/g,"__"))} key={nominations.id} className="flex w-64 justify-between hover:scale-105 drop-shadow-lg">
                   <div className="flex flex-col  relative ">
                     <div className="w-[300px] h-[300px] overflow-hidden rounded-xl ">
-                      <ImageWithFallback
+                      {!nominations?.attributes?.Artwork?.data?.attributes?.url ? <Image
+                        src={'/images/final-main-poster-1080x1080.jpg'}
+                        alt="Libera Awards Category Card image"
                         width={300}
                         height={300}
-                        key={nominations.id}
-                        src={nominations.attributes.Artwork?.data?.attributes?.url}
-                        fallbackSrc={'/images/final-main-poster-1080x1080.jpg'}
-                        />
+                        sizes="(max-width: 768px) 100vw,
+                        (max-width: 1200px) 50vw,
+                        33vw"
+                        className="object-center"
+                        /> : <ImageWithFallback
+                              width={nominations.attributes.Artwork?.data?.attributes?.width}
+                              height={nominations.attributes.Artwork?.data?.attributes?.height}
+                              key={nominations.id}
+                              src={nominations.attributes.Artwork?.data?.attributes?.url}
+                              fallbackSrc={'/images/final-main-poster-1080x1080.jpg'}
+                              />}
                         </div>
                         <div className="flex stretch grow flex-col justify-between">
                       <p className="font-bold">{nominations.attributes.Name}</p>
