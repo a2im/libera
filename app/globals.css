@@ -376,6 +376,16 @@ font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
   animation: gradient 7s ease infinite;
 }
 
+.labelbutton {
+  background: linear-gradient(-45deg, #F669A6, #7D45BC);
+  border-radius: 50px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-size: 300% 300%;
+  animation: gradient 7s ease infinite;
+}
+
 .Borderswap1 {
   background: linear-gradient(-45deg, #F669A6, #7D45BC);
   border-radius: 50px;

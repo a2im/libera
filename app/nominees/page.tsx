@@ -68,9 +68,9 @@ export const dynamic = 'force-dynamic',
               <div className="flex flex-row flex-wrap justify-evenly mx-auto gap-8 max-w-6xl p-3 pb-10 pt-5">
               {
               nominations.data.map(nominations => (
-                <div id={decodeURI(nominations?.attributes?.Name.replace(/"/g,"__"))} key={nominations.id} className="flex w-64 justify-between hover:scale-105 drop-shadow-lg">
+                <div id={decodeURI(nominations?.attributes?.Name.replace(/"/g,"__"))} key={nominations.id} className="flex w-64 justify-between drop-shadow-lg">
                   <div className="flex flex-col  relative ">
-                    <div className="w-[300px] h-[300px] overflow-hidden rounded-xl ">
+                    <div className="w-[300px] h-[300px] overflow-hidden rounded-xl hover:scale-105">
                       {!nominations?.attributes?.Artwork?.data?.attributes?.url ? <Image
                         src={'/images/final-main-poster-1080x1080.jpg'}
                         alt="Libera Awards Category Card image"
@@ -89,9 +89,9 @@ export const dynamic = 'force-dynamic',
                               />}
                         </div>
                         <div className="flex stretch grow flex-col justify-between">
-                      <p className="font-bold">{nominations.attributes.Name}</p>
+                      <p className="font-bold pb-5 pt-2">{nominations.attributes.Name}</p>
                         {nominations.attributes.record_labels.data.map(record_labels => (
-                          <div id={record_labels.attributes.Name} key={record_labels.id} className="archivecard bottom-0">
+                          <div id={record_labels.attributes.Name} key={record_labels.id} className="archivecard bottom-0 labelbutton mr-auto px-2 rounded-full text-white hover:scale-105">
                             <Link href={record_labels.attributes.Website} className="hover:scale-[1.01] text-center mx-auto"><span className="text-center mx-auto">{record_labels.attributes.Name}</span></Link>
                           </div>
                         ))}
