@@ -9,7 +9,7 @@ import ImageWithFallback from '../../../components/image-handler'
 
 export const dynamic = 'force-dynamic',
   dynamicParams = true,
-  revalidate = false,
+  revalidate = true,
   fetchCache = 'auto',
   runtime = 'nodejs',
   preferredRegion = 'auto'
