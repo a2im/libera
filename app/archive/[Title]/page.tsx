@@ -41,24 +41,7 @@ export async function WinnerCards({cleantitle}){
         {nominations.data.map(nominations => (
               <div id={nominations.attributes.Name} key={nominations.id} className=" flex w-64 justify-between bg-sky-50 rounded-2xl shadow-2xl mx-auto LiberaBorder my-5 relative whitespace-normal">
                 <div className="flex flex-col relative">
-                <div className=" overflow-hidden rounded-xl hover:scale-[1.01]">
-                {!nominations?.attributes?.Artwork?.data?.attributes?.url ? <Image
-                        src={'/images/final-main-poster-1080x1080.jpg'}
-                        alt="Libera Awards Category Card image"
-                        width={300}
-                        height={300}
-                        sizes="(max-width: 768px) 100vw,
-                        (max-width: 1200px) 50vw,
-                        33vw"
-                        className="object-center"
-                        /> : <ImageWithFallback
-                              width={nominations.attributes.Artwork?.data?.attributes?.width}
-                              height={nominations.attributes.Artwork?.data?.attributes?.height}
-                              key={nominations.id}
-                              src={nominations.attributes.Artwork?.data?.attributes?.url}
-                              fallbackSrc={'/images/final-main-poster-1080x1080.jpg'}
-                              />}
-                              </div>
+                
                       {nominations.attributes.libera_categories.data.map(libera_categories => (
                           <div id={libera_categories.attributes.Name} key={libera_categories.id} className="flex-shrink">
                               <h4 className="font-bold py-2">{libera_categories.attributes.Name}</h4>
