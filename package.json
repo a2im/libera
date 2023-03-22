@@ -36,7 +36,8 @@
     "react-multi-carousel": "^2.8.2",
     "react-youtube": "^10.1.0",
     "remark-gfm": "^3.0.1",
-    "sharp": "^0.31.3"
+    "sharp": "^0.31.3",
+    "turndown": "^7.1.2"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "2.16.1",

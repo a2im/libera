@@ -8,6 +8,8 @@ import MyNavbar from '../../../components/navbar'
 import ReactMarkdown from "react-markdown";
 import remarkGfm from 'remark-gfm'
 
+
+
 export const dynamic = 'force-dynamic',
   dynamicParams = true,
   revalidate = false,
