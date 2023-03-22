@@ -33,7 +33,8 @@ export const dynamic = 'force-dynamic',
   }
 
   export async function getNominees({cleantitle, catname}){
-    const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/nominations?filters[events][Title][$eq]=${cleantitle}&filters[libera_categories][Name][$eq]=${catname}&filters[isWinner][$ne]=true&sort[0]=[Name]%3Aasc&populate=*`, { next: { revalidate: 60 }});
+    const cleancatname = decodeURI(catname.replace("&","%26"));
+    const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/nominations?filters[events][Title][$eq]=${cleantitle}&filters[libera_categories][Name][$eq]=${cleancatname}&filters[isWinner][$ne]=true&sort[0]=[Name]%3Aasc&populate=*`, { next: { revalidate: 60 }});
     if (!res.ok) {
       // This will activate the closest `error.js` Error Boundary
       throw new Error('Failed to fetch Nominees');
@@ -41,7 +42,7 @@ export const dynamic = 'force-dynamic',
     return res.json();
   }
   
-  export async function CategoryCards({cleantitle, catname}){
+  export async function CategoryCards({cleantitle}){
     const categories = await getCategories({cleantitle})
     return(
         <>

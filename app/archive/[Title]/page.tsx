@@ -75,7 +75,7 @@ export default async function ArchiveSinglePage({params}: { params: {
   Title : string,
  }}) {
   const title = params.Title
-  const cleantitle = decodeURI(title)
+  const cleantitle = decodeURI(title.replace("&", "+"))
   const events = await getEvent(params.Title)
 
   return (
