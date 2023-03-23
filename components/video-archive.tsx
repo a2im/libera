@@ -4,7 +4,6 @@ import YouTube, { YouTubeProps } from 'react-youtube';
 export default function ArchiveVideo({VideoURL}:{VideoURL: string}){
   const YouTubeURL = VideoURL.replace("https://www.youtube.com/watch?v=","");
   const onPlayerReady: YouTubeProps['onReady'] = (event) => {
-    event.target.pauseVideo();
     event.target.playVideo();
   }
   const opts: YouTubeProps['opts'] = {
@@ -12,8 +11,12 @@ export default function ArchiveVideo({VideoURL}:{VideoURL: string}){
     width: '640',
     playerVars: {
       autoplay: 1,
-
+      enablejsapi: 1,
+      fs: 0,
+      modestbranding: 1,
     },
+    origin:
+      'https://www.youtube.com',
   };
     return(
       <>
