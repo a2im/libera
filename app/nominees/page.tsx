@@ -12,11 +12,6 @@ export const dynamic = 'force-dynamic',
   runtime = 'nodejs',
   preferredRegion = 'auto'
 
-
-
-
-
-
 export default async function NomineesPage() {
   const cleantitle = "2023 Libera Awards"
   const events = await getEvent({cleantitle})
