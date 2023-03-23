@@ -1,37 +1,15 @@
 import { Suspense } from 'react'
 import Loading from '../../loading'
-import ReactMarkdown from "react-markdown";
-import remarkGfm from 'remark-gfm'
 import Link from 'next/link'
-import Image from 'next/image'
 import ArchiveVideo from '../../../components/video-archive'
-import ImageWithFallback from '../../../components/image-handler'
+import { getEvent, getWinners } from '../../nominees/rest-archives'
 
 export const dynamic = 'force-dynamic',
   dynamicParams = true,
-  revalidate = true,
+  revalidate = 0,
   fetchCache = 'auto',
   runtime = 'nodejs',
   preferredRegion = 'auto'
-
-  export async function getEvent(cleantitle){
-    const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/events?filters[Title][$eq]=${cleantitle}&populate=*`, { next: { revalidate: 60 }})
-    if (!res.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      throw new Error('Failed to fetch Events');
-    }
-    return res.json()
-  }
-
-  export async function getWinners({cleantitle}){
-    const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/nominations?filters[events][Title][$eq]=${cleantitle}&filters[isWinner][$eq]=true&sort[0]=[libera_categories][Name]%3Aasc&populate=*`, { next: { revalidate: 60 }});
-    if (!res.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      throw new Error('Failed to fetch Winners');
-    }
-    return res.json();
-  }
-
 
 export async function WinnerCards({cleantitle}){
   const nominations = await getWinners({cleantitle})
@@ -70,7 +48,7 @@ export default async function ArchiveSinglePage({params}: { params: {
  }}) {
   const title = params.Title
   const cleantitle = decodeURI(title.replace("&", "+"))
-  const events = await getEvent(params.Title)
+  const events = await getEvent({cleantitle})
 
   return (
     <>
@@ -82,6 +60,7 @@ export default async function ArchiveSinglePage({params}: { params: {
       <ArchiveVideo VideoURL={events.attributes.VideoURL}/>
       </div>
       ))}
+      {/* @ts-expect-error Async Server Component */}
       <WinnerCards cleantitle={cleantitle} />
     </Suspense>
     </>

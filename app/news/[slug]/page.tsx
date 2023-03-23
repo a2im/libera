@@ -1,14 +1,11 @@
 import Link from "next/link";
 import Image from "next/legacy/image";
-import { PostRelationResponseCollection, PostEntityResponseCollection } from "../../../lib/gql/types";
+import { PostRelationResponseCollection} from "../../../lib/gql/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Suspense } from 'react'
 import Loading from '../../loading'
-import MyNavbar from '../../../components/navbar'
 import ReactMarkdown from "react-markdown";
 import remarkGfm from 'remark-gfm'
-
-
 
 export const dynamic = 'force-dynamic',
   dynamicParams = true,
