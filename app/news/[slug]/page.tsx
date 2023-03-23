@@ -23,40 +23,43 @@ export default async function MyPost({params,}: { params: {
 
 const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/posts?populate[0]=coverImage&filters[slug][$eq]=${params.slug}`);
 const posts: PostRelationResponseCollection = await res.json()
-
-  return <>
+  return (
+  <>
   <Suspense fallback={<Loading start={0} end={10}/>}>
     <div className="max-w-5xl mx-auto text-4xl pt-20">
 <Link href="/news">
-    <FontAwesomeIcon icon="arrow-left-long" className="ml-10 mb-2 hover:scale-105"/>
+    <FontAwesomeIcon icon="arrow-left-long" className="ml-10 mb-4 hover:scale-105"/>
 </Link>
 </div>
-  <div className=" max-w-5xl p-8 mx-auto bg-sky-50 shadow-2xl rounded-2xl">
+  <div className=" max-w-5xl px-8 pb-8 mx-auto bg-sky-50 shadow-2xl rounded-2xl">
   {posts?.data.map(posts => (
             <div key={posts.id} className="mx-auto text-black">
-             <div className="flex flex-row justify-content-evenly">
+             <div className="flex flex-row justify-between px-10 pt-10">
               <Link href={`/news/${posts?.attributes?.slug}`}><h3 className="max-w-xl hover:scale-105">{posts.attributes?.Title}</h3></Link>
-              <div className="relative w-1/2">
+              <div className="w-[220px] h-[150px] overflow-hidden rounded-2xl">
               <Image 
                 src={posts.attributes?.coverImage?.data?.attributes?.url}
-                layout="fill"
-                objectFit="contain"
+                width={posts.attributes?.coverImage?.data?.attributes?.width}
+                height={posts.attributes?.coverImage?.data?.attributes?.height}
                 alt={posts.attributes?.coverImage?.data?.attributes?.alternativeText}
                 sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
-                className="mx-auto hover:scale-105"
+                className="hover:scale-105"
                 /> 
                 </div>
                 
                 </div>
-                <hr className="mt-3 mb-8 Hrswap"></hr>
-                <ReactMarkdown className="line-break" remarkPlugins={[remarkGfm]}>{posts?.attributes?.Body}</ReactMarkdown>
-            </div>
+                <hr className="mt-3 mb-8 Hrswap mx-8"></hr>
+                <div>
+              {posts.attributes.Date >= '2023-03-22T15:00:00.000Z' ? <ReactMarkdown className="line-break max-w-4xl mx-auto" remarkPlugins={[remarkGfm]}>{posts?.attributes?.Body}</ReactMarkdown> : <div className="max-w-4xl mx-auto"> <div dangerouslySetInnerHTML={{ __html: posts?.attributes?.Body }}/></div> }
+                </div></div>
   )
   )}
         </div>
+        
 </Suspense>
     </>
+  )
 }
 
