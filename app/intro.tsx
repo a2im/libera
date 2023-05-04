@@ -1,18 +1,13 @@
 import Image from "next/image";
 import LiberaButton from "./button"
-import LiberaAwardsLady from '../public/images/dancing-lady.png'
-import LiberaAwardsLogo from '../public/logos/black-logos/libera-title-logo.png'
+import LiberaAwardsLogo from '../public/logos/libera-dancinglady-left-black-logo.png'
 import LiberaHand from '../public/images/hand.png'
 
 export function Intro() {
   return (
     <>
       <div className="max-w-2xl flex flex-col justify-center gap-0 md:mx-auto relative mb-20">
-        <div className="mx-auto relative w-[300px]">
-          <Image priority={true} 
-            src={LiberaAwardsLady} alt="Libera Awards Dancing Lady" className="hover:animate-pulse"/>
-        </div>
-        <div className="mx-auto relative w-[300px]">
+        <div className="mx-auto relative">
           <Image priority={true} 
             src={LiberaAwardsLogo} alt="Libera Awards Logo"/>
         </div>
@@ -58,12 +53,12 @@ export function Intro3() {
       <div className="grid grid-cols-0 md:grid-cols-2 items-center md:justify-around mx-auto gap-10 p-5">
       <div className="relative order-last md:order-first">
   <h4>Historically held in New York City, the Libera Awards went virtual in 2020 in response to the pandemic. Moving forward with a hybrid format, we return to our in-person ceremony in NYC, and virtual ceremony
-exclusively on YouTube.</h4><LiberaButton href="/tickets">GET TICKETS</LiberaButton>
+exclusively on YouTube.</h4><LiberaButton href="/tickets" type="internal">GET TICKETS</LiberaButton>
 </div>
 <div className="image-cropper">
               <Image className="roundedimage" 
               src="/images/liberaonline.jpg" 
-              alt='libera awards on YouTube'
+              alt="libera awards on YouTube"
               width={500}
               height={500}
               sizes="(max-width: 768px) 100vw,

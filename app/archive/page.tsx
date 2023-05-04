@@ -2,21 +2,17 @@
 import { Suspense } from 'react'
 import Loading from '../loading'
 import Link from 'next/link'
-import { GetArchiveEvents } from '../../components/get-archives'
 
 export const dynamic = 'force-dynamic',
   dynamicParams = true,
-  revalidate = true,
+  revalidate = 0,
   fetchCache = 'auto',
   runtime = 'nodejs',
   preferredRegion = 'auto'
 
-export default async function ArchivePage({params}: { params: { 
-  Name : string,
- }}) {
+export default async function ArchivePage() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/events?filters[Title][$contains]=Libera%20Awards&sort[Title]=asc&populate=*`, { next: { revalidate: 60 }});
   const events = await res.json();
-  const cleantitle = await events?.attributes?.Title.replace("Libera Awards", " ");
   return (
     <>
     <div>
