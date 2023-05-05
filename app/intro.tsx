@@ -12,9 +12,7 @@ export function Intro() {
             src={LiberaAwardsLogo} alt="Libera Awards Logo"/>
         </div>
       </div>
-      <div className="animate-bounce">
       <LiberaButton href='/tickets' type="internal">Get Tickets</LiberaButton>
-    </div>
     </>
   )
 }
