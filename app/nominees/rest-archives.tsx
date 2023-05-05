@@ -28,7 +28,7 @@ export async function getNominees({cleantitle, catname}){
 }
 
 export async function getWinners({cleantitle}){
-  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/nominations?filters[events][Title][$eq]=${cleantitle}&filters[isWinner][$eq]=true&sort[0]=[libera_categories][Name]%3Aasc&populate=*`, { next: { revalidate: 60 }});
+  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/nominations?filters[event][Title][$eq]=${cleantitle}&filters[isWinner][$eq]=true&sort[0]=[libera_categories][Name]%3Aasc&populate=*`, { next: { revalidate: 60 }});
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch Winners');

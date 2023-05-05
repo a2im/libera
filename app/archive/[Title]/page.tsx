@@ -4,12 +4,12 @@ import Link from 'next/link'
 import ArchiveVideo from '../../../components/video-archive'
 import { getEvent, getWinners } from '../../nominees/rest-archives'
 
-export const dynamic = 'force-dynamic',
-  dynamicParams = true,
-  revalidate = 0,
-  fetchCache = 'auto',
-  runtime = 'nodejs',
-  preferredRegion = 'auto'
+export const dynamic = 'force-dynamic'
+export const dynamicParams = true
+export const revalidate = 0
+export const fetchCache = 'auto'
+export const runtime = 'nodejs'
+export const preferredRegion = 'auto'
 
 export async function WinnerCards({cleantitle}){
   const nominations = await getWinners({cleantitle})
@@ -44,10 +44,9 @@ export async function WinnerCards({cleantitle}){
 }
 
 export default async function ArchiveSinglePage({params}: { params: { 
-  Title : string,
+  Title : String,
  }}) {
-  const title = params.Title
-  const cleantitle = decodeURI(title.replace("&", "+"))
+  const cleantitle = await decodeURI(params.Title.replace("&", "+"))
   const events = await getEvent({cleantitle})
 
   return (

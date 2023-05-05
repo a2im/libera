@@ -10,7 +10,6 @@ export default function ArchiveVideo({VideoURL}:{VideoURL: string}){
     height: '390',
     width: '640',
     playerVars: {
-      autoplay: 1,
       enablejsapi: 1,
       fs: 0,
       modestbranding: 1,
