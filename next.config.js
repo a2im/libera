@@ -1,14 +1,6 @@
 module.exports = {
   output: 'standalone',
-  async redirects() {
-    return [
-      {
-        source: '/nominees',
-        destination: '/news/libera-award-nominees-2023',
-        permanent: false,
-      },
-    ]
-  },
+
   env: {
     NEXT_PUBLIC_GOOGLE_ANALYTICS: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
     SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
