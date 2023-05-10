@@ -1,8 +1,14 @@
+import 'server-only'
 import { Suspense } from 'react'
 import Loading from '../loading'
 import { getAbout } from '../get-data'
 import InfoCard from '../info-card'
 import { ImageGallery } from '../../components/gallery'
+export const dynamic = 'force-dynamic'
+export const dynamicParams = true
+export const revalidate = 0
+export const fetchCache = 'auto'
+export const runtime = 'nodejs'
 export const metadata = { 
   title: 'Libera Awards - About Us',
   description: 'The Libera Awards is the Largest Independent Music Awards show in the World.'}

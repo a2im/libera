@@ -1,3 +1,4 @@
+import 'server-only'
 import React from 'react'
 import LiberaButton from '../button'
 import AdBanner from '../../components/ad-banner'
@@ -6,6 +7,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Suspense } from 'react'
 import Loading from '../loading'
+export const dynamic = 'force-dynamic'
+export const dynamicParams = true
+export const revalidate = 0
+export const fetchCache = 'auto'
+export const runtime = 'nodejs'
 
 
 export default function Submissions() {

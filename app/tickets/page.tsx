@@ -1,7 +1,13 @@
+import 'server-only'
 import { Suspense } from 'react'
 import Loading from '../loading'
 import Image from 'next/image'
 import Link from 'next/link'
+export const dynamic = 'force-dynamic'
+export const dynamicParams = true
+export const revalidate = 0
+export const fetchCache = 'auto'
+export const runtime = 'nodejs'
 
 export default function Tickets() {
   return (
