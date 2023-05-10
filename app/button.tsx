@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 export default function LiberaButton ({ children, href, type}) {
-  if (type === "internal")
+  if (type === "Internal")
   return (
   <div className="text-center p-8">
         <Link href={href}>
@@ -17,7 +17,7 @@ export default function LiberaButton ({ children, href, type}) {
         </Link>
     </div>
   )
-  else if (type === "external")
+  else if (type === "External")
   return (
   <div className="text-center p-8">
         <Link

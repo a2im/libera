@@ -1,4 +1,5 @@
 import MyHead from './head';
+import Intro from '../components/intro';
 import './globals.css'
 import Footer from './footer';
 import MyModal from "../components/modal"
@@ -26,10 +27,12 @@ export default function RootLayout({
         </head>
       <body className="min-h-screen z-0">
       <Providers>
+        
       <MyNavbar/>
       {children}
       <Footer/>
       <MyModal />
+      <Intro/>
       </Providers>
       </body>
     </html>
