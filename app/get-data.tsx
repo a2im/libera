@@ -71,3 +71,12 @@ export async function getAbout (){
   }
   return res.json();
 } 
+
+export async function getTickets (){
+  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/libera-ticket?populate[0]=Info.Image&populate[1]=Info.Button`, { next: { revalidate: 60 } })
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+  return res.json();
+} 
