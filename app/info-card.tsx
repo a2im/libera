@@ -1,5 +1,8 @@
 import Image from "next/image";
 import LiberaButton from "./button"
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
 
 export default function InfoCard({Info}) {
 
@@ -14,20 +17,15 @@ export default function InfoCard({Info}) {
             width={Info.Image.data.attributes.width}
             height={Info.Image.data.attributes.height}
             />
-            <LiberaButton 
-            href={Info.Button.URL} 
-            type={Info.Button.NavType}
-            >
-              {Info.Button.Text}
-              </LiberaButton>
+                  <div className="p-8">
+          <InfoButton Button={Info.Button}/>
+          </div>
         </div>
         <div className="px-8 md:px-20 mx-auto">
             <h2 className="grow align-middle mb-9 max-w-2xl">
             {Info.Title}
               </h2>
-            <h4 className="align-middle max-w-xl">
-              {Info.Text}
-              </h4>
+              <ReactMarkdown className="paragraph line-break " remarkPlugins={[remarkGfm, remarkBreaks]}>{Info.Text}</ReactMarkdown>
         </div>
   </div>
   </div>
@@ -41,13 +39,10 @@ export default function InfoCard({Info}) {
       <hr className="mt-3 mb-8 Hrswap"></hr>
       <div className="grid grid-cols-0 md:grid-cols-2 items-center md:justify-around mx-auto gap-10 p-5">
         <div className="relative order-last md:order-first">
-          <h4>{Info.Text}</h4>
-          <LiberaButton 
-          href={Info.Button.URL} 
-          type={Info.Button.NavType}
-          >
-            {Info.Button.Text}
-            </LiberaButton>
+        <ReactMarkdown className="paragraph line-break " remarkPlugins={[remarkGfm, remarkBreaks]}>{Info.Text}</ReactMarkdown>
+          <div className="p-8">
+          <InfoButton Button={Info.Button}/>
+          </div>
         </div>
         <div className="image-cropper">
           <Image className="roundedimage" 
@@ -72,13 +67,10 @@ export default function InfoCard({Info}) {
       <hr className="mt-3 mb-8 Hrswap"></hr>
       <div className="grid grid-cols-0 md:grid-cols-2 mx-auto justify-center gap-3">
         <div className="flex flex-col justify-between max-w-sm">
-          <p>{Info.Text}</p>
-          <LiberaButton 
-          href={Info.Button.URL} 
-          type={Info.Button.NavType}
-          >
-            {Info.Button.Text}
-            </LiberaButton>
+        <ReactMarkdown className="paragraph line-break " remarkPlugins={[remarkGfm, remarkBreaks]}>{Info.Text}</ReactMarkdown>
+          <div className="p-8">
+          <InfoButton Button={Info.Button}/>
+          </div>
         </div>
         <div className="relative mx-auto rounded-lg overflow-hidden">
         <Image
@@ -92,4 +84,17 @@ export default function InfoCard({Info}) {
       </div>
     </div>
   );
+}
+
+
+export function InfoButton({Button}){
+  if (Button == null) return (<></>);
+  else return (
+            <LiberaButton 
+            href={Button.URL} 
+            type={Button.NavType}
+            >
+              {Button.Text}
+              </LiberaButton>
+  )
 }

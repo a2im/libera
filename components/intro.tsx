@@ -7,9 +7,12 @@ import { useState } from "react";
 const dropIn = {
     hidden: {
         opacity: 0,
+        zIndex: 0,
+        transitionEnd: { display: "none" }
     },
     visible: {
         opacity: 1,
+        zIndex: 60
     },
 };
 
@@ -20,7 +23,7 @@ export default function Intro(){
         <AnimatePresence>
         <motion.div
         key={'intro-image'}
-                className="absolute z-60 top-10 w-full h-full bg-white opacity-100"
+                className="absolute top-10 w-full h-full bg-white opacity-100"
                 variants={dropIn}
                 animate={isVisible ? "visible" : "hidden"}
                 transition={{ease: "easeOut", delay: 2.5, duration: 2,}}

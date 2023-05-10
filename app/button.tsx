@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function LiberaButton ({ children, href, type}) {
   if (type === "Internal")
   return (
-  <div className="text-center p-8">
+  <div className="text-center">
         <Link href={href}>
         <div className="p-7 drop-shadow-2xl max-h-21 justify-center leading-tight mx-auto">
             <button 
@@ -19,7 +19,7 @@ export default function LiberaButton ({ children, href, type}) {
   )
   else if (type === "External")
   return (
-  <div className="text-center p-8">
+  <div className="text-center">
         <Link
           href={href}
           target="_blank"

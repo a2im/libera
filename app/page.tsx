@@ -4,12 +4,9 @@ import Header from './header'
 import InfoCard from './info-card'
 import { getHomeInfo, getHomeHeader } from './get-data'
 import LiberaButton from './button'
-
 export const metadata = { 
   title: 'Libera Awards - Home',
-  description: 'The Libera Awards is the Largest Independent Music Awards show in the World.',
-}
-
+  description: 'The Libera Awards is the Largest Independent Music Awards show in the World.'}
 export default async function Home() {
   const header = await getHomeHeader()
   const info = await getHomeInfo()

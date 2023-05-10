@@ -62,3 +62,12 @@ export async function getHomeHeader (){
   }
   return res.json();
 } 
+
+export async function getAbout (){
+  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/libera-about?populate[0]=TopInfo.Image&populate[1]=TopInfo.Button&populate[2]=Gallery.Images&populate[3]=Info.Image&populate[4]=Info.Button`, { next: { revalidate: 60 } })
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+  return res.json();
+} 
