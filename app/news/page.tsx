@@ -2,8 +2,6 @@ import { LiberaPostsList } from './posts'
 import { Suspense } from 'react'
 import Loading from '../loading'
 
-
-
 export default function News() {
   return (
     <div>

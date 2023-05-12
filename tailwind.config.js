@@ -392,6 +392,7 @@ module.exports = {
       '7xl': ['4.5rem', { lineHeight: '1' }],
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
+      'button' :['2em', { lineHeight: '1' }],
     },
     fontWeight: {
       thin: '100',
@@ -952,6 +953,11 @@ module.exports = {
       30: '30',
       40: '40',
       50: '50',
+      60: '60',
+      70: '70',
+      80: '80',
+      90: '90',
+      99: '99',
     },
   },
   variantOrder: [

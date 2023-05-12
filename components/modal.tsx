@@ -34,7 +34,7 @@ export default function MyModal () {
 
     return (
         <>
-            <div className="flex fixed bottom-5 right-5 w-20 h-20 rounded-full bg-black border-4 border-white hover:border-liberapurple">
+            <div className="flex fixed z-60 bottom-5 right-5 w-20 h-20 rounded-full bg-black border-4 border-white hover:border-liberapurple">
             {isModalOpen ? (
                 <motion.div
                 ref={ref}
@@ -50,7 +50,7 @@ export default function MyModal () {
                  ) : (
                 <motion.button 
                 whileTap={{scale: 0.95}}
-                className="save-button"
+                className=""
                 onClick={() => (setModalOpen(true))}>
                 <h2 className="text-7xl ml-3 mt-2 hover:text-liberapink text-white text-center font-black hover:scale-105">   ?   </h2>
             </motion.button>
