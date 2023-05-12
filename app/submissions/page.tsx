@@ -13,7 +13,6 @@ export const revalidate = 0
 export const fetchCache = 'auto'
 export const runtime = 'nodejs'
 
-
 export default function Submissions() {
   return (
     <div>
@@ -35,7 +34,7 @@ export default function Submissions() {
             </div>
         <AdBanner/>
         <br></br>
-        <LiberaQualifications />
+
         </section>
         <div className='max-w-4xl mx-auto'>
           <h2 className="grow mb-9 mt-10 font-bold text-center leading-tight pb-8">

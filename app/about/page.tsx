@@ -9,13 +9,12 @@ export const dynamicParams = true
 export const revalidate = 0
 export const fetchCache = 'auto'
 export const runtime = 'nodejs'
-export const metadata = { 
-  title: 'Libera Awards - About Us',
-  description: 'The Libera Awards is the Largest Independent Music Awards show in the World.'}
+
 export default async function About() {
   const data = await getAbout();
   return (
     <div>
+      <title>Libera Awards - About Us</title>
           <Suspense fallback={<Loading start={0} end={10}/>}>
           <div className="grow shrink content-center">
 <h1 className="pt-20 grow font-bold align-middle text-center leading-tight">
