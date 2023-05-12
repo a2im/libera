@@ -17,7 +17,7 @@ export default async function NomineesPage() {
   // const events = await getEvent({cleantitle})
   return (
     <>
-    <title>Libera Awards - Nominees</title>
+    <title>Libera Awards - 2023 Nominees</title>
           <Suspense fallback={<Loading start={0} end={10}/>}>
     <h2 className="mx-auto pt-20 pb-10 text-center drop-shadow-2xl">Nominees</h2>
    
